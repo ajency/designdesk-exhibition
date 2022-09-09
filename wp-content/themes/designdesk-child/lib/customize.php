@@ -22,6 +22,118 @@ function genesis_sample_customizer_register( $wp_customize ) {
 
 	$appearance = genesis_get_config( 'appearance' );
 
+	//Topbar section
+	$wp_customize->add_section('dd_topbar', array(
+		'title'	=>	'Topbar'
+	));
+
+	//checkbox
+	function mytheme_checkbox_sanitization( $input ) {
+		if ( true === $input ) {
+		   return 1;
+		} else {
+		   return 0;
+		}
+	 }
+	$wp_customize->add_setting( 'dd_topbar_checkbox',
+	array(
+		'default' => 1,
+		'transport' => 'refresh',
+		'sanitize_callback' => 'mytheme_checkbox_sanitization'
+	)
+	);
+	
+	$wp_customize->add_control( 'dd_topbar_checkbox',
+	array(
+		'label'	=> esc_html__( 'Click to enable or disable the topbar.' ),
+		'section'  => 'dd_topbar',
+		'type'=> 'checkbox'
+	)
+	);
+
+	//email ID
+	$wp_customize->add_setting(
+		'dd_topbar_email',
+		[
+			'sanitize_callback' => 'sanitize_email',
+		]
+	);
+	$wp_customize->add_control(
+		'dd_topbar_email_controls',
+			[
+				'label'       => __( 'Email ID', 'genesis-sample' ),
+				'section'     => 'dd_topbar',
+				'settings'    => 'dd_topbar_email',
+				'type' => 'text'
+			]
+	);
+
+	//social links | start
+	$wp_customize->add_setting(
+		'dd_social_link_1',
+		[
+			'sanitize_callback' => 'wp_filter_nohtml_kses',
+		]
+	);
+	$wp_customize->add_control(
+		'dd_topbar_link_controls_1',
+			[
+				'label'       => __( 'Youtube', 'genesis-sample' ),
+				'section'     => 'dd_topbar',
+				'settings'    => 'dd_social_link_1',
+				'type' => 'text'
+			]
+	);
+
+	$wp_customize->add_setting(
+		'dd_social_link_2',
+		[
+			'sanitize_callback' => 'wp_filter_nohtml_kses',
+		]
+	);
+	$wp_customize->add_control(
+		'dd_topbar_link_controls_2',
+			[
+				'label'       => __( 'Twitter', 'genesis-sample' ),
+				'section'     => 'dd_topbar',
+				'settings'    => 'dd_social_link_2',
+				'type' => 'text'
+			]
+	);
+
+	$wp_customize->add_setting(
+		'dd_social_link_3',
+		[
+			'sanitize_callback' => 'wp_filter_nohtml_kses',
+		]
+	);
+	$wp_customize->add_control(
+		'dd_topbar_link_controls_3',
+			[
+				'label'       => __( 'Facebook', 'genesis-sample' ),
+				'section'     => 'dd_topbar',
+				'settings'    => 'dd_social_link_3',
+				'type' => 'text'
+			]
+	);
+
+	$wp_customize->add_setting(
+		'dd_social_link_4',
+		[
+			'sanitize_callback' => 'wp_filter_nohtml_kses',
+		]
+	);
+	$wp_customize->add_control(
+		'dd_topbar_link_controls_4',
+			[
+				'label'       => __( 'Instagram', 'genesis-sample' ),
+				'section'		=> 'dd_topbar',
+				'settings'    => 'dd_social_link_4',
+				'type' => 'text'
+			]
+	);
+	//social link  | end
+
 	$wp_customize->add_setting(
 		'genesis_sample_link_color',
 		[
@@ -29,7 +141,6 @@ function genesis_sample_customizer_register( $wp_customize ) {
 			'sanitize_callback' => 'sanitize_hex_color',
 		]
 	);
-
 	$wp_customize->add_control(
 		new WP_Customize_Color_Control(
 			$wp_customize,
@@ -50,7 +161,6 @@ function genesis_sample_customizer_register( $wp_customize ) {
 			'sanitize_callback' => 'sanitize_hex_color',
 		]
 	);
-
 	$wp_customize->add_control(
 		new WP_Customize_Color_Control(
 			$wp_customize,
