@@ -581,10 +581,10 @@ th {
 /* Site Inner
 --------------------------------------------- */
 
-.site-inner {
+.site-inner, .footer-widgets .wrap {
 	clear: both;
 	margin: 0 auto;
-	padding: 60px 30px 0;
+	padding: 60px 20px 0;
 }
 
 
@@ -1445,7 +1445,7 @@ p.entry-meta {
 	border-top: 1px solid #eee;
 	font-size: 15px;
 	line-height: 1.5;
-	padding: 30px;
+	padding: 20px;
 	text-align: center;
 }
 
@@ -1694,7 +1694,7 @@ p.entry-meta {
 	--------------------------------------------- */
 
 	.footer-widgets .wrap {
-		max-width: 1140px;
+		max-width: 1220px;
 	}
 
 	.footer-widget-area {

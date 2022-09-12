@@ -1,0 +1,23 @@
+//social links widget
+.social-links {
+    margin-left: 30px;
+    display: flex;
+    align-items: center;
+    margin-left: 0px;
+    .social-link {
+        margin-bottom: 0px;
+      &:not(:last-child) {
+        margin-right: 10px;
+      }
+      a {
+        display: flex;
+        &:after{
+          content: none;
+        }
+        img {
+          width: 20px;
+          height: 20px;
+        }
+      }
+    }
+  }

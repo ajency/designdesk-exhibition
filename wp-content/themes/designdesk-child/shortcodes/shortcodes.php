@@ -22,12 +22,9 @@ add_shortcode('dd_phone', 'contact_phone');
 
 // follow
 
-function follow_us($atts) {
-    $default = array(
-        'title' => 'Follow Us On',
-    );
-    $a = shortcode_atts($default, $atts);
+function dd_site_url($atts) {
 
-    return '<div class="follow-us"><p class="title">'. $a['title'] .'</p></div>';
+
+    return site_url()."/wp-content/uploads/";
 }
-add_shortcode('dd_follow', 'follow_us');
+add_shortcode('dd_site_url', 'dd_site_url');

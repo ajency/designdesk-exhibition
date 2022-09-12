@@ -272,6 +272,9 @@ function genesis_sample_comments_gravatar( $args ) {
 /* shortcodes */
 include('shortcodes/shortcodes.php');
 
+/* widgets */
+include('widgets/all_widgets.php');
+
 /* enqueue stylesheets */
 add_action( 'wp_enqueue_scripts', 'enqueue_child_theme_styles' );
 
