@@ -1,8 +1,9 @@
-@import 'theme-styles/header';
-@import 'theme-styles/hero-slider';
+@import "theme-styles/header";
+@import "theme-styles/hero-slider";
 
 body {
   font-family: "Montserrat";
+  color: #041925;
 }
 a {
   outline: none !important;
@@ -11,4 +12,9 @@ a {
   @media only screen and (min-width: 1300px) {
     max-width: 1220px;
   }
+}
+
+.wp-block-genesis-blocks-gb-columns.margin-0 {
+  margin-top: 0px !important;
+  margin-bottom: 0px !important;
 }

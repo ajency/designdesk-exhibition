@@ -1,0 +1,56 @@
+.statistics-section {
+  .stat {
+    &:not(:last-child) {
+      border-right: 1px solid #eeeeee;
+    }
+    &-number {
+      font-family: "Poppins";
+      font-weight: 600;
+      font-size: 32px;
+      line-height: 48px;
+      color: #2471b5;
+      margin-bottom: 6px;
+      strong {
+        color: #f48e0c;
+      }
+    }
+    &-title {
+      font-weight: 500;
+    }
+  }
+  @media (max-width: 992px) {
+    .gb-layout-column-wrap {
+      &.gb-is-responsive-column {
+        grid-template-columns: 1fr;
+        grid-template-areas:
+          "col1"
+          "col2"
+          "col3"
+          "col4";
+      }
+    }
+    .stat {
+      position: relative;
+      &:not(:first-child) {
+        padding-top: 30px;
+      }
+      &:not(:last-child) {
+        border-right: 0;
+        padding-bottom: 30px;
+
+        &:after {
+          content: "";
+          height: 1px;
+          width: 58px;
+          background-color: #eeeeee;
+          position: absolute;
+          left: calc(50% - 29px);
+          bottom: 0;
+        }
+      }
+      &-number {
+        margin-bottom: 10px;
+      }
+    }
+  }
+}

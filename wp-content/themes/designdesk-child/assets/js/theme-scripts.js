@@ -1,12 +1,13 @@
-/* $(document).ready(function(){
-    $(document).on('click' , '.menu-item-has-children:not(.clicked) a' ,function(e){
-        e.preventDefault();
-        $(this).closest('ul').find('.menu-item-has-children').removeClass('clicked');
-        $(this).parent('.menu-item-has-children').addClass("clicked").children('.sub-menu').show().addClass("active");
+//number counter animation
+$('.stat-number mark').each(function () {
+    $(this).prop('Counter',0).animate({
+        Counter: $(this).text()
+    }, {
+        duration: 4000,
+        easing: 'swing',
+        step: function (now) {
+            // $(this).text(Math.ceil(now));
+           $(this).text(Math.ceil(now).toString().replace(/(\d)(?=(\d\d\d)+(?!\d))/g, "$1,"));
+        }
     });
-    
-    $(document).on('click' , '.menu-item-has-children.clicked a' , function(e){
-        $(this).closest('.menu-item-has-children').addClass("grand-child").children('.sub-menu').show().addClass("active");
-       $(this).parent('.menu-item-has-children:not(.grand-child)').removeClass("clicked").children('.sub-menu').hide().removeClass("active");
-    });
-}); */
+});
