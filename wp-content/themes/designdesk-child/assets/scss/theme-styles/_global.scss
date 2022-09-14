@@ -1,23 +1,71 @@
 //social links widget
 .social-links {
-    margin-left: 30px;
-    display: flex;
-    align-items: center;
-    margin-left: 0px;
-    .social-link {
-        margin-bottom: 0px;
-      &:not(:last-child) {
-        margin-right: 10px;
+  margin-left: 30px;
+  display: flex;
+  align-items: center;
+  margin-left: 0px;
+  .social-link {
+    margin-bottom: 0px;
+    &:not(:last-child) {
+      margin-right: 10px;
+    }
+    a {
+      display: flex;
+      &:after {
+        content: none;
       }
-      a {
-        display: flex;
-        &:after{
-          content: none;
-        }
-        img {
-          width: 20px;
-          height: 20px;
-        }
+      img {
+        width: 20px;
+        height: 20px;
       }
     }
   }
+}
+
+.link-with-icon {
+  display: inline-flex;
+  align-items: center;
+  a {
+    text-decoration: none;
+    color: #2471B5;
+    font-weight: 500;
+    font-size: inherit;
+    line-height: inherit;
+  }
+  .icon{
+    margin-left: 10px;
+  }
+}
+
+.section-heading-light {
+  margin-bottom: 0px;
+}
+.section-heading {
+  margin-bottom: 30px;
+}
+
+@media (max-width: 992px) {
+  .section-heading-light {
+    font-size: 24px !important;
+    line-height: 36px !important;
+    margin-bottom: 10px;
+  }
+  .section-heading {
+    font-size: 24px !important;
+    line-height: 28px !important;
+    margin-bottom: 20px;
+  }
+  .text{
+    font-size: 16px !important;
+    text-align: left !important;
+  }
+  .section-heading, .section-heading-light{
+    text-align: left !important;
+  }
+}
+@media(max-width: 575.98px){
+  .link-with-icon{
+    display: flex;
+    margin-top: 20px;
+  }
+}

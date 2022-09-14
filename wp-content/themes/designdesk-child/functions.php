@@ -300,3 +300,18 @@ function enqueue_child_theme_scripts() {
 	wp_enqueue_script('theme-scripts');
 }
 add_action("wp_enqueue_scripts", "enqueue_child_theme_scripts");
+
+
+function wpb_widgets_init() {
+ 
+    register_sidebar( array(
+        'name'          => 'Header Bottom Area',
+        'id'            => 'header-bottom-area',
+        'before_widget' => '<div class="dd-widget">',
+        'after_widget'  => '</div>',
+        'before_title'  => '<p class="dd-title">',
+        'after_title'   => '</p>',
+    ) );
+ 
+}
+add_action( 'widgets_init', 'wpb_widgets_init' );

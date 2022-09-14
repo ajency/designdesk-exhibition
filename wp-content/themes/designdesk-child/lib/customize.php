@@ -1,4 +1,5 @@
 <?php
+
 /**
  * Genesis Sample.
  *
@@ -10,7 +11,7 @@
  * @link    https://www.studiopress.com/
  */
 
-add_action( 'customize_register', 'genesis_sample_customizer_register' );
+add_action('customize_register', 'genesis_sample_customizer_register');
 /**
  * Registers settings and controls with the Customizer.
  *
@@ -18,9 +19,10 @@ add_action( 'customize_register', 'genesis_sample_customizer_register' );
  *
  * @param WP_Customize_Manager $wp_customize Customizer object.
  */
-function genesis_sample_customizer_register( $wp_customize ) {
+function genesis_sample_customizer_register($wp_customize)
+{
 
-	$appearance = genesis_get_config( 'appearance' );
+	$appearance = genesis_get_config('appearance');
 
 	//Topbar section
 	$wp_customize->add_section('dd_topbar', array(
@@ -28,27 +30,30 @@ function genesis_sample_customizer_register( $wp_customize ) {
 	));
 
 	//checkbox
-	function mytheme_checkbox_sanitization( $input ) {
-		if ( true === $input ) {
-		   return 1;
+	function mytheme_checkbox_sanitization($input)
+	{
+		if (true === $input) {
+			return 1;
 		} else {
-		   return 0;
+			return 0;
 		}
-	 }
-	$wp_customize->add_setting( 'dd_topbar_checkbox',
-	array(
-		'default' => 1,
-		'transport' => 'refresh',
-		'sanitize_callback' => 'mytheme_checkbox_sanitization'
-	)
+	}
+	$wp_customize->add_setting(
+		'dd_topbar_checkbox',
+		array(
+			'default' => 1,
+			'transport' => 'refresh',
+			'sanitize_callback' => 'mytheme_checkbox_sanitization'
+		)
 	);
-	
-	$wp_customize->add_control( 'dd_topbar_checkbox',
-	array(
-		'label'	=> esc_html__( 'Click to enable or disable the topbar.' ),
-		'section'  => 'dd_topbar',
-		'type'=> 'checkbox'
-	)
+
+	$wp_customize->add_control(
+		'dd_topbar_checkbox',
+		array(
+			'label'	=> esc_html__('Click to enable or disable the topbar.'),
+			'section'  => 'dd_topbar',
+			'type' => 'checkbox'
+		)
 	);
 
 	//email ID
@@ -60,12 +65,12 @@ function genesis_sample_customizer_register( $wp_customize ) {
 	);
 	$wp_customize->add_control(
 		'dd_topbar_email_controls',
-			[
-				'label'       => __( 'Email ID', 'genesis-sample' ),
-				'section'     => 'dd_topbar',
-				'settings'    => 'dd_topbar_email',
-				'type' => 'text'
-			]
+		[
+			'label'       => __('Email ID', 'genesis-sample'),
+			'section'     => 'dd_topbar',
+			'settings'    => 'dd_topbar_email',
+			'type' => 'text'
+		]
 	);
 
 	//social links | start
@@ -77,12 +82,12 @@ function genesis_sample_customizer_register( $wp_customize ) {
 	);
 	$wp_customize->add_control(
 		'dd_topbar_link_controls_1',
-			[
-				'label'       => __( 'Youtube', 'genesis-sample' ),
-				'section'     => 'dd_topbar',
-				'settings'    => 'dd_social_link_1',
-				'type' => 'text'
-			]
+		[
+			'label'       => __('Youtube', 'genesis-sample'),
+			'section'     => 'dd_topbar',
+			'settings'    => 'dd_social_link_1',
+			'type' => 'text'
+		]
 	);
 
 	$wp_customize->add_setting(
@@ -93,12 +98,12 @@ function genesis_sample_customizer_register( $wp_customize ) {
 	);
 	$wp_customize->add_control(
 		'dd_topbar_link_controls_2',
-			[
-				'label'       => __( 'Twitter', 'genesis-sample' ),
-				'section'     => 'dd_topbar',
-				'settings'    => 'dd_social_link_2',
-				'type' => 'text'
-			]
+		[
+			'label'       => __('Twitter', 'genesis-sample'),
+			'section'     => 'dd_topbar',
+			'settings'    => 'dd_social_link_2',
+			'type' => 'text'
+		]
 	);
 
 	$wp_customize->add_setting(
@@ -109,12 +114,12 @@ function genesis_sample_customizer_register( $wp_customize ) {
 	);
 	$wp_customize->add_control(
 		'dd_topbar_link_controls_3',
-			[
-				'label'       => __( 'Facebook', 'genesis-sample' ),
-				'section'     => 'dd_topbar',
-				'settings'    => 'dd_social_link_3',
-				'type' => 'text'
-			]
+		[
+			'label'       => __('Facebook', 'genesis-sample'),
+			'section'     => 'dd_topbar',
+			'settings'    => 'dd_social_link_3',
+			'type' => 'text'
+		]
 	);
 
 	$wp_customize->add_setting(
@@ -125,12 +130,12 @@ function genesis_sample_customizer_register( $wp_customize ) {
 	);
 	$wp_customize->add_control(
 		'dd_topbar_link_controls_4',
-			[
-				'label'       => __( 'Instagram', 'genesis-sample' ),
-				'section'		=> 'dd_topbar',
-				'settings'    => 'dd_social_link_4',
-				'type' => 'text'
-			]
+		[
+			'label'       => __('Instagram', 'genesis-sample'),
+			'section'		=> 'dd_topbar',
+			'settings'    => 'dd_social_link_4',
+			'type' => 'text'
+		]
 	);
 	//social link  | end
 
@@ -146,8 +151,8 @@ function genesis_sample_customizer_register( $wp_customize ) {
 			$wp_customize,
 			'genesis_sample_link_color',
 			[
-				'description' => __( 'Change the color of post info links and button blocks, the hover color of linked titles and menu items, and more.', 'genesis-sample' ),
-				'label'       => __( 'Link Color', 'genesis-sample' ),
+				'description' => __('Change the color of post info links and button blocks, the hover color of linked titles and menu items, and more.', 'genesis-sample'),
+				'label'       => __('Link Color', 'genesis-sample'),
 				'section'     => 'colors',
 				'settings'    => 'genesis_sample_link_color',
 			]
@@ -166,8 +171,8 @@ function genesis_sample_customizer_register( $wp_customize ) {
 			$wp_customize,
 			'genesis_sample_accent_color',
 			[
-				'description' => __( 'Change the default hover color for button links, menu buttons, and submit buttons. The button block uses the Link Color.', 'genesis-sample' ),
-				'label'       => __( 'Accent Color', 'genesis-sample' ),
+				'description' => __('Change the default hover color for button links, menu buttons, and submit buttons. The button block uses the Link Color.', 'genesis-sample'),
+				'label'       => __('Accent Color', 'genesis-sample'),
 				'section'     => 'colors',
 				'settings'    => 'genesis_sample_accent_color',
 			]
@@ -187,8 +192,8 @@ function genesis_sample_customizer_register( $wp_customize ) {
 	$wp_customize->add_control(
 		'genesis_sample_logo_width',
 		[
-			'label'       => __( 'Logo Width', 'genesis-sample' ),
-			'description' => __( 'The maximum width of the logo in pixels.', 'genesis-sample' ),
+			'label'       => __('Logo Width', 'genesis-sample'),
+			'description' => __('The maximum width of the logo in pixels.', 'genesis-sample'),
 			'priority'    => 9,
 			'section'     => 'title_tagline',
 			'settings'    => 'genesis_sample_logo_width',
@@ -199,7 +204,24 @@ function genesis_sample_customizer_register( $wp_customize ) {
 
 		]
 	);
+	$wp_customize->add_setting(
+		'dd_mobile_logo',
+		[
+			'sanitize_callback' => 'wp_filter_nohtml_kses',
+		]
+	);
 
+	// Add a control for the logo size.
+	$wp_customize->add_control(
+		'dd_mobile_logo',
+		[
+			'label'       => __('Mobile Logo', 'genesis-sample'),
+			'description' => __('Add mobile logo image link.', 'genesis-sample'),
+			'section'     => 'title_tagline',
+			'type'        => 'text'
+
+		]
+	);
 }
 
 /**
@@ -209,14 +231,14 @@ function genesis_sample_customizer_register( $wp_customize ) {
  * @param int    $width The width entered by the user.
  * @return int The new width.
  */
-function genesis_sample_validate_logo_width( $validity, $width ) {
+function genesis_sample_validate_logo_width($validity, $width)
+{
 
-	if ( empty( $width ) || ! is_numeric( $width ) ) {
-		$validity->add( 'required', __( 'You must supply a valid number.', 'genesis-sample' ) );
-	} elseif ( $width < 100 ) {
-		$validity->add( 'logo_too_small', __( 'The logo width cannot be less than 100.', 'genesis-sample' ) );
+	if (empty($width) || !is_numeric($width)) {
+		$validity->add('required', __('You must supply a valid number.', 'genesis-sample'));
+	} elseif ($width < 100) {
+		$validity->add('logo_too_small', __('The logo width cannot be less than 100.', 'genesis-sample'));
 	}
 
 	return $validity;
-
 }
