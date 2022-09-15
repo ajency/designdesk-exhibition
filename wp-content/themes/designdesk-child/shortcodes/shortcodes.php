@@ -43,6 +43,9 @@ function link_with_icon($atts)
         'link-title'    => 'Link Title',
     );
     $a = shortcode_atts($default, $atts);
-    return '<span class="link-with-icon"><a href="' . $a['link'] . '">' . $a['link-title'] . '</a><span class="icon"><svg width="7" height="12" viewBox="0 0 7 12" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M1.33594 10.667L6.0026 6.00033L1.33594 1.33366" stroke="#2471B5" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></span>';
+    return '<span class="link-with-icon"><a href="' . $a['link'] . '">' . $a['link-title'] . '</a><span class="icon"><svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <path d="M5.33594 12.667L10.0026 8.00033L5.33594 3.33366" stroke="#2471B5" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
+    </svg>
+    </span>';
 }
 add_shortcode('dd_link_with_icon', 'link_with_icon');
