@@ -137,6 +137,22 @@ function genesis_sample_customizer_register($wp_customize)
 			'type' => 'text'
 		]
 	);
+
+	$wp_customize->add_setting(
+		'dd_social_link_5',
+		[
+			'sanitize_callback' => 'wp_filter_nohtml_kses',
+		]
+	);
+	$wp_customize->add_control(
+		'dd_topbar_link_controls_5',
+		[
+			'label'       => __('LinkedIn', 'genesis-sample'),
+			'section'		=> 'dd_topbar',
+			'settings'    => 'dd_social_link_5',
+			'type' => 'text'
+		]
+	);
 	//social link  | end
 
 	$wp_customize->add_setting(

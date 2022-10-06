@@ -8,6 +8,7 @@ $youtube_link = get_theme_mod('dd_social_link_1');
 $twitter_link = get_theme_mod('dd_social_link_2');
 $facebook_link = get_theme_mod('dd_social_link_3');
 $instagram_link = get_theme_mod('dd_social_link_4');
+$linkedin_link = get_theme_mod('dd_social_link_5');
 
 ?>
 <?php
@@ -19,17 +20,20 @@ if ($topbar_checkbox == true) : ?>
             <?php } ?>
             <?php if ($youtube_link || $twitter_link || $facebook_link || $instagram_link) : ?>
                 <ul class="social-links">
-                    <?php if ($youtube_link) : ?>
-                        <li class="social-link"><a href="<?php echo $youtube_link ?>" target="_blank"><img src="<?php echo get_stylesheet_directory_uri() ?>/assets/images/youtube.png" title="youtube" alt="youtube"></a></li>
-                    <?php endif ?>
-                    <?php if ($twitter_link) : ?>
-                        <li class="social-link"><a href="<?php echo $twitter_link ?>" target="_blank"><img src="<?php echo get_stylesheet_directory_uri() ?>/assets/images/twitter.png" title="twitter" alt="twitter"></a></li>
+                    <?php if ($linkedin_link) : ?>
+                        <li class="social-link"><a href="<?php echo $linkedin_link ?>" target="_blank"><img src="<?php echo get_stylesheet_directory_uri() ?>/assets/images/linkedin.svg" title="linkedin" alt="linkedin"></a></li>
                     <?php endif ?>
                     <?php if ($facebook_link) : ?>
                         <li class="social-link"><a href="<?php echo $facebook_link ?>" target="_blank"><img src="<?php echo get_stylesheet_directory_uri() ?>/assets/images/facebook.png" title="facebook" alt="facebook"></a></li>
                     <?php endif ?>
+                    <?php if ($twitter_link) : ?>
+                        <li class="social-link"><a href="<?php echo $twitter_link ?>" target="_blank"><img src="<?php echo get_stylesheet_directory_uri() ?>/assets/images/twitter.png" title="twitter" alt="twitter"></a></li>
+                    <?php endif ?>
                     <?php if ($instagram_link) : ?>
                         <li class="social-link"><a href="<?php echo $instagram_link ?>" target="_blank"><img src="<?php echo get_stylesheet_directory_uri() ?>/assets/images/instagram.png" title="instagram" alt="instagram"></a></li>
+                    <?php endif ?>
+                    <?php if ($youtube_link) : ?>
+                        <li class="social-link"><a href="<?php echo $youtube_link ?>" target="_blank"><img src="<?php echo get_stylesheet_directory_uri() ?>/assets/images/youtube.png" title="youtube" alt="youtube"></a></li>
                     <?php endif ?>
                 </ul>
             <?php endif ?>

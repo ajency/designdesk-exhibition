@@ -84,7 +84,6 @@ $(document).ready(function () {
         $titleHeight = $(this).find('.service-card-title').outerHeight();
         $finalTitleHeight = $titleHeight+$addPadding;
         $(this).find('.service-card-details').css('transform','translateY(calc(100% - '+$finalTitleHeight+'px))');
-        console.log($titleHeight);
       });
   }
 });
