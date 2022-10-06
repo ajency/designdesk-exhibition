@@ -1,6 +1,3 @@
-@import "theme-styles/header";
-@import "theme-styles/hero-slider";
-
 body {
   font-family: "Montserrat";
   color: #041925;
@@ -23,3 +20,5 @@ a {
   margin-bottom: 0px !important;
 }
 
+@import "theme-styles/header";
+@import "theme-styles/hero-slider";

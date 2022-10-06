@@ -2,24 +2,21 @@
   padding-top: 0px;
 }
 .dd-topbar {
-  padding-top: 16.5px;
-  padding-bottom: 16.5px;
-  position: absolute;
-  width: 100%;
-  top: 0;
-  z-index: 9;
+  overflow: hidden;
+  transition: all 0.3s ease-in-out;
   &__wraper {
     display: flex;
     align-items: center;
     justify-content: flex-end;
     padding-top: 0;
     padding-bottom: 0;
-    gap: 18px;
+    gap: 27px;
     .email-link {
       font-weight: 400;
       font-size: 14px;
       line-height: 100%;
-      color: #ffffff;
+      color: #041925;
+      background: #ffffff;
       text-decoration: none;
       outline: none;
       display: flex;
@@ -31,6 +28,14 @@
       .icon {
         height: 20px;
         width: 20px;
+        svg {
+          width: 100%;
+          height: 100%;
+          object-fit: contain;
+          path {
+            fill: #041925;
+          }
+        }
       }
     }
     ul {
@@ -56,18 +61,10 @@
     display: none;
   }
 }
-.dd-topbar ~ header {
-  &:not(.active) {
-    top: 53px;
-    @media (max-width: 992px) {
-      top: 0px;
-    }
-  }
-}
 header {
   &.dd-header,
   &.site-header {
-    padding-top: 0px;
+    padding-top: 20px;
     padding-bottom: 20px;
     background: transparent;
     transition: all 0.3s ease-in-out;
@@ -89,7 +86,7 @@ header {
       .left-side {
         .dd-logo {
           .dd-logo-img {
-            width: 200px;
+            width: 240px;
             transition: width 0.3s ease-in-out;
           }
         }
@@ -105,11 +102,14 @@ header {
                 margin-left: 26.33px;
               }
               a {
+                padding-top: 12px;
+                padding-bottom: 12px;
                 font-weight: 600;
                 font-size: 16px;
                 line-height: 140%;
                 color: #ffffff;
                 text-decoration: none;
+                text-transform: uppercase;
                 outline: none;
                 transition: color 0.2s ease-in-out;
               }
@@ -122,8 +122,8 @@ header {
                   a {
                     background: #ffffff;
                     color: #041925;
-                    padding-left: 15px;
-                    padding-right: 15px;
+                    padding: 8px 16px;
+                    text-transform: capitalize;
                     transition: background 0.2s ease-in-out;
                     font-weight: 400;
                     border: none;
@@ -141,6 +141,25 @@ header {
     }
   }
   @media (min-width: 992px) {
+    .site-inner {
+      .right-side {
+        flex-grow: 1;
+        .mobile-dropdown-menu {
+          margin-top: 4px;
+          position: relative;
+          &:before {
+            content: "";
+            height: 1px;
+            width: 100%;
+            background: linear-gradient(
+              270deg,
+              #ffffff 0%,
+              rgba(255, 255, 255, 0) 99.34%
+            );
+          }
+        }
+      }
+    }
     &.active {
       background: rgba(4, 25, 37, 0.7);
       padding-top: 10px;
@@ -151,6 +170,12 @@ header {
             .dd-logo-img {
               width: 137px;
             }
+          }
+        }
+        .right-side {
+          .dd-topbar {
+            opacity: 0px;
+            height: 0px;
           }
         }
       }
@@ -177,9 +202,9 @@ header {
           transform: rotate(180deg);
         }
       }
-      li{
+      li {
         padding-right: 0px;
-        &::after{
+        &::after {
           right: 12px;
           background-image: url(../images/down-arrow-dark.png);
         }
@@ -254,6 +279,7 @@ header {
             padding-bottom: 10px;
             display: none;
             border-top: 1px solid #eeeeee;
+            width: 100% !important;
             .dd-menu {
               .menu {
                 justify-content: flex-start;
@@ -270,6 +296,9 @@ header {
                     margin-left: 0px;
                   }
                   &.menu-item-has-children.sfHover > a {
+                    color: #f48e0c;
+                  }
+                  &.menu-item-has-children.activated > a {
                     color: #f48e0c;
                   }
                 }
