@@ -7,6 +7,10 @@
   overflow: hidden;
   position: relative;
   cursor: pointer;
+  p{
+    padding-left: 0px !important;
+    padding-right: 0px !important;
+  }
   .service-card-details {
     background-color: rgba(4, 25, 37, 0.9);
     color: #fff;
