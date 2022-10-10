@@ -66,7 +66,7 @@ function genesis_sample_customizer_register($wp_customize)
 	$wp_customize->add_control(
 		'dd_topbar_email_controls',
 		[
-			'label'       => __('Email ID', 'genesis-sample'),
+			'label'       => __('Email ID', 'designdesk-child'),
 			'section'     => 'dd_topbar',
 			'settings'    => 'dd_topbar_email',
 			'type' => 'text'
@@ -83,7 +83,7 @@ function genesis_sample_customizer_register($wp_customize)
 	$wp_customize->add_control(
 		'dd_topbar_link_controls_1',
 		[
-			'label'       => __('Youtube', 'genesis-sample'),
+			'label'       => __('Youtube', 'designdesk-child'),
 			'section'     => 'dd_topbar',
 			'settings'    => 'dd_social_link_1',
 			'type' => 'text'
@@ -99,7 +99,7 @@ function genesis_sample_customizer_register($wp_customize)
 	$wp_customize->add_control(
 		'dd_topbar_link_controls_2',
 		[
-			'label'       => __('Twitter', 'genesis-sample'),
+			'label'       => __('Twitter', 'designdesk-child'),
 			'section'     => 'dd_topbar',
 			'settings'    => 'dd_social_link_2',
 			'type' => 'text'
@@ -115,7 +115,7 @@ function genesis_sample_customizer_register($wp_customize)
 	$wp_customize->add_control(
 		'dd_topbar_link_controls_3',
 		[
-			'label'       => __('Facebook', 'genesis-sample'),
+			'label'       => __('Facebook', 'designdesk-child'),
 			'section'     => 'dd_topbar',
 			'settings'    => 'dd_social_link_3',
 			'type' => 'text'
@@ -131,7 +131,7 @@ function genesis_sample_customizer_register($wp_customize)
 	$wp_customize->add_control(
 		'dd_topbar_link_controls_4',
 		[
-			'label'       => __('Instagram', 'genesis-sample'),
+			'label'       => __('Instagram', 'designdesk-child'),
 			'section'		=> 'dd_topbar',
 			'settings'    => 'dd_social_link_4',
 			'type' => 'text'
@@ -147,7 +147,7 @@ function genesis_sample_customizer_register($wp_customize)
 	$wp_customize->add_control(
 		'dd_topbar_link_controls_5',
 		[
-			'label'       => __('LinkedIn', 'genesis-sample'),
+			'label'       => __('LinkedIn', 'designdesk-child'),
 			'section'		=> 'dd_topbar',
 			'settings'    => 'dd_social_link_5',
 			'type' => 'text'
@@ -167,8 +167,8 @@ function genesis_sample_customizer_register($wp_customize)
 			$wp_customize,
 			'genesis_sample_link_color',
 			[
-				'description' => __('Change the color of post info links and button blocks, the hover color of linked titles and menu items, and more.', 'genesis-sample'),
-				'label'       => __('Link Color', 'genesis-sample'),
+				'description' => __('Change the color of post info links and button blocks, the hover color of linked titles and menu items, and more.', 'designdesk-child'),
+				'label'       => __('Link Color', 'designdesk-child'),
 				'section'     => 'colors',
 				'settings'    => 'genesis_sample_link_color',
 			]
@@ -187,8 +187,8 @@ function genesis_sample_customizer_register($wp_customize)
 			$wp_customize,
 			'genesis_sample_accent_color',
 			[
-				'description' => __('Change the default hover color for button links, menu buttons, and submit buttons. The button block uses the Link Color.', 'genesis-sample'),
-				'label'       => __('Accent Color', 'genesis-sample'),
+				'description' => __('Change the default hover color for button links, menu buttons, and submit buttons. The button block uses the Link Color.', 'designdesk-child'),
+				'label'       => __('Accent Color', 'designdesk-child'),
 				'section'     => 'colors',
 				'settings'    => 'genesis_sample_accent_color',
 			]
@@ -208,8 +208,8 @@ function genesis_sample_customizer_register($wp_customize)
 	$wp_customize->add_control(
 		'genesis_sample_logo_width',
 		[
-			'label'       => __('Logo Width', 'genesis-sample'),
-			'description' => __('The maximum width of the logo in pixels.', 'genesis-sample'),
+			'label'       => __('Logo Width', 'designdesk-child'),
+			'description' => __('The maximum width of the logo in pixels.', 'designdesk-child'),
 			'priority'    => 9,
 			'section'     => 'title_tagline',
 			'settings'    => 'genesis_sample_logo_width',
@@ -231,8 +231,8 @@ function genesis_sample_customizer_register($wp_customize)
 	$wp_customize->add_control(
 		'dd_mobile_logo',
 		[
-			'label'       => __('Mobile Logo', 'genesis-sample'),
-			'description' => __('Add mobile logo image link.', 'genesis-sample'),
+			'label'       => __('Mobile Logo', 'designdesk-child'),
+			'description' => __('Add mobile logo image link.', 'designdesk-child'),
 			'section'     => 'title_tagline',
 			'type'        => 'text'
 
@@ -251,9 +251,9 @@ function genesis_sample_validate_logo_width($validity, $width)
 {
 
 	if (empty($width) || !is_numeric($width)) {
-		$validity->add('required', __('You must supply a valid number.', 'genesis-sample'));
+		$validity->add('required', __('You must supply a valid number.', 'designdesk-child'));
 	} elseif ($width < 100) {
-		$validity->add('logo_too_small', __('The logo width cannot be less than 100.', 'genesis-sample'));
+		$validity->add('logo_too_small', __('The logo width cannot be less than 100.', 'designdesk-child'));
 	}
 
 	return $validity;

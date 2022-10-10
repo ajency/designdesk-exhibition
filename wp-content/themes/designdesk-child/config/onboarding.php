@@ -15,8 +15,8 @@ $genesis_sample_shared_content = genesis_get_config( 'onboarding-shared' );
 return [
 	'starter_packs' => [
 		'black-white' => [
-			'title'       => __( 'Black & White', 'genesis-sample' ),
-			'description' => __( 'A pack with a homepage designed with black and white images.', 'genesis-sample' ),
+			'title'       => __( 'Black & White', 'designdesk-child' ),
+			'description' => __( 'A pack with a homepage designed with black and white images.', 'designdesk-child' ),
 			'thumbnail'   => get_stylesheet_directory_uri() . '/config/import/images/thumbnails/home-black-white.jpg',
 			'demo_url'    => 'https://demo.studiopress.com/genesis-sample/',
 			'config'      => [
@@ -47,8 +47,8 @@ return [
 			],
 		],
 		'color'       => [
-			'title'       => __( 'Color', 'genesis-sample' ),
-			'description' => __( 'A pack with a homepage designed with color images.', 'genesis-sample' ),
+			'title'       => __( 'Color', 'designdesk-child' ),
+			'description' => __( 'A pack with a homepage designed with color images.', 'designdesk-child' ),
 			'thumbnail'   => get_stylesheet_directory_uri() . '/config/import/images/thumbnails/home-color.jpg',
 			'demo_url'    => 'https://demo.studiopress.com/genesis-sample/home-color/',
 			'config'      => [

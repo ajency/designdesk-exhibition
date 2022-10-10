@@ -49,3 +49,53 @@ function link_with_icon($atts)
     </span>';
 }
 add_shortcode('dd_link_with_icon', 'link_with_icon');
+
+
+function portfolios($atts){
+    $default = array(
+        'total-portfolios' => -1
+    );
+    $a = shortcode_atts($default, $atts);
+    //$output = $output . 'Display Posts: '. $a['total-portfolios'];
+
+    $args = array(
+        'posts_per_page' => $a['total-portfolios'],
+        'post_type'     => 'dd_portfolio',
+        'orderby'=> 'title',
+        'order' => 'ASC'
+    );
+
+    $postQuery = new Wp_Query($args);
+
+    if(!empty($postQuery)){
+        $output ='';
+
+        $output .='<div class="portfolio-list">';
+        while ($postQuery -> have_posts()){
+            $postQuery -> the_post();
+
+            if ( get_the_post_thumbnail() ){
+                $thumbnailUrl = get_the_post_thumbnail_url();
+            } else{
+                $thumbnailUrl = get_site_url() . '/wp-content/themes/designdesk-child/assets/images/placeholder-square.jpg';
+            }
+
+            $output .=  '<div class="portfolio-card">';
+                $output .=  '<div class="portfolio-card__wraper">';
+                    $output .=  '<div class="card-image">';
+                        $output .=  '<img src="'. $thumbnailUrl .'" alt="'.get_the_title().'" title="'.get_the_title().'" width="280" height="330">';
+                    $output .=  '</div>';
+                    $output .=  '<div class="card-content">';
+                        $output .=  '<div class="card-content__wraper">';
+                            $output .=  '<p class="card-title">'. get_the_title() .'</p>';
+                        $output .=  '</div>';
+                    $output .=  '</div>';
+                $output .=  '</div>';
+            $output .=  '</div>';
+        }
+        $output .='</div>';
+    }
+
+    return $output;
+}
+add_shortcode('dd_portfolios', 'portfolios');

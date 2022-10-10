@@ -328,3 +328,55 @@ function defer_parsing_of_js ( $url ) {
 	return "$url' defer";
 	}
 	add_filter( 'clean_url', 'defer_parsing_of_js', 11, 1 );
+
+//portfolio
+function dd_portfolio_type() {
+	register_post_type('dd_portfolio',
+		array(
+			'labels'      => array(
+				'name'          => __('Portfolios', 'designdesk-child'),
+				'singular_name' => __('portfolio', 'designdesk-child'),
+				'all_items'           => __( 'All Portfolios', 'designdesk-child' ),
+				'add_new'        => __( 'Add New Portfolio', 'designdesk-child' ),
+			),
+				'public'      => true,
+				'has_archive' => true,
+				'rewrite'     => array( 'slug' => 'portfolio' ), // my custom slug
+				'menu_icon' => 'dashicons-portfolio',
+				'show_in_rest' => true,
+				'supports' => array( 'title', 'editor', 'excerpt', 'author', 'thumbnail', 'revisions', 'custom-fields', ),
+				'taxonomies' => array( 'dd_industries' ),
+		)
+	);
+}
+add_action('init', 'dd_portfolio_type');
+
+add_post_type_support('dd_portfolio', 'genesis-seo');
+
+// Industry
+function dd_register_taxonomy_industry() {
+	$labels = array(
+		'name'              => _x( 'Industries', 'designdesk-child' ),
+		'singular_name'     => _x( 'Industry', 'designdesk-child' ),
+		'search_items'      => __( 'Search Industries' ),
+		'all_items'         => __( 'All Industries' ),
+		'parent_item'       => __( 'Parent Industry' ),
+		'parent_item_colon' => __( 'Parent Industry:' ),
+		'edit_item'         => __( 'Edit Industry' ),
+		'update_item'       => __( 'Update Industry' ),
+		'add_new_item'      => __( 'Add New Industry' ),
+		'new_item_name'     => __( 'New Industry Name' ),
+		'menu_name'         => __( 'Industry' ),
+	);
+	$args   = array(
+		'hierarchical'      => true, // make it hierarchical (like categories)
+		'labels'            => $labels,
+		'show_ui'           => true,
+		'show_admin_column' => true,
+		'query_var'         => true,
+		'rewrite'           => [ 'slug' => 'industry' ],
+		'show_in_rest'		=> true,
+	);
+	register_taxonomy( 'dd_industries', [ 'dd_portfolio' ], $args );
+}
+add_action( 'init', 'dd_register_taxonomy_industry' );
