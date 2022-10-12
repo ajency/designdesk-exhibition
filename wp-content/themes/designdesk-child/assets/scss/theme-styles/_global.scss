@@ -68,6 +68,12 @@
 .align-right {
   text-align: right;
 }
+.stopScroll{
+  overflow: hidden !important;
+}
+.positionStatic{
+  position: static !important;
+}
 @media only screen and (min-width: 960px) {
   .full-width-content {
     .entry-content {

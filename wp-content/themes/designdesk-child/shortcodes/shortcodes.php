@@ -80,18 +80,35 @@ function portfolios($atts){
                 $thumbnailUrl = get_site_url() . '/wp-content/themes/designdesk-child/assets/images/placeholder-square.jpg';
             }
 
-            $output .=  '<div class="portfolio-card">';
-                $output .=  '<div class="portfolio-card__wraper">';
-                    $output .=  '<div class="card-image">';
-                        $output .=  '<img src="'. $thumbnailUrl .'" alt="'.get_the_title().'" title="'.get_the_title().'" width="280" height="330">';
-                    $output .=  '</div>';
-                    $output .=  '<div class="card-content">';
-                        $output .=  '<div class="card-content__wraper">';
-                            $output .=  '<p class="card-title">'. get_the_title() .'</p>';
+            $portfolioId = get_the_ID();
+                $output .=  '<div class="portfolio-card dd-popupToggler" target-popup="#'.$portfolioId.'">';
+                    $output .=  '<div class="portfolio-card__wraper">';
+                        $output .=  '<div class="card-image">';
+                            $output .=  '<img src="'. $thumbnailUrl .'" alt="'.get_the_title().'" title="'.get_the_title().'" width="280" height="330">';
+                        $output .=  '</div>';
+                        $output .=  '<div class="card-content">';
+                            $output .=  '<div class="card-content__wraper">';
+                                $output .=  '<p class="card-title">'. get_the_title() .'</p>';
+                            $output .=  '</div>';
                         $output .=  '</div>';
                     $output .=  '</div>';
                 $output .=  '</div>';
-            $output .=  '</div>';
+                //popup
+                $output .=  '<div class="dd-popup" id="'.$portfolioId.'">';
+                    $output .=  '<div class="dd-popup__wraper">';
+                        $output .=  '<div class="dd-popup-content">';
+                            $output .=  '<div class="dd-popup-header">';
+                                $output .=  '<span class="dd-close"></span>';
+                            $output .=  '</div>';
+                            $output .=  '<div class="dd-popup-body main-content">';
+                                $output .=  '<div class="dd-popup-body__wraper">';
+                                $output .=  '</div>';
+                            $output .=  '</div>';
+                            $output .=  '<div class="dd-popup-footer">';
+                            $output .=  '</div>';
+                        $output .=  '</div>';
+                    $output .=  '</div>';
+                $output .=  '</div>';
         }
         $output .='</div>';
     }

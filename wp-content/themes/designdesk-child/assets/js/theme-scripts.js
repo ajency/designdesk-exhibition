@@ -87,3 +87,30 @@ $(document).ready(function () {
       });
   }
 });
+
+
+// popups
+$('.dd-popup').closest('.gb-block-layout-column-inner').addClass('positionStatic');
+$('.dd-popup').closest('.gb-layout-column-wrap').addClass('positionStatic');
+function showPopup(targetPopup){
+  $('.dd-overlay').fadeIn('fast');
+  $(targetPopup).fadeIn('fast');
+  $('body').addClass('stopScroll');
+}
+function hidePopup(targetPopup){
+  $(targetPopup).fadeOut('fast');
+  $('.dd-overlay').fadeOut('fast');
+  $('body').removeClass('stopScroll');
+}
+$('.dd-popupToggler').click(function(e){
+  e.stopPropagation();
+  let targetPopup = $(this).attr('target-popup');
+  showPopup(targetPopup);
+});
+$('.dd-close').click(function(){
+  let targetPopup = $(this).parents('.dd-popup').attr('id');
+  hidePopup('#'+targetPopup);
+});
+$(document).click(function(){
+  hidePopup('.dd-popup');
+});
