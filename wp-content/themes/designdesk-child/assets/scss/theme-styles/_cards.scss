@@ -99,12 +99,12 @@
   flex-wrap: wrap;
   gap: 20px;
   grid-gap: 20px;
-  @media (min-width: 992px){
+  @media (min-width: 992px) {
     .portfolio-card {
       width: calc(100% / 4);
     }
   }
-  @media (max-width: 991.98px){
+  @media (max-width: 991.98px) {
     flex-direction: column;
   }
 }
@@ -132,15 +132,16 @@
     left: calc(50% - 20px);
     top: calc(50% - 20px);
   }
-  &::before, &::after{
+  &::before,
+  &::after {
     opacity: 0;
     transition: opacity 0.2s ease-in-out;
   }
-  &:hover{
-    &::before{
+  &:hover {
+    &::before {
       opacity: 0.5;
     }
-    &::after{
+    &::after {
       opacity: 1;
     }
   }
@@ -184,14 +185,46 @@
       }
     }
   }
-  @media (max-width: 991.98px){
+  @media (max-width: 991.98px) {
     min-width: 374px;
     max-width: 100%;
     margin: auto;
-    &__wraper{
-      .card-image{
+    &__wraper {
+      .card-image {
         max-height: 260px;
       }
     }
+  }
+}
+
+// process cards
+.process-card-list {
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+  grid-gap: 40px;
+  padding: 30px;
+  padding-right: 0px;
+  p {
+    margin-bottom: 0px;
+  }
+  .process-card {
+    margin-bottom: 0px;
+  }
+}
+.process-card{
+  grid-gap: 20px !important;
+  gap: 20px !important;
+  .wp-block-column{
+    &:first-child{
+      max-width: 46px;
+    }
+    &:nth-child(2){
+      flex-basis: auto !important;
+      max-width: calc(100% - 66px);
+    }
+  }
+  .card-title{
+    margin-bottom: 10px;
   }
 }

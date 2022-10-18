@@ -2,12 +2,20 @@
 $poppins: "Poppins";
 $montserrat: "Montserrat";
 
+// typography
 .h2-semi-600 {
   font-family: $poppins;
   font-style: normal;
   font-weight: 600;
   font-size: 32px;
   line-height: 48px;
+}
+.h3-semi-600 {
+  font-family: $poppins;
+  font-style: normal;
+  font-weight: 600;
+  font-size: 24px;
+  line-height: 28px;
 }
 .h4-med-500 {
   font-family: $poppins;
@@ -16,13 +24,22 @@ $montserrat: "Montserrat";
   font-size: 18px;
   line-height: 140%;
 }
-.body-reg-400,
-p {
-  font-family: $montserrat;
-  font-style: normal;
-  font-weight: 400;
-  font-size: 16px;
-  line-height: 140%;
+.body {
+  &-reg-400,
+  p {
+    font-family: $montserrat;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 140%;
+  }
+  &-med-500 {
+    font-family: $montserrat;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 140%;
+  }
 }
 
 .label-med-500 {
@@ -34,9 +51,31 @@ p {
 }
 
 @mixin h4-med-500 {
-    font-family: $poppins;
-    font-style: normal;
-    font-weight: 500;
-    font-size: 18px;
-    line-height: 140%;
+  font-family: $poppins;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 18px;
+  line-height: 140%;
+}
+
+//hide
+.hide-md-down {
+  @media (max-width: 767.98px) {
+    display: none;
+  }
+}
+.hide-sm-down {
+  @media (max-width: 575.98px) {
+    display: none;
+  }
+}
+.hide-lg-up {
+  @media (min-width: 992px) {
+    display: none;
+  }
+}
+.hide-md-up {
+  @media (min-width: 768px) {
+    display: none;
+  }
 }

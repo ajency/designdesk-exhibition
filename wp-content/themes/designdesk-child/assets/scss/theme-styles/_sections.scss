@@ -1,17 +1,46 @@
-.featured-work-section{
-    background: radial-gradient(95.76% 599.79% at 103.19% 38.83%, #2471B5 0.64%, #1D7AC9 10.15%, #1188E8 57.76%, #2471B5 79.68%, #2471B5 100%), linear-gradient(78.94deg, #76C8FB 0.52%, #2471B5 54.84%);
-    padding-top: 60px;
-    padding-bottom: 60px;
-    .section-heading{
-        margin-bottom: 0px;
-    }
-    .section-heading, .link-with-icon a {
-        color: #ffffff;
-    }
-    .link-with-icon svg path{
-        stroke: #ffffff;
-    }
-    .wp-block-columns{
-        margin-bottom: 40px;
-    }
+.featured-work-section {
+  background: radial-gradient(
+      95.76% 599.79% at 103.19% 38.83%,
+      #2471b5 0.64%,
+      #1d7ac9 10.15%,
+      #1188e8 57.76%,
+      #2471b5 79.68%,
+      #2471b5 100%
+    ),
+    linear-gradient(78.94deg, #76c8fb 0.52%, #2471b5 54.84%);
+  padding-top: 60px;
+  padding-bottom: 60px;
+  .section-heading {
+    margin-bottom: 0px;
+  }
+  .section-heading,
+  .link-with-icon a {
+    color: #ffffff;
+  }
+  .link-with-icon svg path {
+    stroke: #ffffff;
+  }
+  .wp-block-columns {
+    margin-bottom: 40px;
+  }
+}
+
+// process section
+.process-section {
+    margin-bottom: 85px;
+  .section-heading {
+    margin-bottom: 20px;
+  }
+  .section-columns {
+    margin-top: 132px;
+    margin-bottom: 0px;
+    border: 1px solid #eeeeee;
+    position: relative;
+  }
+  .popout-image {
+    margin: 0px;
+    margin-right: -73px;
+    margin-top: -92px;
+    margin-bottom: -27px;
+  }
 }
