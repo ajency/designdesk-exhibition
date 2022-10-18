@@ -1,0 +1,42 @@
+//fonts
+$poppins: "Poppins";
+$montserrat: "Montserrat";
+
+.h2-semi-600 {
+  font-family: $poppins;
+  font-style: normal;
+  font-weight: 600;
+  font-size: 32px;
+  line-height: 48px;
+}
+.h4-med-500 {
+  font-family: $poppins;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 18px;
+  line-height: 140%;
+}
+.body-reg-400,
+p {
+  font-family: $montserrat;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 140%;
+}
+
+.label-med-500 {
+  font-family: $montserrat;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 140%;
+}
+
+@mixin h4-med-500 {
+    font-family: $poppins;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 18px;
+    line-height: 140%;
+}

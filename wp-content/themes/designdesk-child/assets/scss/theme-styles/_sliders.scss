@@ -83,3 +83,61 @@
     }
   }
 }
+
+// portfolio thumbnail carousel
+.portfolio-thumbnail-carousel {
+  .slick-track {
+    margin-right: 0;
+  }
+  .slick-slide {
+    margin: 0 8px;
+  }
+  .slick-list {
+    margin: 0 -8px;
+  }
+  .thumbnail-slide {
+    border: 2px solid transparent;
+    .thumbnail-image {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+    &.slick-active:not(.slick-current){
+      position: relative;
+      .thumbnail-image{
+        opacity: 70%;
+      }
+      &:before{
+        content: '';
+        background: linear-gradient(0deg, rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2));
+        opacity: 0.7;
+        height: 100%;
+        width: 100%;
+        position: absolute;
+        left: 0;
+        top: 0;
+      }
+    }
+    &.slick-current {
+      border-color: #2471b5;
+      filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
+    }
+  }
+  @media (max-width: 768.98px){
+    .slick-track{
+      display: flex;
+      justify-content: flex-end;
+      max-width: 124px;
+    }
+    .slick-slide {
+      margin: 0 4px;
+    }
+    .slick-list {
+      margin: 0 -4px;
+    }
+    .thumbnail-slide{
+      width: 36px !important;
+      height: 36px;
+    }
+  }
+}

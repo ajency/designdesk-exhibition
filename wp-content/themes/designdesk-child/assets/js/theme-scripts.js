@@ -134,7 +134,7 @@ $('.main-content').click(function(event){
 $('.portfolio-gallery-slider').each(function(){
   let uniqueClass = '.slider-'+$(this).data('class');
   let uniqueDotsClass = '.dd-slider-dots-'+$(this).data('class');
-  console.log(uniqueClass);
+  let thumbnailSlider = '.carousel-'+$(this).data('class');
   $(uniqueClass).slick({
     slidesToShow: 1,
     slidesToScroll: 1,
@@ -143,7 +143,36 @@ $('.portfolio-gallery-slider').each(function(){
     fade: true,
     speed: 600,
     appendDots: $(uniqueDotsClass),
+    asNavFor: thumbnailSlider,
+    infinite: false,
     prevArrow: "<button class='dd-slider-arrow dd-prev'><svg fill=none height=20 viewBox='0 0 12 20'width=12 xmlns=http://www.w3.org/2000/svg><path d='M10 17.7773L2.22222 9.99957L10 2.22179'stroke=white stroke-linecap=round stroke-linejoin=round stroke-width=4 /></svg></button>",
     nextArrow: "<button class='dd-slider-arrow dd-next'><svg fill=none height=20 viewBox='0 0 12 20'width=12 xmlns=http://www.w3.org/2000/svg><path d='M2 17.7773L9.77778 9.99957L2 2.22179'stroke=#2471B5 stroke-linecap=round stroke-linejoin=round stroke-width=4 /></svg></button>",
+    responsive: [
+      {
+        breakpoint: 767.98,
+        settings: {
+          arrows: false,
+          dots: false
+        }
+      }
+    ]
+  });
+});
+
+// poerfolio thumbnail carousel
+$('.portfolio-thumbnail-carousel').each(function(){
+  let uniqueCarousel = '.carousel-'+$(this).data('class');
+  let mainSlider = '.slider-'+$(this).data('class');
+  $(uniqueCarousel).slick({
+    slidesToShow: 3,
+    slidesToScroll: 3,
+    arrows: false,
+    infinite: false,
+    dots:false,
+    speed: 600,
+    asNavFor: mainSlider,
+    centerMode: false,
+    focusOnSelect: true,
+
   });
 });

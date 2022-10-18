@@ -70,6 +70,8 @@
   }
   .service-card {
     max-height: 371px;
+    max-width: 374px;
+    margin: auto;
     .service-card-details {
       padding: 20px;
       p {
@@ -177,11 +179,15 @@
           color: #ffffff;
           position: relative;
           z-index: 1;
+          margin-bottom: 0px;
         }
       }
     }
   }
   @media (max-width: 991.98px){
+    min-width: 374px;
+    max-width: 100%;
+    margin: auto;
     &__wraper{
       .card-image{
         max-height: 260px;
