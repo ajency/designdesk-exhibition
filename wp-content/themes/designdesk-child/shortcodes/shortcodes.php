@@ -68,6 +68,7 @@ function portfolios($atts){
     $postQuery = new Wp_Query($args);
 
     if(!empty($postQuery)){
+
         $output ='';
 
         $output .='<div class="portfolio-list">';
@@ -79,6 +80,9 @@ function portfolios($atts){
             } else{
                 $thumbnailUrl = get_site_url() . '/wp-content/themes/designdesk-child/assets/images/placeholder-square.jpg';
             }
+
+            $fields = get_field_objects();
+
 
             $portfolioId = get_the_ID();
                 $output .=  '<div class="portfolio-card dd-popupToggler" target-popup="#'.$portfolioId.'">';
@@ -102,7 +106,27 @@ function portfolios($atts){
                             $output .=  '</div>';
                             $output .=  '<div class="dd-popup-body main-content">';
                                 $output .=  '<div class="dd-popup-body__wraper">';
+                                    $output .=  '<div data-class="'.$portfolioId.'" class="popup-slider portfolio-gallery-slider slider-'.$portfolioId.'">';
+                                        
+                                        foreach ($fields as $field):
+                                            if($field['type'] == 'image'):
+                                                $imagesFields = [$field];
+                                                foreach ($imagesFields as $imagesField):
+                                                    if(isset($imagesField['value']['url'])):
+                                                        $imagesUrl = $imagesField['value']['url'];
+                                                        $imagesAlt = $imagesField['value']['alt'];
+                                                        $imagesTitle = $imagesField['value']['title'];
+                                                        $output .=  '<div class="gallery-slide">';
+                                                            $output .=  '<img class="gallery-image" src="'.$imagesUrl.'" alt="'.$imagesAlt.'" title="'.$imagesTitle.'">';
+                                                        $output .=  '</div>';
+                                                    endif;
+                                                endforeach;
+                                            endif;
+                                            endforeach;
+
+                                    $output .=  '</div>';
                                 $output .=  '</div>';
+                                $output .=  '<div class="dd-slider-dots dd-slider-dots-'.$portfolioId.'"></div>';
                             $output .=  '</div>';
                             $output .=  '<div class="dd-popup-footer">';
                             $output .=  '</div>';

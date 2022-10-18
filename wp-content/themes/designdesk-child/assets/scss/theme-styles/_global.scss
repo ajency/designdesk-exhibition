@@ -74,6 +74,79 @@
 .positionStatic{
   position: static !important;
 }
+// sliders
+.dd-slider-arrow {
+  position: absolute;
+  top: calc(50% - 32px);
+  z-index: 1;
+  height: 64px;
+  width: 64px;
+  border: 1px solid #2471B5;
+  border-width: 1px !important;
+  outline: none !important;
+  border-radius: 100%;
+  padding: 0;
+  margin: 0;
+  background: #FFFFFF;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  &.dd-prev{
+    left: -32px;
+    background: #2471B5;
+    border-color: #FFFFFF;
+  }
+  &.dd-next{
+    right: -32px;
+    background: #FFFFFF;
+    border-color: #2471B5;
+  }
+  @media (min-width:768px){
+    &:hover{
+      box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    }
+    &.dd-prev:hover{
+      border-color: #2471B5;
+    }
+    &.dd-next:hover{
+      border-color: #FFFFFF;
+    }
+  }
+}
+.dd-slider-dots{
+  .slick-dots {
+    margin: 20px auto 0px;
+    padding: 0px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    grid-gap: 8px;
+    gap: 8px;
+    li{
+      list-style-type: none;
+      display: flex;
+      button{
+        font-size: 0px;
+        padding: 0;
+        margin: 0;
+        background: #FFFFFF;
+        height: 8px;
+        width: 8px;
+        opacity: 0.5;
+        transition: all 0.2s ease-in;
+      }
+      &.slick-active{
+        button{
+          opacity: 1;
+          width: 50px;
+        }
+      }
+    }
+  }
+}
+.slick-slide{
+  outline: none !important;
+}
 @media only screen and (min-width: 960px) {
   .full-width-content {
     .entry-content {

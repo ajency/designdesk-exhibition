@@ -92,25 +92,58 @@ $(document).ready(function () {
 // popups
 $('.dd-popup').closest('.gb-block-layout-column-inner').addClass('positionStatic');
 $('.dd-popup').closest('.gb-layout-column-wrap').addClass('positionStatic');
+// show popup
 function showPopup(targetPopup){
   $('.dd-overlay').fadeIn('fast');
   $(targetPopup).fadeIn('fast');
+  $(targetPopup).addClass('opened');
   $('body').addClass('stopScroll');
+  repositionSlider(targetPopup);
 }
+// reposition slick slider
+function repositionSlider(targetPopupID){
+  $(targetPopupID).find('.popup-slider').slick('setPosition');
+}
+// hide popup
 function hidePopup(targetPopup){
   $(targetPopup).fadeOut('fast');
+  $(targetPopup).removeClass('opened');
   $('.dd-overlay').fadeOut('fast');
   $('body').removeClass('stopScroll');
 }
+// popup trigger
 $('.dd-popupToggler').click(function(e){
   e.stopPropagation();
   let targetPopup = $(this).attr('target-popup');
   showPopup(targetPopup);
 });
+// close popup
 $('.dd-close').click(function(){
   let targetPopup = $(this).parents('.dd-popup').attr('id');
   hidePopup('#'+targetPopup);
 });
+// close popup on outside click
 $(document).click(function(){
   hidePopup('.dd-popup');
+});
+$('.main-content').click(function(event){
+  event.stopPropagation();
+});
+
+// portfolio gallery slider
+$('.portfolio-gallery-slider').each(function(){
+  let uniqueClass = '.slider-'+$(this).data('class');
+  let uniqueDotsClass = '.dd-slider-dots-'+$(this).data('class');
+  console.log(uniqueClass);
+  $(uniqueClass).slick({
+    slidesToShow: 1,
+    slidesToScroll: 1,
+    arrows: true,
+    dots:true,
+    fade: true,
+    speed: 600,
+    appendDots: $(uniqueDotsClass),
+    prevArrow: "<button class='dd-slider-arrow dd-prev'><svg fill=none height=20 viewBox='0 0 12 20'width=12 xmlns=http://www.w3.org/2000/svg><path d='M10 17.7773L2.22222 9.99957L10 2.22179'stroke=white stroke-linecap=round stroke-linejoin=round stroke-width=4 /></svg></button>",
+    nextArrow: "<button class='dd-slider-arrow dd-next'><svg fill=none height=20 viewBox='0 0 12 20'width=12 xmlns=http://www.w3.org/2000/svg><path d='M2 17.7773L9.77778 9.99957L2 2.22179'stroke=#2471B5 stroke-linecap=round stroke-linejoin=round stroke-width=4 /></svg></button>",
+  });
 });
