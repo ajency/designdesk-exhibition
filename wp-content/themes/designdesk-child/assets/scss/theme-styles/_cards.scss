@@ -1,6 +1,7 @@
 // service cards
 .service-cards {
   column-gap: 20px !important;
+  margin-bottom: 0px;
 }
 .service-card {
   margin-top: 10px;
@@ -92,7 +93,11 @@
     }
   }
 }
-
+@media (max-width: 575.98px){
+  .service-card{
+    max-width: 100%;
+  }
+}
 // portfolio cards
 .portfolio-list {
   display: flex;
@@ -137,14 +142,6 @@
     opacity: 0;
     transition: opacity 0.2s ease-in-out;
   }
-  &:hover {
-    &::before {
-      opacity: 0.5;
-    }
-    &::after {
-      opacity: 1;
-    }
-  }
   cursor: pointer;
   &__wraper {
     .card-image {
@@ -185,15 +182,35 @@
       }
     }
   }
+  @media (min-width: 992px) {
+    &:hover {
+      &::before {
+        opacity: 0.5;
+      }
+      &::after {
+        opacity: 1;
+      }
+    }
+  }
   @media (max-width: 991.98px) {
     min-width: 374px;
     max-width: 100%;
     margin: auto;
+    &:after {
+      opacity: 1;
+      background-image: url(../images/show-more.svg);
+      top: 10px;
+      left: auto;
+      right: 10px;
+    }
     &__wraper {
       .card-image {
         max-height: 260px;
       }
     }
+  }
+  @media (max-width: 575.98px){
+    min-width: 100%;
   }
 }
 
@@ -211,20 +228,32 @@
   .process-card {
     margin-bottom: 0px;
   }
+  @media (max-width: 991.98px) {
+    padding: 0px;
+    grid-gap: 20px;
+    gap: 20px;
+  }
 }
-.process-card{
+.process-card {
   grid-gap: 20px !important;
   gap: 20px !important;
-  .wp-block-column{
-    &:first-child{
+  .wp-block-column {
+    &:first-child {
       max-width: 46px;
     }
-    &:nth-child(2){
+    &:nth-child(2) {
       flex-basis: auto !important;
       max-width: calc(100% - 66px);
     }
   }
-  .card-title{
+  .card-title {
     margin-bottom: 10px;
+  }
+  @media (max-width: 991.98px) {
+    border: 1px solid #eeeeee;
+    padding: 16px;
+    .card-title {
+      @include h4-semi-600;
+    }
   }
 }
