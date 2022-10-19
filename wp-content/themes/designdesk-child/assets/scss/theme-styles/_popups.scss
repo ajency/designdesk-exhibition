@@ -88,10 +88,9 @@
       left: 0px;
     }
     &__wraper {
-      display: grid;
+      display: flex;
       gap: 20px;
       grid-gap: 20px;
-      grid-template-columns: 1.5fr 1fr;
     }
   }
   .portfolio-title {
@@ -110,6 +109,16 @@
       align-items: center;
       grid-gap: 10px;
       gap: 10px;
+    }
+  }
+  @media (min-width: 768px){
+    .portfolio-details{
+      justify-content: space-between;
+      &__wraper{
+        .portfolio-info, .portfolio-slider-thumbnails{
+          width: 50%;
+        }
+      }
     }
   }
   @media (max-width: 768.98px) {
@@ -141,6 +150,7 @@
       li {
         grid-gap: 4px;
         gap: 4px;
+        width: 50%;
       }
     }
   }

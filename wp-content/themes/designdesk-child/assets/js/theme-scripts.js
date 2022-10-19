@@ -165,7 +165,7 @@ $('.portfolio-thumbnail-carousel').each(function(){
   let mainSlider = '.slider-'+$(this).data('class');
   $(uniqueCarousel).slick({
     slidesToShow: 3,
-    slidesToScroll: 3,
+    slidesToScroll: 1,
     arrows: false,
     infinite: false,
     dots:false,
@@ -173,6 +173,6 @@ $('.portfolio-thumbnail-carousel').each(function(){
     asNavFor: mainSlider,
     centerMode: false,
     focusOnSelect: true,
-
+    variableWidth: false,
   });
 });
