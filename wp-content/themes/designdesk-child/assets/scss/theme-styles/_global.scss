@@ -145,6 +145,11 @@
 .slick-slide{
   outline: none !important;
 }
+.ellipsis {
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
 @media only screen and (min-width: 960px) {
   .full-width-content {
     .entry-content {

@@ -117,7 +117,7 @@ function portfolios($atts){
                         $output .=  '</div>';
                         $output .=  '<div class="card-content">';
                             $output .=  '<div class="card-content__wraper">';
-                                $output .=  '<p class="card-title">'. get_the_title() .'</p>';
+                                $output .=  '<p class="ellipsis card-title">'. get_the_title() .'</p>';
                             $output .=  '</div>';
                         $output .=  '</div>';
                     $output .=  '</div>';
@@ -155,8 +155,12 @@ function portfolios($atts){
                                             $output .=  '<div class="portfolio-info">';
                                                 $output .=  '<p class="h2-semi-600 portfolio-title">'.$portfolioTitle.'</p>';
                                                 $output .=  '<ul class="portfolio-info-list">';
-                                                    $output .=  '<li class="label-med-500"><img class="icon" src="'. get_site_url() .'/wp-content/themes/designdesk-child/assets/images/location.svg">Location : '.$portfolioLocation.'</li>';
-                                                    $output .=  '<li class="label-med-500"><img class="icon" src="'. get_site_url() .'/wp-content/themes/designdesk-child/assets/images/size-icon.svg">Size : '.$stallSize.' sqm</li>';
+                                                    if($portfolioLocation):
+                                                        $output .=  '<li class="label-med-500"><img class="icon" src="'. get_site_url() .'/wp-content/themes/designdesk-child/assets/images/location.svg">Location : '.$portfolioLocation.'</li>';
+                                                    endif;
+                                                    if($stallSize):
+                                                        $output .=  '<li class="label-med-500"><img class="icon" src="'. get_site_url() .'/wp-content/themes/designdesk-child/assets/images/size-icon.svg">Size : '.$stallSize.' sqm</li>';
+                                                    endif;
                                                 $output .=  '</ul>';
                                             $output .=  '</div>';
                                             $output .=  '<div class="portfolio-slider-thumbnails">';
