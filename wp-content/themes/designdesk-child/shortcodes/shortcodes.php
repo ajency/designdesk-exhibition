@@ -53,16 +53,31 @@ add_shortcode('dd_link_with_icon', 'link_with_icon');
 
 function portfolios($atts){
     $default = array(
-        'total-portfolios' => -1
+        'total-portfolios' => -1,
+        'featured' => "false"
     );
     $a = shortcode_atts($default, $atts);
     //$output = $output . 'Display Posts: '. $a['total-portfolios'];
+
+    if($a['featured'] == "true"){
+        $featured = 1;
+    }else{
+        $featured = array(0, 1);
+    }
 
     $args = array(
         'posts_per_page' => $a['total-portfolios'],
         'post_type'     => 'dd_portfolio',
         'orderby'=> 'title',
-        'order' => 'ASC'
+        'order' => 'ASC',
+        'meta_query'    => array(
+            'relation'      => 'AND',
+            array(
+                'key'       => 'featured_portfolio',
+                'value'     => $featured,
+                'compare'   => '=',
+            )
+        ),
     );
 
     $postQuery = new Wp_Query($args);
