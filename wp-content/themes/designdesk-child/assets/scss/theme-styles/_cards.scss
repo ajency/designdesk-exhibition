@@ -253,7 +253,7 @@
     border: 1px solid #eeeeee;
     padding: 16px;
     .card-title {
-      @include h4-semi-600;
+      @include h4-semi(600);
     }
   }
 }

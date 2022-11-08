@@ -26,10 +26,13 @@
       margin-bottom: 0px;
     }
   }
-  .link-with-icon{
+  .link-with-icon {
     font-size: 16px;
   }
-  @media (max-width:1199.98px){
+  @media (min-width: 768px) {
+    margin-bottom: 60px !important;
+  }
+  @media (max-width: 1199.98px) {
     .link-with-icon {
       justify-content: center;
       margin-top: 30px;
@@ -66,7 +69,7 @@
     .subheading {
       max-width: 211px;
       margin: 0px auto 30px;
-      @include body-reg-400;
+      @include body-reg(400);
     }
     .section-columns {
       margin-top: 30px;
@@ -98,71 +101,165 @@
   }
 }
 //CTA
-.contact-cta{
-  .gradient-bg-1{
+.text-cta {
+  .has-bg {
     padding-top: 30px;
     padding-bottom: 30px;
   }
-  .wp-block-columns{
+  .wp-block-columns {
     margin-bottom: 0px;
   }
-  @media(max-width:767.98px){
-    text-align: center !important;
-    .dd-button{
-      text-align: center !important;
+  @media (min-width: 768px) {
+    margin-top: 60px !important;
+  }
+  @media (max-width: 767.98px) {
+    margin-top: 30px !important;
+    .dd-button {
+      a {
+        @include dd-button-mobile;
+      }
+    }
+    .wp-block-columns {
+      grid-gap: 30px;
+      gap: 30px;
     }
   }
 }
 
 //image CTA
-.image-cta{
-  .gradient-bg-2{
+.image-cta {
+  .has-bg {
     color: $light;
     padding-top: 40px;
     padding-bottom: 40px;
+    margin-bottom: 0px;
   }
-  .wp-block-columns{
+  .wp-block-columns {
     grid-gap: 45px;
-    gap:45px;
-    @media (min-width:768px){
-      &:first-child{
+    gap: 45px;
+    @media (min-width: 768px) {
+      &:first-child {
         padding-left: 40px;
       }
-      &:last-child{
+      &:last-child {
         padding-right: 20px;
       }
     }
   }
-  @media(min-width:768px){
+  @media (min-width: 768px) {
     margin-top: 180px !important;
-    .overflow-image{
+    .overflow-image {
       margin-top: -113px;
       margin-bottom: -64px !important;
       max-width: 535px;
     }
   }
-  @media (max-width: 767.98px){
-    .gradient-bg-2{
+  @media (max-width: 767.98px) {
+    .gradient-bg-2 {
       padding: 30px 20px 20px;
     }
-    .overflow-image{
+    .overflow-image {
       text-align: center;
     }
-    .wp-block-columns{
+    .wp-block-columns {
       grid-gap: 20px;
-      gap:20px;
+      gap: 20px;
     }
-    .h2-semi-600{
+    .h2-semi-600 {
       margin-bottom: 10px !important;
       @include h3-semi(600);
     }
-    .body-reg-400{
+    .body-reg-400 {
       @include label(500);
     }
   }
-  @media (max-width: 575.98px){
-    .h2-semi-600{
+  @media (max-width: 575.98px) {
+    .h2-semi-600 {
       max-width: 214px;
+    }
+    .dd-button {
+      a {
+        @include dd-button-mobile;
+      }
+    }
+  }
+}
+
+//Features lsit
+.features-section {
+  .features-list {
+    margin-bottom: 0px;
+    grid-gap: 20px 40px !important;
+    gap: 20px 40px !important;
+    margin-top: 54px;
+    .icon {
+      margin-bottom: 24px;
+      img {
+        width: 86px;
+        height: 86px;
+        object-fit: contain;
+      }
+    }
+    .body-reg-400 {
+      margin-bottom: 0px;
+    }
+    .feature {
+      p {
+        padding-left: 0px !important;
+        padding-right: 0px !important;
+      }
+    }
+  }
+  @media (min-width: 768px) {
+    .h3-semi-600 {
+      max-width: 216px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+  }
+  @media (max-width: 767.98px) {
+    margin-bottom: 30px !important;
+    .subheading {
+      max-width: 319px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+    .h2-semi-600 {
+      @include h3-semi(600);
+    }
+    .body-med-500 {
+      @include body-reg(400);
+    }
+    .features-list {
+      margin-top: 10px;
+      .feature {
+        border-bottom: 1px solid #eeeeee;
+        padding: 20px 0px;
+        display: flex;
+        grid-gap: 20px;
+        &:last-child {
+          padding-bottom: 0px;
+          border-bottom: none;
+        }
+        .h3-semi-600 {
+          @include h4-semi(600);
+          margin-bottom: 8px;
+        }
+        .icon {
+          margin-bottom: 0px;
+          width: 46px;
+          img {
+            width: 46px;
+            height: 46px;
+          }
+        }
+        .wp-block-group {
+          width: calc(100% - 46px);
+          p {
+            text-align: left;
+          }
+        }
+      }
     }
   }
 }
