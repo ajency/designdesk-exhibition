@@ -201,3 +201,8 @@
     }
   }
 }
+@media (min-width:768px){
+  .wp-block-columns{
+    flex-wrap: nowrap!important;
+  }
+}
