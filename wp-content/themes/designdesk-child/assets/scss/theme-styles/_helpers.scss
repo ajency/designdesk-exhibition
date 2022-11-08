@@ -2,6 +2,15 @@
 $poppins: "Poppins";
 $montserrat: "Montserrat";
 
+//colors
+$gradient1: linear-gradient(
+  90.79deg,
+  rgba(118, 200, 251, 0.2) 21.79%,
+  #76c8fb 93.49%
+);
+$brand-orange : #f48e0c;
+$accent-black : #041925;
+
 // typography
 .h2-semi-600 {
   font-family: $poppins;
@@ -96,5 +105,56 @@ $montserrat: "Montserrat";
 .hide-md-up {
   @media (min-width: 768px) {
     display: none;
+  }
+}
+
+//backgrounds
+.gradient-bg-1 {
+  background: $gradient1;
+}
+
+//margins
+.mb {
+  &-0 {
+    margin-bottom: 0px !important;
+  }
+}
+
+// buttons
+.dd-button {
+  a {
+    background-color: $brand-orange !important;
+    border-radius: 0px;
+    outline: none !important;
+    border: 1px solid $brand-orange;
+    box-shadow: none;
+    padding: 12px 30px;
+    height: 50px;
+    display: inline-flex;
+    align-items: center;
+    color: $accent-black !important;
+    @include h4-med-500;
+    transition: all 0.2 ease-in-out;
+  }
+  &.right-icon{
+    a{
+      justify-content: space-between;
+      grid-gap: 10px;
+      gap:10px;
+      &:after{
+        content: '';
+        width: 20px;
+        height: 20px;
+        background-image: url(../images/right-arrow-dark.svg);
+        background-repeat: no-repeat;
+      }
+    }
+  }
+  @media (min-width:768px){
+    a{
+      &:hover{
+        box-shadow: 2px 4px 4px rgba(0, 0, 0, 0.25);
+      }
+    }
   }
 }

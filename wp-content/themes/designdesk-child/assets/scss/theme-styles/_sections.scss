@@ -37,7 +37,7 @@
     }
   }
   @media (max-width: 767.98px) {
-    margin-bottom: 40px !important;
+    margin-bottom: 30px !important;
     padding-top: 30px;
     padding-bottom: 30px;
     .wp-block-columns {
@@ -94,6 +94,22 @@
     .popout-image {
       max-width: 70%;
       top: -5%;
+    }
+  }
+}
+//CTA
+.contact-cta{
+  .gradient-bg-1{
+    padding-top: 30px;
+    padding-bottom: 30px;
+  }
+  .wp-block-columns{
+    margin-bottom: 0px;
+  }
+  @media(max-width:767.98px){
+    text-align: center !important;
+    .dd-button{
+      text-align: center !important;
     }
   }
 }
