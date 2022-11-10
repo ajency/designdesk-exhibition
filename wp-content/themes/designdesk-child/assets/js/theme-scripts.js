@@ -88,6 +88,11 @@ $(document).ready(function () {
   }
 });
 
+// share requirements popup
+//add id
+$(".shareRequirement a").attr("class", "shareRequirementToggler dd-popupToggler");
+//add target popup
+$(".shareRequirement a").attr("target-popup", "#shareRequirementPopup");
 
 // popups
 $('.dd-popup').closest('.gb-block-layout-column-inner').addClass('positionStatic');
@@ -112,10 +117,13 @@ function hidePopup(targetPopup){
   $('body').removeClass('stopScroll');
 }
 // popup trigger
-$('.dd-popupToggler').click(function(e){
-  e.stopPropagation();
-  let targetPopup = $(this).attr('target-popup');
-  showPopup(targetPopup);
+$('.dd-popupToggler').each(function(){
+  $(this).click(function(e){
+    e.stopPropagation();
+    let targetPopup = $(this).attr('target-popup');
+    showPopup(targetPopup);
+    console.log(targetPopup);
+  });
 });
 // close popup
 $('.dd-close').click(function(){

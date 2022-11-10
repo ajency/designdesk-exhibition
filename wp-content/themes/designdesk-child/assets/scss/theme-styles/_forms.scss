@@ -1,0 +1,88 @@
+form {
+  font-family: $poppins !important;
+  .dd-button {
+    button {
+      border-radius: 0 !important;
+      box-shadow: none !important;
+      border-color: #f48e0c !important;
+      padding: 12px 30px !important;
+      height: 50px !important;
+      margin-bottom: 0px !important;
+      margin-top: 30px !important;
+      font-weight: 500 !important;
+      font-size: 18px !important;
+      line-height: 140% !important;
+      transition: all 0.2 ease-in-out !important;
+    }
+  }
+  label {
+    @include h4-med(500);
+    font-weight: 500 !important;
+    font-size: 18px !important;
+    margin-bottom: 4px;
+  }
+  input,
+  textarea {
+    background: #ffffff !important;
+    border: 1px solid #d8d8d8 !important;
+    border-radius: 0px !important;
+    box-shadow: none !important;
+    padding: 10px 20px !important;
+    font-family: "Montserrat" !important;
+    font-weight: 400 !important;
+    font-size: 16px !important;
+    line-height: 140% !important;
+    color: #041925 !important;
+  }
+  input {
+    height: 42px !important;
+  }
+  .frm_required,
+  .frm_blank_field label,
+  .frm_error,
+  .frm_limit_error {
+    color: #e70707 !important;
+  }
+  .form-field {
+    margin-bottom: 30px !important;
+  }
+  @media (min-width: 768px) {
+    .dd-button {
+      button {
+        &:hover {
+          box-shadow: 2px 4px 4px rgba(0, 0, 0, 0.25) !important;
+        }
+      }
+    }
+  }
+  @media (max-width: 767.98px) {
+    label {
+      font-weight: 600 !important;
+      font-size: 16px !important;
+      line-height: 140% !important;
+      margin-bottom: 8px;
+    }
+    .dd-button {
+      button {
+        margin-top: 20px !important;
+      }
+    }
+    .form-field {
+        margin-bottom: 20px !important;
+      }
+  }
+}
+
+// share requirement form
+#form_sharerequirements {
+  .dd-button {
+    button {
+      @include dd-button-mobile;
+    }
+  }
+  input,
+  textarea {
+    font-size: 14px !important;
+    padding: 11px 10px !important;
+  }
+}

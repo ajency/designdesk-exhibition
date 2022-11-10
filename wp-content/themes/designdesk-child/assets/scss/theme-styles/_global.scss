@@ -43,15 +43,16 @@
 .wp-block-genesis-blocks-gb-columns {
   margin-top: 80px !important;
   margin-bottom: 80px !important;
-  .section-heading {
-    font-size: 32px;
-    line-height: 48px;
-    margin-bottom: 30px;
-    font-family: "Poppins";
-  }
   .gb-block-layout-column-inner {
     padding-bottom: 0px !important;
   }
+}
+.section-heading {
+  font-weight: 600;
+  font-size: 32px;
+  line-height: 48px;
+  margin-bottom: 30px;
+  font-family: "Poppins";
 }
 .gb-has-custom-background-color .gb-layout-column-wrap{
   max-width: 1220px;

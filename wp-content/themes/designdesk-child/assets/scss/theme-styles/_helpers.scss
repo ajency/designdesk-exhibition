@@ -31,10 +31,10 @@ $accent-black: #041925;
 $light: #ffffff;
 
 // typography
-@mixin h4-med-500 {
+@mixin h4-med($fontWeight) {
   font-family: $poppins;
   font-style: normal;
-  font-weight: 500;
+  font-weight: $fontWeight;
   font-size: 18px;
   line-height: 140%;
 }
@@ -90,11 +90,7 @@ $light: #ffffff;
   line-height: 48px;
 }
 .h4-med-500 {
-  font-family: $poppins;
-  font-style: normal;
-  font-weight: 500;
-  font-size: 18px;
-  line-height: 140%;
+  @include h4-med(500);
 }
 .body {
   &-reg-400,
@@ -180,7 +176,7 @@ $light: #ffffff;
 
 // buttons
 .dd-button {
-  a {
+  a, button {
     background-color: $brand-orange !important;
     border-radius: 0px;
     outline: none !important;
@@ -191,11 +187,13 @@ $light: #ffffff;
     display: inline-flex;
     align-items: center;
     color: $accent-black !important;
-    @include h4-med-500;
-    transition: all 0.2 ease-in-out;
+    @include h4-med(500);
+    text-decoration: none !important;
+    transition: all 0.2 ease-in-out !important;
+    cursor: pointer;
   }
   &.right-icon {
-    a {
+    a, button {
       justify-content: space-between;
       grid-gap: 10px;
       gap: 10px;
@@ -209,15 +207,27 @@ $light: #ffffff;
     }
   }
   @media (min-width: 768px) {
-    a {
+    a, button {
       &:hover {
         box-shadow: 2px 4px 4px rgba(0, 0, 0, 0.25);
       }
     }
   }
 }
-
 @mixin dd-button-mobile {
   width: 100%;
   justify-content: center;
+}
+
+//seperators
+.dd-seperator{
+  &.wp-block-genesis-blocks-gb-columns{
+    margin-top: 40px!important;
+    margin-bottom: 40px!important;
+  }
+  hr{
+    &.wp-block-separator{
+      margin: 0px auto;
+    }
+  }
 }
