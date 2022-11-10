@@ -25,7 +25,6 @@ function contact_phone($atts)
 add_shortcode('dd_phone', 'contact_phone');
 
 // follow
-
 function dd_site_url($atts)
 {
 
@@ -33,7 +32,6 @@ function dd_site_url($atts)
     return site_url() . "/wp-content/uploads/";
 }
 add_shortcode('dd_site_url', 'dd_site_url');
-
 
 // arrow-link
 function link_with_icon($atts)
@@ -49,7 +47,6 @@ function link_with_icon($atts)
     </span>';
 }
 add_shortcode('dd_link_with_icon', 'link_with_icon');
-
 
 function portfolios($atts){
     $default = array(
@@ -201,3 +198,95 @@ function portfolios($atts){
     return $output;
 }
 add_shortcode('dd_portfolios', 'portfolios');
+
+function videos($atts){
+    $default = array(
+        'total-videos' => -1,
+        'featured' => "false"
+    );
+    $a = shortcode_atts($default, $atts);
+    //$output = $output . 'Display Posts: '. $a['total-portfolios'];
+
+    if($a['featured'] == "true"){
+        $featured = 1;
+    }else{
+        $featured = array(0, 1);
+    }
+
+    $args = array(
+        'posts_per_page' => $a['total-videos'],
+        'post_type'     => 'dd_video',
+        'orderby'=> 'title',
+        'order' => 'ASC',
+        'meta_query'    => array(
+            'relation'      => 'AND',
+            array(
+                'key'       => 'featured_video',
+                'value'     => $featured,
+                'compare'   => '=',
+            )
+        ),
+    );
+
+    $postQuery = new Wp_Query($args);
+
+    if(!empty($postQuery)){
+
+        $output ='';
+
+        $output .='<div class="dd-card-list video-list">';
+        while ($postQuery -> have_posts()){
+            $postQuery -> the_post();
+
+            if ( get_the_post_thumbnail() ){
+                $thumbnailUrl = get_the_post_thumbnail_url();
+            } else{
+                $thumbnailUrl = get_site_url() . '/wp-content/themes/designdesk-child/assets/images/placeholder-square.jpg';
+            }
+
+            $videoId = get_the_ID();
+
+            if(get_field('video_title') == ''){
+                $videoTitle = get_the_title();
+            }else{
+                $videoTitle = get_field('video_title');
+            }
+
+                $output .=  '<div class="dd-card video-card">';
+                    $output .=  '<div class="dd-card__wraper">';
+                        $output .=  '<div class="card-image">';
+                            $output .=  '<img src="'. $thumbnailUrl .'" alt="'.get_the_title().'" title="'.get_the_title().'" width="280" height="330">';
+                            $output .=  '<a class="play-button dd-popupToggler" target-popup="#'.$videoId.'"></a>';
+                        $output .=  '</div>';
+                        $output .=  '<div class="card-content">';
+                            $output .=  '<div class="card-content__wraper">';
+                                $output .=  '<p class="card-title">'. $videoTitle .'</p>';
+                            $output .=  '</div>';
+                        $output .=  '</div>';
+                    $output .=  '</div>';
+                $output .=  '</div>';
+                //popup
+                $output .=  '<div class="dd-popup video-popup" id="'.$videoId.'">';
+                    $output .=  '<div class="dd-popup__wraper">';
+                        $output .=  '<div class="dd-popup-content">';
+                            $output .=  '<div class="dd-popup-header">';
+                                $output .=  '<span class="dd-close"></span>';
+                            $output .=  '</div>';
+                            $output .=  '<div class="dd-popup-body main-content">';
+                                $output .=  '<div class="dd-popup-body__wraper">';
+                                
+                                $output .=  '</div>';
+                                $output .=  '<div class="dd-slider-dots dd-slider-dots-'.$videoId.'"></div>';
+                            $output .=  '</div>';
+                            $output .=  '<div class="dd-popup-footer">';
+                            $output .=  '</div>';
+                        $output .=  '</div>';
+                    $output .=  '</div>';
+                $output .=  '</div>';
+        }
+        $output .='</div>';
+    }
+
+    return $output;
+}
+add_shortcode('dd_videos', 'videos');

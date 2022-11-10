@@ -352,9 +352,9 @@ function dd_portfolio_type() {
 }
 add_action('init', 'dd_portfolio_type');
 
-add_post_type_support('dd_portfolio', 'genesis-seo');
+//add_post_type_support('dd_portfolio', 'genesis-seo');
 
-// Industry
+// portfolio -Industry
 function dd_register_taxonomy_industry() {
 	$labels = array(
 		'name'              => _x( 'Industries', 'designdesk-child' ),
@@ -381,3 +381,24 @@ function dd_register_taxonomy_industry() {
 	register_taxonomy( 'dd_industries', [ 'dd_portfolio' ], $args );
 }
 add_action( 'init', 'dd_register_taxonomy_industry' );
+
+//videos
+function dd_video_type() {
+	register_post_type('dd_video',
+		array(
+			'labels'      => array(
+				'name'          => __('Videos', 'designdesk-child'),
+				'singular_name' => __('video', 'designdesk-child'),
+				'all_items'           => __( 'All Videos', 'designdesk-child' ),
+				'add_new'        => __( 'Add New Video', 'designdesk-child' ),
+			),
+				'public'      => true,
+				'has_archive' => true,
+				'rewrite'     => array( 'slug' => 'video' ), // my custom slug
+				'menu_icon' => 'dashicons-video-alt3',
+				'show_in_rest' => true,
+				'supports' => array( 'title', 'editor', 'excerpt', 'author', 'thumbnail', 'revisions', 'custom-fields', ),
+		)
+	);
+}
+add_action('init', 'dd_video_type');
