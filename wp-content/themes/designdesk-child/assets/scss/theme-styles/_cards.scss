@@ -261,7 +261,6 @@
 // default card
 .dd-card-list {
   display: grid;
-  grid-template-columns: 1fr 1fr 1fr;
   overflow: hidden;
   grid-gap: 20px;
   .dd-card {
@@ -310,5 +309,8 @@
         }
       }
     }
+  }
+  @media (min-width: 768px){
+    grid-template-columns: 1fr 1fr 1fr;
   }
 }
