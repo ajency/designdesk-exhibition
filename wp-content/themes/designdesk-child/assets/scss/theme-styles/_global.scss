@@ -51,6 +51,12 @@
   @include h2(600);
   text-transform: capitalize;
 }
+.secondary-heading{
+  @include h2(400);
+  @media (max-width: 767.98px){
+    @include h3(400);
+  }
+}
 .subheading{
   @include body(500);
   @media (max-width: 767.98px){

@@ -229,7 +229,6 @@ function stopYtPlayer(element){
 }
 
 // testimonial slider
-
 $('.testimonial-slider .wp-block-group__inner-container').slick({
   dots: true,
   prevArrow: "<button class='dd-slider-arrow dd-prev'><svg fill=none height=20 viewBox='0 0 12 20'width=12 xmlns=http://www.w3.org/2000/svg><path d='M10 17.7773L2.22222 9.99957L10 2.22179'stroke=white stroke-linecap=round stroke-linejoin=round stroke-width=4 /></svg></button>",
@@ -242,4 +241,29 @@ $('.testimonial-slider .wp-block-group__inner-container').slick({
       }
     }
   ]
+});
+
+$(window).on("resize, load", function () {
+  if ($(window).width() > 768) {
+    //only for larger screen
+  }else{
+    //only foe smaller screen
+    // awards carousel
+    $('.awards-carousel').slick({
+      slidesToShow: 3,
+      slidesToScroll: 1,
+      centerMode: true,
+      arrows: false,
+      dots: true,
+      speed: 300,
+      centerPadding: '5px',
+      infinite: true,
+    });
+
+    // On before slide change
+    $('.awards-carousel').on('beforeChange', function(event, slick, currentSlide, nextSlide){
+      let slide = $(this).find('.slick-slide:not(.slick-current)');
+      $(slide).find('.award-title').hide("slow");
+    });
+  }
 });

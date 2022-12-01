@@ -308,3 +308,28 @@
     padding-bottom: 30px;
   }
 }
+
+// Awards sections
+.awards-section{
+  .secondary-heading{
+    margin-bottom: 0px;
+  }
+  .section-heading{
+    margin-bottom: 16px;
+  }
+  .subheading{
+    max-width: 730px;
+    margin: 0px auto 54px;
+  }
+  @media(max-width:767.98px){
+    .secondary-heading{
+      margin-bottom: 10px;
+    }
+    .section-heading{
+      margin-bottom: 20px;
+    }
+    .subheading{
+      margin-bottom: 60px;
+    }
+  }
+}
