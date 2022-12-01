@@ -193,6 +193,12 @@ $gradient4: radial-gradient(
   }
 }
 
+@mixin dd-button-mobile {
+  width: 100%;
+  justify-content: center !important;
+  padding: 12px 16px;
+}
+
 // buttons
 .dd-button {
   a,
@@ -248,6 +254,9 @@ $gradient4: radial-gradient(
     }
   }
   @media (max-width: 767.98px){
+    a, button{
+      @include dd-button-mobile;
+    }
     &.shadow{
       a, button{
         box-shadow: none;
@@ -255,11 +264,7 @@ $gradient4: radial-gradient(
     }
   }
 }
-@mixin dd-button-mobile {
-  width: 100%;
-  justify-content: center;
-  padding: 12px 16px;
-}
+
 
 //seperators
 .dd-seperator {

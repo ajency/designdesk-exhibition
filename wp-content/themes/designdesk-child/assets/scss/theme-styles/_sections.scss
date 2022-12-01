@@ -333,3 +333,31 @@
     }
   }
 }
+
+// image CTA
+.bg-image-cta{
+  .alignwide{
+    .alignwide{
+      padding: 50px;
+      margin-bottom: 0px;
+    }
+  }
+  p{
+    text-transform: capitalize;
+  }
+  @media(max-width:767.98px){
+    .alignwide{
+      .alignwide{
+        padding: 60px 20px 40px;
+        gap: 30px;
+      }
+    }
+    .gb-background-cover{
+      background-position: 70% center;
+      background-size: cover;
+    }
+    .h2-semi-600{
+      @include h3(600);
+    }
+  }
+}
