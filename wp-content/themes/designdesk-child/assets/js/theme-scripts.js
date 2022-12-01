@@ -185,64 +185,10 @@ $('.portfolio-thumbnail-carousel').each(function(){
 });
 
 // Youtube video player
-
-/* var player; */
-
-// This code loads the IFrame Player API code asynchronously. This is the Youtube-recommended script loading method
-/* var tag = document.createElement("script");
-tag.src = "https://youtube.com/iframe_api";
-tag.id = "youtubeScript";
-var firstScriptTag = document.getElementsByTagName("script")[1];
-firstScriptTag.parentNode.insertBefore(tag, firstScriptTag); */
-
-// Create youtube player (function called by YouTube API)
-/* function onYouTubeIframeAPIReady() {
-
-  $(".video-card").each(function(){
-    let videoId = $(this).attr('video-id');
-    let videoPlayer = "ytplayer-"+videoId;
-
-    player = new YT.Player(videoPlayer, {
-      width: "562",
-      videoId: videoId,
-      playerVars: {
-        autoplay: 0,
-        controls: 0,
-        rel: 0,
-        fs: 0,
-        showinfo: 0,
-        modestbranding: 1
-      },
-    });
-  });
-
-
-}
-
-function stopYtPlayer(){
-  console.log("stopped")
-  player.stopVideo();
-}
-
-function playYtPlayer(){
-  player.playVideo();
-}
-
-function pauseYtPlayer(){
-  player.pauseVideo();
-}
- */
-
-
 var tag = document.createElement('script');
 tag.src = "https://www.youtube.com/iframe_api";
 var firstScriptTag = document.getElementsByTagName('script')[0];
 firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
-
-/* {
-  id: 'player1',
-  videoId: 'be8a-YejhEY'
-} */
 
 var playerInfoList = [];
 
@@ -281,3 +227,19 @@ function stopYtPlayer(element){
     }
   });
 }
+
+// testimonial slider
+
+$('.testimonial-slider .wp-block-group__inner-container').slick({
+  dots: true,
+  prevArrow: "<button class='dd-slider-arrow dd-prev'><svg fill=none height=20 viewBox='0 0 12 20'width=12 xmlns=http://www.w3.org/2000/svg><path d='M10 17.7773L2.22222 9.99957L10 2.22179'stroke=white stroke-linecap=round stroke-linejoin=round stroke-width=4 /></svg></button>",
+  nextArrow: "<button class='dd-slider-arrow dd-next'><svg fill=none height=20 viewBox='0 0 12 20'width=12 xmlns=http://www.w3.org/2000/svg><path d='M2 17.7773L9.77778 9.99957L2 2.22179'stroke=#2471B5 stroke-linecap=round stroke-linejoin=round stroke-width=4 /></svg></button>",
+  responsive: [
+    {
+      breakpoint: 767.98,
+      settings: {
+        arrows: false,
+      }
+    }
+  ]
+});

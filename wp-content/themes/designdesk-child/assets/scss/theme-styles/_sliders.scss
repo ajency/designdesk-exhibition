@@ -110,14 +110,18 @@
       height: 100%;
       object-fit: cover;
     }
-    &.slick-active:not(.slick-current){
+    &.slick-active:not(.slick-current) {
       position: relative;
-      .thumbnail-image{
+      .thumbnail-image {
         opacity: 70%;
       }
-      &:before{
-        content: '';
-        background: linear-gradient(0deg, rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2));
+      &:before {
+        content: "";
+        background: linear-gradient(
+          0deg,
+          rgba(0, 0, 0, 0.2),
+          rgba(0, 0, 0, 0.2)
+        );
         opacity: 0.7;
         height: 100%;
         width: 100%;
@@ -131,16 +135,16 @@
       filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
     }
   }
-  @media (min-width: 768px){
-    .thumbnail-slide{
-      &.slick-current{
+  @media (min-width: 768px) {
+    .thumbnail-slide {
+      &.slick-current {
         width: 103px !important;
         height: 64px !important;
       }
     }
   }
-  @media (max-width: 767.98px){
-    .slick-track{
+  @media (max-width: 767.98px) {
+    .slick-track {
       display: flex;
       justify-content: flex-end;
     }
@@ -150,9 +154,131 @@
     .slick-list {
       margin: 0 -4px;
     }
-    .thumbnail-slide{
+    .thumbnail-slide {
       width: 36px !important;
       height: 36px !important;
+    }
+  }
+}
+
+// testimonial slider
+.testimonial-slider {
+  margin-bottom: 40px;
+  .wp-block-columns {
+    margin-bottom: 0px;
+    gap: 11px 25px;
+  }
+  .wp-block-group__inner-container {
+    .testimonial {
+      p {
+        margin-bottom: 0px;
+      }
+      .gb-container-inside {
+        background: #185a91;
+        background-image: url(../images/coma.svg);
+        background-repeat: no-repeat;
+        background-position: calc(100% - 20px) 20px;
+        background-size: 130px 99px;
+      }
+      .author-image {
+        margin: 0px;
+        height: 100%;
+        display: flex;
+        align-items: flex-end;
+      }
+      .left-panel {
+        padding-left: 30px;
+        padding-top: 15px;
+      }
+      .right-panel {
+        padding: 40px 20px 40px 0px;
+      }
+      hr {
+        border-color: #f48e0c;
+        width: 93px;
+        border-width: 4px;
+        margin: 20px auto 30px 0px;
+      }
+      .author {
+        display: grid;
+        grid-template-columns: 74px 1fr;
+        gap: 14px;
+        grid-gap: 14px;
+        .author-position {
+          margin-bottom: 4px;
+        }
+        .author-logo {
+          margin: 0;
+          background: #fff;
+          border-radius: 2px;
+          overflow: hidden;
+          img {
+            object-fit: contain;
+          }
+        }
+      }
+    }
+  }
+  @media (min-width: 768px) {
+    .wp-block-group__inner-container {
+      .testimonial {
+        .left-panel {
+          max-width: 207px;
+        }
+        .right-panel {
+          flex-basis: 55.623% !important;
+        }
+      }
+    }
+  }
+  @media (max-width: 767.98px) {
+    margin-bottom: 30px;
+    .wp-block-group__inner-container {
+      .testimonial {
+        .left-panel {
+          padding: 0px;
+          padding-top: 6px;
+        }
+        .right-panel{
+          padding: 20px;
+          padding-bottom: 25px;
+        }
+        .author-image {
+          justify-content: center;
+          position: relative;
+          max-width: 120px;
+          margin: auto;
+          &:after {
+            content: "";
+            height: 1px;
+            width: 107.62px;
+            background-color: #1e65a3;
+            position: absolute;
+            bottom: 0px;
+          }
+        }
+        .gb-container-inside {
+          background-size: 63px 48px;
+        }
+        hr{
+          border-color: #76C8FB;
+          border-width: 1px;
+          width: 100%;
+          margin-top: 20px;
+          margin-bottom: 20px;
+          max-width: 100%;
+        }
+        .author-position{
+          @include body(400);
+        }
+        .author-company{
+          @include label(600);
+        }
+        .author{
+          gap: 10px;
+          grid-gap: 10px;
+        }
+      }
     }
   }
 }
