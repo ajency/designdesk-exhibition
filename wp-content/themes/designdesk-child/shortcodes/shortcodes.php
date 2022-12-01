@@ -235,7 +235,13 @@ function videos($atts){
         $output ='';
 
         $output .='<div class="dd-card-list video-list">';
+
+        $loopCount = 0;		// loop control variable
+
         while ($postQuery -> have_posts()){
+
+            $loopCount++;
+
             $postQuery -> the_post();
 
             if ( get_the_post_thumbnail() ){
@@ -244,19 +250,20 @@ function videos($atts){
                 $thumbnailUrl = get_site_url() . '/wp-content/themes/designdesk-child/assets/images/placeholder-square.jpg';
             }
 
-            $videoId = get_the_ID();
+            $videoPopupId = get_the_ID();
 
             if(get_field('video_title') == ''){
                 $videoTitle = get_the_title();
             }else{
                 $videoTitle = get_field('video_title');
             }
+            $videoId = get_field('youtube_embed_id');
 
-                $output .=  '<div class="dd-card video-card">';
+                $output .=  '<div class="dd-card video-card" video-id="'.$videoId.'">';
                     $output .=  '<div class="dd-card__wraper">';
                         $output .=  '<div class="card-image">';
                             $output .=  '<img src="'. $thumbnailUrl .'" alt="'.get_the_title().'" title="'.get_the_title().'" width="280" height="330">';
-                            $output .=  '<a class="play-button dd-popupToggler" target-popup="#'.$videoId.'"></a>';
+                            $output .=  '<a class="play-button dd-popupToggler" target-popup="#'.$videoPopupId.'"></a>';
                         $output .=  '</div>';
                         $output .=  '<div class="card-content">';
                             $output .=  '<div class="card-content__wraper">';
@@ -266,17 +273,17 @@ function videos($atts){
                     $output .=  '</div>';
                 $output .=  '</div>';
                 //popup
-                $output .=  '<div class="dd-popup video-popup" id="'.$videoId.'">';
+                $output .=  '<div class="dd-popup video-popup" id="'.$videoPopupId.'">';
                     $output .=  '<div class="dd-popup__wraper">';
                         $output .=  '<div class="dd-popup-content">';
                             $output .=  '<div class="dd-popup-header">';
-                                $output .=  '<span class="dd-close"></span>';
+                                $output .=  '<span class="dd-close outside" onclick="stopYtPlayer(this)"></span>';
                             $output .=  '</div>';
                             $output .=  '<div class="dd-popup-body main-content">';
                                 $output .=  '<div class="dd-popup-body__wraper">';
-                                
+                                $output .=  '<div id="player'.$loopCount.'"></div>';
                                 $output .=  '</div>';
-                                $output .=  '<div class="dd-slider-dots dd-slider-dots-'.$videoId.'"></div>';
+                                $output .=  '<div class="dd-slider-dots dd-slider-dots-'.$videoPopupId.'"></div>';
                             $output .=  '</div>';
                             $output .=  '<div class="dd-popup-footer">';
                             $output .=  '</div>';

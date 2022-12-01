@@ -69,7 +69,7 @@
     .subheading {
       max-width: 211px;
       margin: 0px auto 30px;
-      @include body-reg(400);
+      @include body(400);
     }
     .section-columns {
       margin-top: 30px;
@@ -165,16 +165,16 @@
       grid-gap: 20px;
       gap: 20px;
     }
-    .h2-semi-600 {
+    .h2-600 {
       margin-bottom: 10px !important;
-      @include h3-semi(600);
+      @include h3(600);
     }
-    .body-reg-400 {
+    .body-400 {
       @include label(500);
     }
   }
   @media (max-width: 575.98px) {
-    .h2-semi-600 {
+    .h2-600 {
       max-width: 214px;
     }
     .dd-button {
@@ -200,7 +200,7 @@
         object-fit: contain;
       }
     }
-    .body-reg-400 {
+    .body-400 {
       margin-bottom: 0px;
     }
     .feature {
@@ -211,7 +211,7 @@
     }
   }
   @media (min-width: 768px) {
-    .h3-semi-600 {
+    .h3-600 {
       max-width: 216px;
       margin-left: auto;
       margin-right: auto;
@@ -224,11 +224,11 @@
       margin-left: auto;
       margin-right: auto;
     }
-    .h2-semi-600 {
-      @include h3-semi(600);
+    .h2-600 {
+      @include h3(600);
     }
     .body-med-500 {
-      @include body-reg(400);
+      @include body(400);
     }
     .features-list {
       margin-top: 10px;
@@ -241,8 +241,8 @@
           padding-bottom: 0px;
           border-bottom: none;
         }
-        .h3-semi-600 {
-          @include h4-semi(600);
+        .h3-600 {
+          @include h4(600);
           margin-bottom: 8px;
         }
         .icon {
@@ -270,5 +270,11 @@
   .video-list {
     margin-top: 40px;
     margin-bottom: 40px;
+  }
+  @media (max-width:767.98px){
+    .video-list{
+      margin-top: 30px;
+      margin-bottom: 30px;
+    }
   }
 }

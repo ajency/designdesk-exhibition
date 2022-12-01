@@ -16,7 +16,7 @@ form {
     }
   }
   label {
-    @include h4-med(500);
+    @include h4(500);
     font-weight: 500 !important;
     font-size: 18px !important;
     margin-bottom: 4px;

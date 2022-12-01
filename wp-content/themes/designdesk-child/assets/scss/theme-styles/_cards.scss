@@ -253,7 +253,7 @@
     border: 1px solid #eeeeee;
     padding: 16px;
     .card-title {
-      @include h4-semi(600);
+      @include h4(600);
     }
   }
 }
@@ -312,5 +312,30 @@
   }
   @media (min-width: 768px){
     grid-template-columns: 1fr 1fr 1fr;
+  }
+  @media (max-width: 767.98px){
+    .dd-card{
+      &.video-card{
+        .dd-card__wraper{
+          display: grid;
+          grid-template-columns: 1fr 1.3fr;
+          .card-title{
+            @include label(600);
+          }
+          .card-image{
+            max-height:120px;
+            .play-button{
+              height: 48px;
+              width: 48px;
+              top: calc(50% - 24px);
+              left: calc(50% - 24px);
+            }
+          }
+          .card-content{
+            padding: 10px;
+          }
+        }
+      }
+    }
   }
 }
