@@ -24,6 +24,7 @@ class social_links_widget extends WP_Widget
         $twitter_link = $instance['twitter_link'];
         $facebook_link = $instance['facebook_link'];
         $instagram_link = $instance['instagram_link'];
+        $linkedin_link = $instance['linkedin_link'];
 
         echo $before_widget;
         if (!empty($title)) {
@@ -31,14 +32,26 @@ class social_links_widget extends WP_Widget
         }
 ?>
         <ul class="social-links">
-            <?php if (!empty($title)) { ?>
-                <li class="social-link"><a href="<?php echo esc_url_raw($youtube_link) ?>" target="_blank">
+
+            <?php if (!empty($linkedin_link)) { ?>
+                <li class="social-link"><a href="<?php esc_url_raw($linkedin_link) ?>" target="_blank">
+                    <div class="icon">
+                        <svg width="40" height="40" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M7.83851 0C3.52794 0 0 3.52786 0 7.83851V32.1628C0 36.4733 3.52786 40 7.83851 40H32.1628C36.4734 40 40 36.4734 40 32.1628V7.83851C40 3.52794 36.4734 0 32.1628 0H7.83851ZM9.81001 6.6008C11.8768 6.6008 13.1499 7.95764 13.1892 9.74118C13.1892 11.4853 11.8768 12.8803 9.77003 12.8803H9.73125C7.70377 12.8803 6.39331 11.4854 6.39331 9.74118C6.39331 7.95768 7.74342 6.6008 9.80997 6.6008H9.81001ZM27.621 14.9368C31.5959 14.9368 34.5756 17.5349 34.5756 23.1179V33.5404H28.5349V23.8166C28.5349 21.3732 27.6606 19.7061 25.4745 19.7061C23.8056 19.7061 22.8108 20.8297 22.3741 21.9152C22.2145 22.3035 22.1753 22.8459 22.1753 23.3891V33.5404H16.1346C16.1346 33.5404 16.2138 17.0687 16.1346 15.3631H22.1766V17.9372C22.9793 16.6987 24.4152 14.9368 27.621 14.9368V14.9368ZM6.74963 15.3644H12.7904V33.5405H6.74963V15.3644Z" fill="white"/>
+                        </svg>
+                    </div>
+                    </a></li>
+            <?php } ?>
+
+            <?php if (!empty($facebook_link)) { ?>
+                <li class="social-link"><a href="<?php echo esc_url_raw($facebook_link) ?>" target="_blank">
                         <div class="icon"><svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                <path d="M18.5654 15.7327L14.9718 14.0559C14.6582 13.9103 14.4006 14.0735 14.4006 14.4207V17.5791C14.4006 17.9263 14.6582 18.0895 14.9718 17.9439L18.5638 16.2671C18.879 16.1199 18.879 15.8799 18.5654 15.7327ZM16.0006 0.639893C7.51743 0.639893 0.640625 7.51669 0.640625 15.9999C0.640625 24.4831 7.51743 31.3599 16.0006 31.3599C24.4838 31.3599 31.3606 24.4831 31.3606 15.9999C31.3606 7.51669 24.4838 0.639893 16.0006 0.639893ZM16.0006 22.2399C8.13823 22.2399 8.00062 21.5311 8.00062 15.9999C8.00062 10.4687 8.13823 9.75989 16.0006 9.75989C23.863 9.75989 24.0006 10.4687 24.0006 15.9999C24.0006 21.5311 23.863 22.2399 16.0006 22.2399Z" fill="#041925" />
+                                <path d="M31.9962 16.098C31.9962 7.20605 24.8322 -0.00195312 15.9962 -0.00195312C7.15619 4.68751e-05 -0.0078125 7.20605 -0.0078125 16.1C-0.0078125 24.134 5.84419 30.794 13.4922 32.002V20.752H9.43219V16.1H13.4962V12.55C13.4962 8.51605 15.8862 6.28805 19.5402 6.28805C21.2922 6.28805 23.1222 6.60205 23.1222 6.60205V10.562H21.1042C19.1182 10.562 18.4982 11.804 18.4982 13.078V16.098H22.9342L22.2262 20.75H18.4962V32C26.1442 30.792 31.9962 24.132 31.9962 16.098Z" fill="#041925" />
                             </svg>
                         </div>
                     </a></li>
             <?php } ?>
+
             <?php if (!empty($twitter_link)) { ?>
                 <li class="social-link"><a href="<?php echo esc_url_raw($twitter_link) ?>" target="_blank">
                         <div class="icon">
@@ -49,14 +62,7 @@ class social_links_widget extends WP_Widget
                         </div>
                     </a></li>
             <?php } ?>
-            <?php if (!empty($facebook_link)) { ?>
-                <li class="social-link"><a href="<?php echo esc_url_raw($facebook_link) ?>" target="_blank">
-                        <div class="icon"><svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                <path d="M31.9962 16.098C31.9962 7.20605 24.8322 -0.00195312 15.9962 -0.00195312C7.15619 4.68751e-05 -0.0078125 7.20605 -0.0078125 16.1C-0.0078125 24.134 5.84419 30.794 13.4922 32.002V20.752H9.43219V16.1H13.4962V12.55C13.4962 8.51605 15.8862 6.28805 19.5402 6.28805C21.2922 6.28805 23.1222 6.60205 23.1222 6.60205V10.562H21.1042C19.1182 10.562 18.4982 11.804 18.4982 13.078V16.098H22.9342L22.2262 20.75H18.4962V32C26.1442 30.792 31.9962 24.132 31.9962 16.098Z" fill="#041925" />
-                            </svg>
-                        </div>
-                    </a></li>
-            <?php } ?>
+
             <?php if (!empty($instagram_link)) { ?>
                 <li class="social-link"><a href="<?php esc_url_raw($instagram_link) ?>" target="_blank">
                         <div class="icon">
@@ -68,6 +74,16 @@ class social_links_widget extends WP_Widget
                         </div>
                     </a></li>
             <?php } ?>
+
+            <?php if (!empty($youtube_link)) { ?>
+                <li class="social-link"><a href="<?php echo esc_url_raw($youtube_link) ?>" target="_blank">
+                        <div class="icon"><svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M18.5654 15.7327L14.9718 14.0559C14.6582 13.9103 14.4006 14.0735 14.4006 14.4207V17.5791C14.4006 17.9263 14.6582 18.0895 14.9718 17.9439L18.5638 16.2671C18.879 16.1199 18.879 15.8799 18.5654 15.7327ZM16.0006 0.639893C7.51743 0.639893 0.640625 7.51669 0.640625 15.9999C0.640625 24.4831 7.51743 31.3599 16.0006 31.3599C24.4838 31.3599 31.3606 24.4831 31.3606 15.9999C31.3606 7.51669 24.4838 0.639893 16.0006 0.639893ZM16.0006 22.2399C8.13823 22.2399 8.00062 21.5311 8.00062 15.9999C8.00062 10.4687 8.13823 9.75989 16.0006 9.75989C23.863 9.75989 24.0006 10.4687 24.0006 15.9999C24.0006 21.5311 23.863 22.2399 16.0006 22.2399Z" fill="#041925" />
+                            </svg>
+                        </div>
+                    </a></li>
+            <?php } ?>
+
         </ul>
     <?php
         echo $after_widget;
@@ -81,6 +97,7 @@ class social_links_widget extends WP_Widget
         $twitter_link = !empty($instance['twitter_link']) ? $instance['twitter_link'] : '';
         $facebook_link = !empty($instance['facebook_link']) ? $instance['facebook_link'] : '';
         $instagram_link = !empty($instance['instagram_link']) ? $instance['instagram_link'] : '';
+        $linkedin_link = !empty($instance['linkedin_link']) ? $instance['linkedin_link'] : '';
     ?>
         <p>
             <label for=" <?php echo $this->get_field_name('title'); ?>"><?php _e('Title:'); ?></label>
@@ -102,6 +119,10 @@ class social_links_widget extends WP_Widget
             <label for="<?php echo $this->get_field_name('instagram_link'); ?>"><?php _e('Instagram:'); ?></label>
             <input class="widefat" id="<?php echo $this->get_field_id('instagram_link'); ?>" name="<?php echo $this->get_field_name('instagram_link'); ?>" type="text" value="<?php echo esc_attr($instagram_link); ?>" />
         </p>
+        <p>
+            <label for="<?php echo $this->get_field_name('linkedin_link'); ?>"><?php _e('LinkedIn:'); ?></label>
+            <input class="widefat" id="<?php echo $this->get_field_id('linkedin_link'); ?>" name="<?php echo $this->get_field_name('linkedin_link'); ?>" type="text" value="<?php echo esc_attr($linkedin_link); ?>" />
+        </p>
 <?php
     }
 
@@ -114,6 +135,7 @@ class social_links_widget extends WP_Widget
         $instance['twitter_link'] = (!empty($new_instance['twitter_link'])) ? strip_tags($new_instance['twitter_link']) : '';
         $instance['facebook_link'] = (!empty($new_instance['facebook_link'])) ? strip_tags($new_instance['facebook_link']) : '';
         $instance['instagram_link'] = (!empty($new_instance['instagram_link'])) ? strip_tags($new_instance['instagram_link']) : '';
+        $instance['linkedin_link'] = (!empty($new_instance['linkedin_link'])) ? strip_tags($new_instance['linkedin_link']) : '';
 
         return $instance;
     }
