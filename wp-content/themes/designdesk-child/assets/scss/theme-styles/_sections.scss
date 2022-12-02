@@ -79,18 +79,23 @@
   @media (min-width: 992px) {
     .section-columns {
       max-width: calc(100% - 118px);
+      .hide-lg-down {
+        display: flex;
+        align-items: center;
+      }
     }
     .popout-image {
       margin: 0px;
       position: absolute;
       right: -73px;
-      top: -92px;
+      top: -47px;
       max-width: 618px;
     }
   }
   @media (max-width: 1250px) {
     .popout-image {
-      right: -25%;
+      right: -15%;
+      max-width: 65%;
     }
   }
   @media (max-width: 1061px) {
@@ -168,7 +173,7 @@
     .h2-semi-600 {
       margin-bottom: 10px !important;
       @include h3(600);
-      max-width: 214px
+      max-width: 214px;
     }
     .body-400 {
       @include label(500);
@@ -228,7 +233,7 @@
     .h2-600 {
       @include h3(600);
     }
-    .h3-semi-600{
+    .h3-semi-600 {
       @include h4(600);
       margin-bottom: 6px;
     }
@@ -269,15 +274,14 @@
   }
 }
 
-
 // featured videos section
 .featured-videos-section {
   .video-list {
     margin-top: 40px;
     margin-bottom: 40px;
   }
-  @media (max-width:767.98px){
-    .video-list{
+  @media (max-width: 767.98px) {
+    .video-list {
       margin-top: 30px;
       margin-bottom: 30px;
     }
@@ -288,75 +292,75 @@
 .testimonial-section {
   padding-top: 60px;
   padding-bottom: 60px;
-  .dd-slider-arrow{
-    &.dd-prev{
+  .dd-slider-arrow {
+    &.dd-prev {
       left: -92px;
     }
-    &.dd-next{
+    &.dd-next {
       right: -92px;
     }
   }
-  @media(min-width:768px){
-    .testimonial-slider{
+  @media (min-width: 768px) {
+    .testimonial-slider {
       max-width: calc(100% - 184px);
       margin-left: auto;
       margin-right: auto;
     }
   }
-  @media(max-width: 767.98px){
+  @media (max-width: 767.98px) {
     padding-top: 30px;
     padding-bottom: 30px;
   }
 }
 
 // Awards sections
-.awards-section{
-  .secondary-heading{
+.awards-section {
+  .secondary-heading {
     margin-bottom: 0px;
   }
-  .section-heading{
+  .section-heading {
     margin-bottom: 16px;
   }
-  .subheading{
+  .subheading {
     max-width: 730px;
     margin: 0px auto 54px;
   }
-  @media(max-width:767.98px){
-    .secondary-heading{
+  @media (max-width: 767.98px) {
+    .secondary-heading {
       margin-bottom: 10px;
     }
-    .section-heading{
+    .section-heading {
       margin-bottom: 20px;
     }
-    .subheading{
+    .subheading {
       margin-bottom: 60px;
     }
   }
 }
 
 // image CTA
-.bg-image-cta{
-  .alignwide{
-    .alignwide{
+.bg-image-cta {
+  .alignwide {
+    .alignwide {
       padding: 50px;
       margin-bottom: 0px;
     }
   }
-  p{
+  p {
     text-transform: capitalize;
   }
-  @media(max-width:767.98px){
-    .alignwide{
-      .alignwide{
+  @media (max-width: 767.98px) {
+    .alignwide {
+      .alignwide {
         padding: 60px 20px 40px;
         gap: 30px;
       }
     }
-    .gb-background-cover{
+    .gb-background-cover {
       background-position: 70% center;
       background-size: cover;
     }
-    .h2-semi-600{
+    .h2-semi-600 {
       @include h3(600);
     }
   }
