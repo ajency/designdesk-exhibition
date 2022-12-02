@@ -4,50 +4,109 @@
   margin-bottom: 0px;
 }
 .service-card {
-  margin-top: 10px;
-  max-height: 485px;
+  margin-top: 0px;
+  max-height: 400px;
   overflow: hidden;
   position: relative;
-  cursor: pointer;
+
+  &:before{
+    content: '';
+    position: absolute;
+    width: 204px;
+    height: 204px;
+    z-index: 1;
+    background-size: contain;
+    background-repeat: no-repeat;
+    left: -15%;
+    top: -10%;
+  }
+  &.india{
+    &:before{
+      background-image: url(../images/india-symbol.svg);
+    }
+  }
+  &.europe{
+    &:before{
+      background-image: url(../images/europe-symbol.svg);
+    }
+  }
+  &.worldwide{
+    &:before{
+      background-image: url(../images/world-symbol.svg);
+    }
+  }
+  .circle-arrow {
+    position: absolute;
+    height: 60px;
+    width: 60px;
+    background-image: url(../images/right-arrow-circle.svg);
+    background-size: contain;
+    background-repeat: no-repeat;
+    margin: 0px;
+    right: 30px;
+    bottom: 40px;
+    display: flex;
+    a{
+      background-color: transparent !important;
+      font-size: 0px;
+      height: 100%;
+      width: 100%;
+      padding: 0px;
+      margin: 0px;
+      box-shadow: none !important;
+    }
+    @media (max-width: 992px){
+      bottom: 30px;
+    }
+  }
   p {
     padding-left: 0px !important;
     padding-right: 0px !important;
   }
   .service-card-details {
-    background-color: rgba(4, 25, 37, 0.9);
     color: #fff;
-    padding: 30px 20px;
+    padding: 30px;
+    padding-bottom: 40px;
+    padding-right: 100px;
     position: absolute;
     left: 0;
     bottom: 0;
     width: 100%;
-    transform: translateY(calc(100% - 88px));
-    transition: all 0.3s ease-in-out;
     .service-card-title {
-      font-family: "Poppins";
-      font-weight: 600;
-      font-size: 24px;
-      line-height: 28px;
-      margin-bottom: 30px;
-      transition: all 0.3s ease-in-out;
-    }
-    &.show {
-      transform: translateY(0) !important;
-      .service-card-title {
-        margin-bottom: 10px;
-      }
+      @include h3(600);
+      margin-bottom: 0px;
     }
   }
   .service-card-image {
     margin-bottom: 0px;
     width: 100%;
+    position: relative;
+    &:before {
+      content: "";
+      height: 100%;
+      width: 100%;
+      position: absolute;
+      background: linear-gradient(
+          116.5deg,
+          rgba(0, 0, 0, 0.4) 13.92%,
+          rgba(0, 0, 0, 0) 82.49%
+        ),
+        linear-gradient(
+          180deg,
+          rgba(0, 0, 0, 0) 29.52%,
+          rgba(0, 0, 0, 0.6) 94.79%
+        ),
+        linear-gradient(0deg, rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2));
+    }
     img {
       width: 100%;
-      max-height: 485px;
+      max-height: 400px;
       object-fit: cover;
     }
   }
-
+  .section-heading {
+    margin-bottom: 30px;
+  }
   .link-with-icon {
     font-size: 16px;
     line-height: 140%;
@@ -64,23 +123,22 @@
     }
   }
 }
-@media (max-width: 992px) {
+@media (max-width: 991.98px) {
   .service-cards {
     flex-direction: column;
-    row-gap: 30px !important;
+    row-gap: 20px !important;
   }
   .service-card {
     max-height: 371px;
     max-width: 374px;
     margin: auto;
     .service-card-details {
-      padding: 20px;
+      padding: 30px;
       p {
         font-size: 14px;
       }
       .service-card-title {
-        font-size: 18px;
-        margin-bottom: 20px;
+        @include h3(600);
       }
     }
     .link-with-icon {
@@ -310,28 +368,28 @@
       }
     }
   }
-  @media (min-width: 768px){
+  @media (min-width: 768px) {
     grid-template-columns: 1fr 1fr 1fr;
   }
-  @media (max-width: 767.98px){
-    .dd-card{
-      &.video-card{
-        .dd-card__wraper{
+  @media (max-width: 767.98px) {
+    .dd-card {
+      &.video-card {
+        .dd-card__wraper {
           display: grid;
           grid-template-columns: 1fr 1.3fr;
-          .card-title{
+          .card-title {
             @include label(600);
           }
-          .card-image{
-            max-height:120px;
-            .play-button{
+          .card-image {
+            max-height: 120px;
+            .play-button {
               height: 48px;
               width: 48px;
               top: calc(50% - 24px);
               left: calc(50% - 24px);
             }
           }
-          .card-content{
+          .card-content {
             padding: 10px;
           }
         }

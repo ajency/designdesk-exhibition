@@ -51,6 +51,15 @@
   }
 }
 
+//services section
+.services-section{
+  @media (max-width: 991.98px){
+    .section-heading{
+      margin-bottom: 30px;
+    }
+  }
+}
+
 // process section
 .process-section {
   margin-bottom: 85px;

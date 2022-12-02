@@ -54,40 +54,6 @@ $(".logo-carousel .gb-container-content").slick({
   ],
 });
 
-//service cards
-$(document).ready(function () {
-  
-    $(window).on("resize", function (e) {
-    checkScreenSize();
-  });
-
-  checkScreenSize();
-
-  function checkScreenSize() {
-    var newWindowWidth = $(window).width();
-    if (newWindowWidth < 992) {
-      checkCardTitle(40);
-      $(".service-card").click(function () {
-        $(this).find(".service-card-details").toggleClass("show");
-      });
-    } else {
-      checkCardTitle(60);
-      $(".service-card").hover(function () {
-        $(this).find(".service-card-details").toggleClass("show");
-      });
-    }
-  }
-  function checkCardTitle($addPadding){
-    $cartTitleHeight = $('.service-card');
-
-    $cartTitleHeight.each(function() {
-        $titleHeight = $(this).find('.service-card-title').outerHeight();
-        $finalTitleHeight = $titleHeight+$addPadding;
-        $(this).find('.service-card-details').css('transform','translateY(calc(100% - '+$finalTitleHeight+'px))');
-      });
-  }
-});
-
 // share requirements popup
 //add id
 $(".shareRequirement a").attr("class", "shareRequirementToggler dd-popupToggler");
