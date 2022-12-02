@@ -55,6 +55,9 @@ $linkedin_link = get_theme_mod('dd_social_link_5');
                 </div>
             </div>
         </div>
+        <div class="middle-side">
+            <div class="line"></div>
+        </div>
         <div class="right-side">
             <?php
             if ($topbar_checkbox == true) : ?>
