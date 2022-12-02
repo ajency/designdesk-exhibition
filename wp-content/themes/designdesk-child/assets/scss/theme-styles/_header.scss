@@ -172,15 +172,13 @@ header {
             li{
               ul{
                 padding-top: 29px;
-                li{
-                  a{
-                    //box-shadow: 0px 0px 16px rgba(0, 0, 0, 0.08);
-                  }
-                  &:last-child{
-                    a{
-                      //box-shadow: 0px 10px 16px rgba(0, 0, 0, 0.08);
-                    }
-                  }
+                &:before{
+                  content: '';
+                  height: calc(100% - 29px);
+                  width: 100%;
+                  position: absolute;
+                  top: 29px;
+                  box-shadow: 0px 1px 16px rgba(0, 0, 0, 0.12);
                 }
               }
             }
@@ -423,6 +421,9 @@ header {
                   justify-content: center;
                   svg {
                     width: 100%;
+                    path{
+                      fill:#041925
+                    }
                   }
                 }
                 &:not(:last-child) {
