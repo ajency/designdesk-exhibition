@@ -1,22 +1,40 @@
 .statistics-section {
+  background: radial-gradient(
+      95.76% 599.79% at 103.19% 38.83%,
+      #2471b5 0.64%,
+      #1d7ac9 10.15%,
+      #1188e8 57.76%,
+      #2471b5 79.68%,
+      #2471b5 100%
+    ),
+    linear-gradient(
+      269.87deg,
+      #6ebff4 0.21%,
+      #2471b5 20.71%,
+      #2471b5 73.54%,
+      #76c8fb 99.89%
+    );
+    color: #fff;
+    padding-top: 30px;
+    padding-bottom: 30px;
   .stat {
     &:not(:last-child) {
       border-right: 1px solid #eeeeee;
     }
     &-number {
-      font-family: "Poppins";
-      font-weight: 600;
-      font-size: 32px;
-      line-height: 48px;
-      color: #2471b5;
-      margin-bottom: 6px;
-      strong {
-        color: #f48e0c;
+      @include h1(600);
+      margin-bottom: 0px;
+      mark, strong{
+        color: #fff !important;
       }
     }
     &-title {
-      font-weight: 500;
+      @include body(600);
+      margin-bottom: 0px;
     }
+  }
+  .wp-block-genesis-blocks-gb-columns{
+    margin: 0px !important;
   }
   @media (max-width: 992px) {
     .gb-layout-column-wrap {
@@ -47,9 +65,6 @@
           left: calc(50% - 29px);
           bottom: 0;
         }
-      }
-      &-number {
-        margin-bottom: 10px;
       }
     }
   }

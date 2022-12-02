@@ -54,6 +54,13 @@ $gradient4: radial-gradient(
   font-size: 16px;
   line-height: 140%;
 }
+@mixin h1($fontWeight) {
+  font-family: $poppins;
+  font-style: normal;
+  font-weight: $fontWeight;
+  font-size: 40px;
+  line-height: 140%;
+}
 @mixin h2($fontWeight) {
   font-family: $poppins;
   font-style: normal;
