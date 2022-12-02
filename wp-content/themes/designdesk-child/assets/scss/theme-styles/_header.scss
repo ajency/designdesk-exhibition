@@ -127,9 +127,11 @@ header {
                     transition: background 0.2s ease-in-out;
                     font-weight: 400;
                     border: none;
-                    &:hover {
-                      font-weight: 500;
-                      background: #76c8fb;
+                    @media(min-width:992px){
+                      &:hover {
+                        font-weight: 500;
+                        background: #76c8fb;
+                      }
                     }
                   }
                 }
@@ -147,16 +149,6 @@ header {
         .mobile-dropdown-menu {
           margin-top: 4px;
           position: relative;
-          &:before {
-            content: "";
-            height: 1px;
-            width: 100%;
-            background: linear-gradient(
-              270deg,
-              #ffffff 0%,
-              rgba(255, 255, 255, 0) 99.34%
-            );
-          }
         }
       }
     }
@@ -207,6 +199,36 @@ header {
         &::after {
           right: 12px;
           background-image: url(../images/down-arrow-dark.png);
+        }
+      }
+    }
+  }
+  @media (min-width: 1250px){
+    .site-inner{
+      .right-side{
+        .mobile-dropdown-menu{
+          &:before {
+            content: "";
+            height: 1px;
+            width: 100%;
+            background: linear-gradient(
+              270deg,
+              #ffffff 0%,
+              rgba(255, 255, 255, 0) 99.34%
+            );
+            display: block;
+            max-width: 34%;
+            left: 0;
+            top: calc(50% - 0.5px);
+            position: absolute;
+          }
+        }
+      }
+    }
+    &.active{
+      .mobile-dropdown-menu{
+        &:before{
+          opacity: 0;
         }
       }
     }
