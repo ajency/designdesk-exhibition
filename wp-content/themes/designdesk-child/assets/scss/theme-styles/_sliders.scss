@@ -1,7 +1,8 @@
 // logo carousel
 .logo-carousel-section {
-  padding-top: 30px;
-  padding-bottom: 30px;
+  padding-top: 13px;
+  padding-bottom: 14px;
+  margin-top: 0px !important;
   .section-heading {
     margin-bottom: 0px;
   }
@@ -26,16 +27,16 @@
       left: 0;
       background: linear-gradient(
         90deg,
-        #dbf2ff 26.68%,
-        rgba(219, 242, 255, 0) 100%
+        #ffffff 1.95%,
+        rgba(255, 255, 255, 0) 100.8%
       );
     }
     &:after {
       right: 0;
       background: linear-gradient(
         -90deg,
-        #dbf2ff 0%,
-        rgba(219, 242, 255, 0) 100%
+        #ffffff 1.95%,
+        rgba(255, 255, 255, 0) 100.8%
       );
     }
     .slick-track {
@@ -48,20 +49,18 @@
       background-color: #fff;
       margin-bottom: 0px;
       margin: 0 10px;
-      height: inherit !important;
-      padding: 8px 18px;
-    }
-  }
-  @media (min-width: 992px) {
-    .gb-layout-column-wrap {
-      .gb-block-layout-column {
-        &:nth-child(1) {
-          max-width: 14.577%;
-        }
+      height: 94px !important;
+      padding: 0px;
+      img{
+        height: 100%;
+        width: 100%;
+        object-fit: contain;
       }
     }
   }
   @media (max-width: 991.98px) {
+    padding-top: 0px;
+    padding-bottom: 0px;
     .gb-layout-column-wrap {
       flex-direction: column;
       justify-content: center;
@@ -69,6 +68,15 @@
     }
     .section-heading {
       margin-bottom: 30px;
+    }
+    .logo-carousel{
+      .slick-list {
+        margin: 0 -2.5px;
+      }
+      .slick-slide{
+        height: 87px !important;
+        margin: 0 2.5px;
+      }
     }
   }
 }
@@ -331,11 +339,11 @@
       transform: scale(0.5);
       opacity: 0.5;
       transition: all 0.3s ease-in-out;
-      .award-title{
+      .award-title {
         display: none;
         height: 67.2px;
       }
-      .award-image{
+      .award-image {
         transform: translateY(-50px);
         transition: all 0.3s ease-in-out;
       }
@@ -346,10 +354,10 @@
       transform: scale(0.5, 0.5);
       opacity: 0.5;
       transition: all 0.3s ease-in-out;
-      .award-title{
+      .award-title {
         display: none;
       }
-      .award-image{
+      .award-image {
         transform: translateY(-50px);
         transition: all 0.3s ease-in-out;
       }
@@ -359,20 +367,20 @@
       + .slick-cloned[aria-hidden="true"] {
       transform: scale(1);
       opacity: 1;
-      .award-title{
+      .award-title {
         display: block;
       }
-      .award-image{
+      .award-image {
         transform: translateY(0);
       }
     }
     .slick-current.slick-active {
       transform: scale(1);
       opacity: 1;
-      .award-title{
+      .award-title {
         display: block;
       }
-      .award-image{
+      .award-image {
         transform: translateY(0);
       }
     }
