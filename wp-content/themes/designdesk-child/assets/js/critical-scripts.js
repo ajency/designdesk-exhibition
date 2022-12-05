@@ -1,4 +1,24 @@
 $(function () {
+  // display sections
+const inViewport = (elem) => {
+  let allElements = document.getElementsByClassName(elem);
+  let windowHeight = window.innerHeight;
+  const elems = () => {
+      for (let i = 0; i < allElements.length; i++) {
+          let viewportOffset = allElements[i].getBoundingClientRect(); 
+          let top = viewportOffset.top;
+          if(top < windowHeight){
+              allElements[i].classList.add('in-viewport');
+          } else{
+          }
+      }
+  }
+  elems();
+  window.addEventListener('scroll', elems);
+}
+
+inViewport('belowFold');
+
   $(window).on("scroll", function () {
     if ($(window).scrollTop() > 50) {
       $("header").addClass("active");
