@@ -449,9 +449,66 @@
       }
     }
   }
-  @media(max-width:767.98px){
-    .section-heading{
+  @media (max-width: 767.98px) {
+    .section-heading {
       max-width: 323px;
     }
   }
+}
+
+// our work section
+.our-work-section {
+  background: radial-gradient(
+      95.76% 599.79% at 103.19% 38.83%,
+      #2471b5 0.64%,
+      #1d7ac9 10.15%,
+      #1188e8 57.76%,
+      #2471b5 79.68%,
+      #2471b5 100%
+    ),
+    linear-gradient(94.9deg, rgba(118, 200, 251, 0.6) 13.19%, #2471b5 60.09%);
+    padding-top: 60px;
+    padding-bottom: 60px;
+    color:#ffffff;
+    .secondary-heading, .section-heading{
+      margin-bottom: 0px;
+    }
+    .sliders{
+      gap: 20px 109px;
+      margin-bottom: 0px;
+      .wp-block-column{
+        &:first-child{
+          margin-top: 30px;
+        }
+      }
+      .dd-button{
+        margin-bottom: 0px;
+      }
+    }
+    @media(max-width:767.98px){
+      padding-top: 30px;
+      padding-bottom: 30px;
+      .secondary-heading{
+        margin-bottom: 10px;
+      }
+      .section-heading{
+        max-width: 262px;
+      }
+      .sliders{
+          .wp-block-column{
+            &:first-child{
+              order: 2;
+              margin-top: 0px;
+            }
+            &:last-child{
+              margin-top: 30px;
+              order: 1;
+            }
+          }
+          .slick-dots{
+            margin-top: 10px;
+            margin-bottom: 0px;
+          }
+      }
+    }
 }
