@@ -52,9 +52,9 @@
 }
 
 //services section
-.services-section{
-  @media (max-width: 991.98px){
-    .section-heading{
+.services-section {
+  @media (max-width: 991.98px) {
+    .section-heading {
       margin-bottom: 30px;
     }
   }
@@ -371,6 +371,87 @@
     }
     .h2-semi-600 {
       @include h3(600);
+    }
+  }
+}
+
+// hero banner
+.hero-banner {
+  margin-top: 0px !important;
+  min-height: 600px;
+  display: grid;
+  position: relative;
+  padding-bottom: 75px;
+  padding-top: 75px;
+  &:before {
+    content: "";
+    height: 100%;
+    width: 100%;
+    background: linear-gradient(
+        0deg,
+        rgba(4, 25, 37, 0.4),
+        rgba(4, 25, 37, 0.4)
+      ),
+      radial-gradient(
+        99.34% 476.3% at 105.9% 22.27%,
+        rgba(0, 0, 0, 0) 50.4%,
+        rgba(0, 0, 0, 0.58) 90.23%
+      ),
+      linear-gradient(
+        177.38deg,
+        rgba(0, 0, 0, 0.5) 2.55%,
+        rgba(0, 0, 0, 0) 20.91%
+      );
+    position: absolute;
+  }
+  p {
+    margin-bottom: 0px;
+  }
+  .banner-heading {
+    margin-bottom: 20px;
+  }
+  .banner-text {
+    max-width: 549px;
+  }
+  @media (max-width: 767.98px) {
+    min-height: 500px;
+    padding-top: 0px;
+    padding-bottom: 0px;
+    align-items: end;
+    .banner-heading {
+      margin-bottom: 10px;
+      @include h2(600);
+    }
+    .seperator-horizontal-orange {
+      margin: 30px 0 !important;
+    }
+  }
+}
+
+// page intro
+.page-intro {
+  p {
+    margin-bottom: 0px;
+    padding: 0px !important;
+  }
+  .section-heading {
+    margin-bottom: 20px;
+  }
+  @media (min-width: 768px) {
+    margin-top: -230px !important;
+    .float-over {
+      padding: 40px;
+      background-color: #ffffff;
+      box-shadow: 2px 5px 22px rgba(0, 0, 0, 0.06);
+      .wp-block-group__inner-container {
+        max-width: 860px;
+        margin: auto;
+      }
+    }
+  }
+  @media(max-width:767.98px){
+    .section-heading{
+      max-width: 323px;
     }
   }
 }

@@ -88,8 +88,8 @@ $gradient4: radial-gradient(
       @include label(500);
     }
   }
-  &-reg{
-    &-400{
+  &-reg {
+    &-400 {
       @include label(400);
     }
   }
@@ -102,12 +102,18 @@ $gradient4: radial-gradient(
   &-med-500 {
     @include body(500);
   }
-  &-semi-600{
+  &-semi-600 {
     @include body(600);
   }
 }
+.h1{
+  &-semi-600{
+    @include h1(600);
+  }
+}
 .h2 {
-  &-600, &-semi-600 {
+  &-600,
+  &-semi-600 {
     @include h2(600);
   }
 }
@@ -119,10 +125,11 @@ $gradient4: radial-gradient(
   }
 }
 .h4 {
-  &-med {
-    &-500 {
-      @include h4(500);
-    }
+  &-med-500 {
+    @include h4(500);
+  }
+  &-reg-400 {
+    @include h4(400);
   }
 }
 
@@ -155,7 +162,10 @@ $gradient4: radial-gradient(
 
 //backgrounds
 .gradient-bg {
-  &-1, &-2, &-3, &-4{
+  &-1,
+  &-2,
+  &-3,
+  &-4 {
     color: #ffffff;
   }
   &-1 {
@@ -167,7 +177,7 @@ $gradient4: radial-gradient(
   &-3 {
     background: $gradient3;
   }
-  &-4{
+  &-4 {
     background: $gradient4;
   }
 }
@@ -190,6 +200,9 @@ $gradient4: radial-gradient(
   }
 }
 .mt {
+  &-0 {
+    margin-top: 0px !important;
+  }
   &-60 {
     margin-top: 60px !important;
   }
@@ -240,8 +253,9 @@ $gradient4: radial-gradient(
       }
     }
   }
-  &.shadow{
-    a, button{
+  &.shadow {
+    a,
+    button {
       box-shadow: 2px 4px 4px rgba(0, 0, 0, 0.25);
     }
   }
@@ -252,26 +266,28 @@ $gradient4: radial-gradient(
         box-shadow: 2px 4px 4px rgba(0, 0, 0, 0.25);
       }
     }
-    &.shadow{
-      a, button{
-        &:hover{
+    &.shadow {
+      a,
+      button {
+        &:hover {
           box-shadow: 0px 0px 0px rgba(0, 0, 0, 0);
         }
       }
     }
   }
-  @media (max-width: 767.98px){
-    a, button{
+  @media (max-width: 767.98px) {
+    a,
+    button {
       @include dd-button-mobile;
     }
-    &.shadow{
-      a, button{
+    &.shadow {
+      a,
+      button {
         box-shadow: none;
       }
     }
   }
 }
-
 
 //seperators
 .dd-seperator {
@@ -285,3 +301,7 @@ $gradient4: radial-gradient(
     }
   }
 }
+  .seperator-horizontal-orange {
+    border: 4px solid #F48E0C !important;
+    margin: 20px 0 !important;
+  }
