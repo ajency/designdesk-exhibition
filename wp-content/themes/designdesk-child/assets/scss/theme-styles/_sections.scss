@@ -467,48 +467,144 @@
       #2471b5 100%
     ),
     linear-gradient(94.9deg, rgba(118, 200, 251, 0.6) 13.19%, #2471b5 60.09%);
-    padding-top: 60px;
-    padding-bottom: 60px;
-    color:#ffffff;
-    .secondary-heading, .section-heading{
+  padding-top: 60px;
+  padding-bottom: 60px;
+  color: #ffffff;
+  .secondary-heading,
+  .section-heading {
+    margin-bottom: 0px;
+  }
+  .sliders {
+    gap: 20px 109px;
+    margin-bottom: 0px;
+    .wp-block-column {
+      &:first-child {
+        margin-top: 30px;
+      }
+    }
+    .dd-button {
       margin-bottom: 0px;
     }
-    .sliders{
-      gap: 20px 109px;
-      margin-bottom: 0px;
-      .wp-block-column{
-        &:first-child{
+  }
+  @media (max-width: 767.98px) {
+    margin-top: 0px !important;
+    padding-top: 30px;
+    padding-bottom: 30px;
+    .secondary-heading {
+      margin-bottom: 10px;
+    }
+    .section-heading {
+      max-width: 262px;
+    }
+    .sliders {
+      .wp-block-column {
+        &:first-child {
+          order: 2;
+          margin-top: 0px;
+        }
+        &:last-child {
           margin-top: 30px;
+          order: 1;
         }
       }
-      .dd-button{
+      .slick-dots {
+        margin-top: 10px;
         margin-bottom: 0px;
       }
     }
-    @media(max-width:767.98px){
-      padding-top: 30px;
-      padding-bottom: 30px;
-      .secondary-heading{
-        margin-bottom: 10px;
+  }
+}
+
+// map section
+.map-section {
+  .section-heading {
+    margin-bottom: 20px;
+  }
+  .subheading {
+    max-width: 569px;
+    margin: auto;
+  }
+  .location-details {
+    margin-top: 50px;
+    margin-bottom: 0px;
+    gap: 14px 80px;
+    .map {
+      width: 100%;
+      height: 100%;
+      position: relative;
+      path{
+        &.active-state{
+          fill:#2471B5;
+          box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+          transform: translate(-1px, -1px);
+        }
       }
-      .section-heading{
-        max-width: 262px;
-      }
-      .sliders{
-          .wp-block-column{
-            &:first-child{
-              order: 2;
-              margin-top: 0px;
-            }
-            &:last-child{
-              margin-top: 30px;
-              order: 1;
-            }
+      g{
+        position: relative;
+        &.active-location{
+          opacity: 1;
+          transform: scale(1.5);
+          transform-origin: center;
+          transform-box: fill-box;
+          ellipse, path{
+            fill: #ffffff;
           }
-          .slick-dots{
-            margin-top: 10px;
-            margin-bottom: 0px;
-          }
+        }
       }
     }
+    .wp-block-column {
+      &:first-child {
+        flex-basis: 60%;
+      }
+      &:last-child {
+        flex-basis: 40%;
+      }
+    }
+  }
+  @media (max-width: 991.98px) {
+    .location-details {
+      flex-direction: column;
+    }
+  }
+  @media (max-width: 767.98px) {
+    overflow: hidden;
+    margin-bottom: 0px !important;
+    background: #f6fbff;
+    padding-top: 30px;
+    padding-bottom: 30px;
+    .section-heading {
+      margin-bottom: 10px;
+    }
+    .subheading {
+      @include label(400);
+    }
+    .location-details {
+      margin-top: 10px;
+    }
+    button {
+      &.dd-slider-arrow {
+        width: 90px;
+        height: 90px;
+        top: 10px;
+        svg {
+          height: 24px;
+          width: 14px;
+        }
+        &.dd-next.slick-arrow {
+          right: -65px;
+          justify-content: flex-start;
+          svg {
+            margin-left: 20px;
+          }
+        }
+        &.dd-prev.slick-arrow {
+          left: -65px;
+          justify-content: flex-end;
+          svg {
+            margin-right: 20px;
+          }
+        }
+      }
+    }
+  }
 }

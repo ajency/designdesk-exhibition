@@ -259,3 +259,48 @@ $(ourWorkImageSlider).slick({
     }
   ]
 });
+
+// locations slider
+
+let locationsSlider = $('.locations-slider > .wp-block-group__inner-container');
+$(locationsSlider).slick({
+  arrows: false,
+  fade: true,
+  autoplay: true,
+  autoplaySpeed: 5000,
+  responsive: [
+    {
+      breakpoint: 767.98,
+      settings: {
+        arrows: true,
+        fade: false,
+        prevArrow: "<button class='dd-slider-arrow dd-prev'><svg fill=none height=20 viewBox='0 0 12 20'width=12 xmlns=http://www.w3.org/2000/svg><path d='M10 17.7773L2.22222 9.99957L10 2.22179'stroke=white stroke-linecap=round stroke-linejoin=round stroke-width=4 /></svg></button>",
+        nextArrow: "<button class='dd-slider-arrow dd-next'><svg fill=none height=20 viewBox='0 0 12 20'width=12 xmlns=http://www.w3.org/2000/svg><path d='M2 17.7773L9.77778 9.99957L2 2.22179'stroke=#2471B5 stroke-linecap=round stroke-linejoin=round stroke-width=4 /></svg></button>",
+      }
+    }
+  ]
+});
+
+function mapping(locationOnSlide){
+  locationOnSlide = locationOnSlide.split('_');
+  let mapState = locationOnSlide[1];
+  let mapLocation = locationOnSlide[0];
+
+  let ddMap = $('.map-section .map');
+  console.log(mapState);
+  $(ddMap).find('path').removeClass('active-state');
+  $(ddMap).find('path[data-state='+ mapState +']').addClass('active-state');
+  $(ddMap).find('g').removeClass('active-location');
+  $(ddMap).find('g[data-locationMarker='+ mapLocation +']').addClass('active-location');
+}
+
+let currectLocation = $(locationsSlider).find('.slick-current').attr('id');
+mapping(currectLocation);
+
+$(locationsSlider).on('beforeChange', function(event, slick, currentSlide, nextSlide){
+  let location_index = nextSlide;
+  let locationOnSlide = $(this).find('.location[data-slick-index='+ location_index +']').attr('id');
+
+  mapping(locationOnSlide);
+
+});
