@@ -563,11 +563,6 @@
       }
     }
   }
-  @media (max-width: 991.98px) {
-    .location-details {
-      flex-direction: column;
-    }
-  }
   @media (max-width: 767.98px) {
     overflow: hidden;
     margin-bottom: 0px !important;
@@ -582,6 +577,7 @@
     }
     .location-details {
       margin-top: 10px;
+      flex-direction: column;
     }
     button {
       &.dd-slider-arrow {
@@ -742,6 +738,11 @@
         bottom: 0px;
         left: 0px;
     }
+    }
+  }
+  @media (min-width: 768px){
+    .service-cards{
+      flex-direction: row;
     }
   }
   @media (max-width: 767.98px){
