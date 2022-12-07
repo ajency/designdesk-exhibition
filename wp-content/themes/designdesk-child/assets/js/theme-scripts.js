@@ -287,7 +287,6 @@ function mapping(locationOnSlide){
   let mapLocation = locationOnSlide[0];
 
   let ddMap = $('.map-section .map');
-  console.log(mapState);
   $(ddMap).find('path').removeClass('active-state');
   $(ddMap).find('path[data-state='+ mapState +']').addClass('active-state');
   $(ddMap).find('g').removeClass('active-location');
@@ -303,4 +302,13 @@ $(locationsSlider).on('beforeChange', function(event, slick, currentSlide, nextS
 
   mapping(locationOnSlide);
 
+});
+
+$('.map-marker').click(function(){
+  let markerState = $(this).data('statemarker');
+  let markerLocation = $(this).data('locationmarker');
+
+  let targetSlide = $(locationsSlider).find('.location[id='+ markerLocation + '_' + markerState +']').data('slick-index');
+  console.log(targetSlide);
+  $(locationsSlider).slick('slickGoTo', targetSlide);
 });
