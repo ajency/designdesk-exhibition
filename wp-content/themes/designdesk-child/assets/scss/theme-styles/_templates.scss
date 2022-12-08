@@ -1,0 +1,26 @@
+.page-template{
+    //Filters section
+    .dd-filters {
+        margin-bottom: 40px;
+        &__wraper {
+          display: flex;
+          justify-content: space-between;
+          gap: 20px;
+        }
+        @media(max-width:767.98px){
+          &__wraper{
+              flex-direction: column;
+          }
+        }
+      }
+    &-portfolio{
+        .page-intro{
+            margin-bottom: 30px !important;
+        }
+        hr{
+            &.wp-block-separator{
+                margin: 30px auto;
+            }
+        }
+    }
+}

@@ -342,7 +342,7 @@ function dd_portfolio_type() {
 			),
 				'public'      => true,
 				'has_archive' => true,
-				'rewrite'     => array( 'slug' => 'portfolio' ), // my custom slug
+				'rewrite'     => array( 'slug' => 'portfolios' ), // my custom slug
 				'menu_icon' => 'dashicons-portfolio',
 				'show_in_rest' => true,
 				'supports' => array( 'title', 'editor', 'excerpt', 'author', 'thumbnail', 'revisions', 'custom-fields', ),
@@ -367,7 +367,7 @@ function dd_register_taxonomy_industry() {
 		'update_item'       => __( 'Update Industry' ),
 		'add_new_item'      => __( 'Add New Industry' ),
 		'new_item_name'     => __( 'New Industry Name' ),
-		'menu_name'         => __( 'Industry' ),
+		'menu_name'         => __( 'Industries' ),
 	);
 	$args   = array(
 		'hierarchical'      => true, // make it hierarchical (like categories)

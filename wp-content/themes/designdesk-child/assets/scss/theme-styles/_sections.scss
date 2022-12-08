@@ -410,9 +410,6 @@
   .banner-heading {
     margin-bottom: 20px;
   }
-  .banner-text {
-    max-width: 549px;
-  }
   @media (max-width: 767.98px) {
     min-height: 500px;
     padding-top: 0px;
@@ -424,6 +421,13 @@
     }
     .seperator-horizontal-orange {
       margin: 30px 0 !important;
+    }
+  }
+}
+.Exhibition_Stands_In_India{
+  .hero-banner {
+    .banner-text {
+      max-width: 549px;
     }
   }
 }
