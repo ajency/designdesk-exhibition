@@ -89,6 +89,26 @@ form {
 
 
 // filters
+.field-group {
+  position: relative;
+  width: 100%;
+  label{
+    @include h4(500);
+    margin-bottom: 4px;
+  }
+  #reset-button{
+    display: none;
+    cursor: pointer;
+    height: 25px;
+    width: 25px;
+    background-image: url(../images/close-icon.svg);
+    background-size: contain;
+    position: absolute;
+    right: 20px;
+    top: 38.5px;
+    z-index: 1;
+  }
+}
 .select-hidden {
   display: none;
   visibility: hidden;

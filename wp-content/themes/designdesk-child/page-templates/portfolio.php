@@ -27,26 +27,36 @@
                         <div class="dd-filters">
                             <div class="dd-filters__wraper">
 
-                            <select class="dd-select" id="stallSizes">
-                                <option value="hide">Select Stall Size</option>
-                                <option value="1">100 sqm</option>
-                                <option value="2">120 sqm</option>
-                                <option value="3">200 sqm</option>
-                            </select> 
-
-                            <select class="dd-select" id="industries">
-                                <option value="hide">Select Industry</option>
-                                <option value="4">Pharmaceutical</option>
-                                <option value="5">Agriculture</option>
-                                <option value="6">Media and Telecommunication</option>
-                            </select> 
-
-                            <select class="dd-select" id="loactions">
-                                <option value="hide">Select Location</option>
-                                <option value="8">New Delhi</option>
-                                <option value="9">Germany</option>
-                                <option value="10">Bengaluru</option>
-                            </select> 
+                            <div class="field-group">
+                                <div id="reset-button" onclick="resetFilter(this)"></div>
+                                <label for="stallSize">Stall Size</label>
+                                <select class="dd-select" id="stallSizes">
+                                    <option value="hide">Select Stall Size</option>
+                                    <option value="1">100 sqm</option>
+                                    <option value="2">120 sqm</option>
+                                    <option value="3">200 sqm</option>
+                                </select> 
+                            </div>
+                            <div class="field-group">
+                                <label for="industries">Industry</label>
+                                <div id="reset-button" onclick="resetFilter(this)"></div>
+                                <select class="dd-select" id="industries">
+                                    <option value="hide">Select Industry</option>
+                                    <option value="4">Pharmaceutical</option>
+                                    <option value="5">Agriculture</option>
+                                    <option value="6">Media and Telecommunication</option>
+                                </select> 
+                            </div>
+                            <div class="field-group">
+                                <label for="locations">Location</label>
+                                <div id="reset-button" onclick="resetFilter(this)"></div>
+                                <select class="dd-select" id="locations">
+                                    <option value="hide">Select Location</option>
+                                    <option value="8">New Delhi</option>
+                                    <option value="9">Germany</option>
+                                    <option value="10">Bengaluru</option>
+                                </select> 
+                            </div>
 
                             </div>
                         </div>

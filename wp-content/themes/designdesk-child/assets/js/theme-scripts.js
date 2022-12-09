@@ -362,6 +362,7 @@ $('.dd-select').each(function(){
       $this.val($(this).attr('rel'));
       $(this).parent().find('li').removeClass('is-selected');
       $(this).addClass('is-selected');
+      $(this).parents('.field-group').find('#reset-button').show();
       $list.slideUp('fast');
       //console.log($this.val());
   });
@@ -400,3 +401,11 @@ $('#load-more').on('click', function() {
     }
   });
 });
+
+
+
+function resetFilter(element){
+  let defaultValue = $(element).parents('.field-group').find('.dd-select li[rel=hide]').text();
+    $(element).parents('.field-group').find('.select-styled').text(defaultValue);
+    $(element).hide();
+}
