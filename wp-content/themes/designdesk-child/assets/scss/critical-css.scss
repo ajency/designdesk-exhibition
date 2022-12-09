@@ -1,12 +1,12 @@
 .belowFold{
   visibility: hidden;
   opacity: 0;
-  transform: translateY(30px);
+  //transform: translateY(30px); (causing issue for the popups)
   transition: opacity 0.5s ease-in, transform 0.5s ease-in;
   &.in-viewport{
     visibility: visible;
     opacity: 1;
-    transform: translateY(0);
+    //transform: translateY(0);
   }
 }
 

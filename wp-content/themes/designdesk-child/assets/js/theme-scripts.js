@@ -81,6 +81,9 @@ function hidePopup(targetPopup){
   $(targetPopup).removeClass('opened');
   $('.dd-overlay').fadeOut('fast');
   $('body').removeClass('stopScroll');
+  players.forEach(function (el) {
+      el.stopVideo();
+  });
 }
 // popup trigger
 $('.dd-popupToggler').each(function(){
@@ -374,4 +377,26 @@ $('.dd-select').each(function(){
 $( ".service-card" ).each(function(){
   let cardLink = $(this).find('.gb-button').attr('href');
   $(this).wrap( "<a href='"+cardLink+"' class='service-card-outer-wrap'></a>" );
+});
+
+// load more
+let currentPage = 1;
+$('#load-more').on('click', function() {
+  currentPage++; // Do currentPage + 1, because we want to load the next page
+
+  $.ajax({
+    type: 'POST',
+    url: '/designdesk-exhibition/wp-admin/admin-ajax.php',
+    dataType: 'json',
+    data: {
+      action: 'weichie_load_more',
+      paged: currentPage,
+    },
+    success: function (res) {
+      if(currentPage >= res.max) {
+        $('#load-more').hide();
+      }
+      $('.dd-card-list').append(res.html);
+    }
+  });
 });

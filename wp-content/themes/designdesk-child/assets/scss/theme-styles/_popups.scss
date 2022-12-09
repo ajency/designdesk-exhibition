@@ -56,6 +56,12 @@
       }
     }
   }
+  &.video-popup{
+    .dd-popup__wraper{
+      height: calc(100vh - 105px);
+      margin: 65px auto 40px;
+    }
+  }
   @media(max-width: 767.98px){
     &-header{
       .dd-close{
