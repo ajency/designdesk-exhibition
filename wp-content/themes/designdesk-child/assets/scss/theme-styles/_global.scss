@@ -25,7 +25,7 @@
   display: inline-flex;
   align-items: center;
   a {
-    text-decoration: underline;
+    text-decoration: none;
     text-underline-offset: 0.2em;
     color: #2471b5;
     font-weight: 500;
@@ -33,6 +33,11 @@
     line-height: inherit;
     display: inline-flex;
     align-items: center;
+    @include dd-link;
+    &:after{
+      background-color: #2471b5;
+      bottom: 1px;
+    }
   }
   .icon {
     margin-left: 6px;
@@ -99,29 +104,47 @@
   padding: 0;
   margin: 0;
   background: #FFFFFF;
+  border-color: #2471B5;
   display: flex;
   align-items: center;
   justify-content: center;
-  &.dd-prev{
-    left: -32px;
+  svg{
+    path{
+      stroke: #2471B5;
+    }
+  }
+  &.slick-disabled{
     background: #2471B5;
     border-color: #FFFFFF;
+    svg{
+      path{
+        stroke: #FFFFFF;
+      }
+    }
+  }
+  &.dd-prev{
+    left: -32px;
   }
   &.dd-next{
     right: -32px;
+  }
+  &:not(.slick-disabled):hover, &:not(.slick-disabled):focus{
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    border-color: #FFFFFF;
     background: #FFFFFF;
-    border-color: #2471B5;
   }
   @media (min-width:768px){
-    &:hover{
+    &:not(.slick-disabled):hover, &:not(.slick-disabled):focus{
       box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
-    }
-    &.dd-prev:hover{
-      border-color: #2471B5;
-    }
-    &.dd-next:hover{
       border-color: #FFFFFF;
+      background: #FFFFFF;
     }
+    /* &.dd-prev:hover{
+      border-color: #2471B5;
+    } */
+    /* &.dd-next:hover{
+      border-color: #FFFFFF;
+    } */
   }
 }
 .slick-dots {

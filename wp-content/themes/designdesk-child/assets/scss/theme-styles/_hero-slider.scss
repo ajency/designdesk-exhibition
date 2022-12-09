@@ -97,6 +97,7 @@
     justify-content: center;
     opacity: 1 !important;
     box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25) !important;
+    transition: all 0.2s ease-in-out !important;
     img {
       display: none !important;
     }
@@ -109,6 +110,9 @@
       background-repeat: no-repeat;
       background-position: center;
       background-size: contain;
+    }
+    &:hover{
+      box-shadow: 0px 0px 0px rgba(0, 0, 0, 0) !important;
     }
   }
   .nextend-arrow-previous {

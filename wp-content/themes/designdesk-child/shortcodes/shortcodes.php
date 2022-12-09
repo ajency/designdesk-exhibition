@@ -259,15 +259,15 @@ function videos($atts){
             }
             $videoId = get_field('youtube_embed_id');
 
-                $output .=  '<div class="dd-card video-card" video-id="'.$videoId.'">';
+                $output .=  '<div class="dd-card video-card dd-popupToggler" video-id="'.$videoId.'" target-popup="#'.$videoPopupId.'">';
                     $output .=  '<div class="dd-card__wraper">';
                         $output .=  '<div class="card-image">';
                             $output .=  '<img src="'. $thumbnailUrl .'" alt="'.get_the_title().'" title="'.get_the_title().'" width="280" height="330">';
-                            $output .=  '<a class="play-button dd-popupToggler" target-popup="#'.$videoPopupId.'"></a>';
+                            $output .=  '<a class="play-button " ></a>';
                         $output .=  '</div>';
                         $output .=  '<div class="card-content">';
                             $output .=  '<div class="card-content__wraper">';
-                                $output .=  '<p class="card-title">'. substrwords($videoTitle, 75 ) .'</p>';
+                                $output .=  '<p class="card-title">'. substrwords($videoTitle, 70 ) .'</p>';
                             $output .=  '</div>';
                         $output .=  '</div>';
                     $output .=  '</div>';

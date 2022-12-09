@@ -16,6 +16,9 @@
   .section-heading,
   .link-with-icon a {
     color: #ffffff;
+    &:after{
+      background-color: #ffffff;
+    }
   }
   .link-with-icon svg path {
     stroke: #ffffff;
@@ -564,7 +567,16 @@
       }
       &:last-child {
         flex-basis: 40%;
+        display: grid;
+        justify-items: end;
       }
+    }
+  }
+  @media (min-width: 1200px){
+    .location-details{
+      max-width: 1078px;
+      margin-left: auto;
+      margin-right: auto;
     }
   }
   @media (max-width: 767.98px) {
@@ -606,6 +618,11 @@
             margin-right: 20px;
           }
         }
+      }
+    }
+    .wp-block-column{
+      &:last-child{
+        justify-content: center;
       }
     }
   }

@@ -73,8 +73,27 @@
     bottom: 0;
     width: 100%;
     .service-card-title {
+      //display: inline-flex;
       @include h3(600);
       margin-bottom: 0px;
+      text-decoration: underline;
+      text-underline-offset: 7px;
+      text-decoration-thickness: 1px;
+      text-decoration-color: #041925;
+      transition: all 0.2s ease-in-out;
+      /* position: relative;
+      &:after {
+        content: "";
+        width: 100%;
+        height: 1px;
+        background-color: #fff;
+        position: absolute;
+        left: 0;
+        bottom: -3px;
+        transform: scaleX(0);
+        transform-origin: bottom right;
+        transition: transform 0.3s ease-out;
+      } */
     }
   }
   .service-card-image {
@@ -118,6 +137,24 @@
       svg {
         path {
           stroke: #f48e0c;
+        }
+      }
+    }
+  }
+}
+.service-card-outer-wrap{
+  cursor: pointer;
+}
+@media (min-width:768px){
+  .service-card{
+    &:hover{
+      .service-card-details{
+        .service-card-title{
+          text-decoration-color: #ffffff;
+            /* &:after {
+              transform: scaleX(1);
+              transform-origin: bottom left;
+            } */
         }
       }
     }
@@ -364,6 +401,31 @@
         color: #ffffff;
         p {
           margin-bottom: 0px;
+        }
+      }
+    }
+    &.video-card{
+      .dd-card__wraper{
+        .card-content{
+          .card-title{
+            text-decoration: underline;
+            text-underline-offset: 7px;
+            text-decoration-thickness: 1px;
+            text-decoration-color: #041925;
+            transition: all 0.2s ease-in-out;
+          }
+        }
+      }
+      &.dd-popupToggler{
+        cursor: pointer;
+        &:hover{
+          .dd-card__wraper{
+            .card-content{
+              .card-title{
+                text-decoration-color: #ffffff;
+              }
+            }
+          }
         }
       }
     }

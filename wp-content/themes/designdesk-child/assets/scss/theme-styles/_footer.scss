@@ -50,7 +50,7 @@
   a {
     color: #fff;
     text-decoration: none;
-    /* position: relative;
+    position: relative;
     &:after {
       content: "";
       width: 100%;
@@ -68,7 +68,7 @@
         transform: scaleX(1);
         transform-origin: bottom left;
       }
-    } */
+    }
   }
   .menu {
     .menu-item {
@@ -194,6 +194,7 @@
             height: 100%;
             path {
               fill: #fff;
+              transition: fill 0.2s ease-in-out;
             }
           }
         }
@@ -222,6 +223,19 @@
     }
     &.footer-widgets-2, &.footer-widgets-3, &.footer-widgets-4{
       padding-left: 30px;
+    }
+    .social-links {
+      .social-link {
+        &:hover{
+          .icon {
+            svg {
+              path {
+                fill:#76c8fb;
+              }
+            }
+          }
+        }
+      }
     }
   }
   @media only screen and (max-width: 959.98px) {

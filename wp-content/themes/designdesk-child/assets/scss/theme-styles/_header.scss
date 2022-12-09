@@ -21,10 +21,11 @@
       outline: none;
       display: flex;
       align-items: center;
-      border: 0.5px solid #eeeeee;
+      border: none;
       border-radius: 100px;
       padding: 4px 10px;
       gap: 10px;
+      transition: background 0.2s ease-in-out;
       .icon {
         height: 20px;
         width: 20px;
@@ -35,6 +36,11 @@
           path {
             fill: #041925;
           }
+        }
+      }
+      @media (min-width: 768px){
+        &:hover{
+          background: #76c8fb;
         }
       }
     }
@@ -48,9 +54,24 @@
           }
           a {
             display: flex;
-            img {
+            img, svg {
               width: 20px;
               height: 20px;
+              path{
+                fill: #fff;
+                transition: fill 0.2s ease-in-out;
+              }
+            }
+          }
+          @media (min-width: 768px){
+            &:hover{
+              a{
+                svg{
+                  path{
+                    fill: #76c8fb;
+                  }
+                }
+              }
             }
           }
         }
@@ -162,6 +183,7 @@ header {
             & > li{
               & > a{
                 padding-bottom: 0px !important;
+                @include dd-link;
               }
               &.menu-item-has-children{
                 &:after{

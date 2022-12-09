@@ -197,6 +197,7 @@ function stopYtPlayer(element){
 // testimonial slider
 $('.testimonial-slider .wp-block-group__inner-container').slick({
   dots: true,
+  infinite: false,
   prevArrow: "<button class='dd-slider-arrow dd-prev'><svg fill=none height=20 viewBox='0 0 12 20'width=12 xmlns=http://www.w3.org/2000/svg><path d='M10 17.7773L2.22222 9.99957L10 2.22179'stroke=white stroke-linecap=round stroke-linejoin=round stroke-width=4 /></svg></button>",
   nextArrow: "<button class='dd-slider-arrow dd-next'><svg fill=none height=20 viewBox='0 0 12 20'width=12 xmlns=http://www.w3.org/2000/svg><path d='M2 17.7773L9.77778 9.99957L2 2.22179'stroke=#2471B5 stroke-linecap=round stroke-linejoin=round stroke-width=4 /></svg></button>",
   responsive: [
@@ -240,11 +241,13 @@ let ourWorkDetailsSlider = $('.our-work-details-slider > .wp-block-group__inner-
 let ourWorkNavigation = $('.our-work-slider-navigation');
 
 $(ourWorkDetailsSlider).slick({
+  infinite:false,
   arrows: false,
   asNavFor: ourWorkImageSlider,
 });
 
 $(ourWorkImageSlider).slick({
+  infinite:false,
   dots:true,
   prevArrow: "<button class='dd-slider-arrow dd-prev'><svg fill=none height=20 viewBox='0 0 12 20'width=12 xmlns=http://www.w3.org/2000/svg><path d='M10 17.7773L2.22222 9.99957L10 2.22179'stroke=white stroke-linecap=round stroke-linejoin=round stroke-width=4 /></svg></button>",
   nextArrow: "<button class='dd-slider-arrow dd-next'><svg fill=none height=20 viewBox='0 0 12 20'width=12 xmlns=http://www.w3.org/2000/svg><path d='M2 17.7773L9.77778 9.99957L2 2.22179'stroke=#2471B5 stroke-linecap=round stroke-linejoin=round stroke-width=4 /></svg></button>",
@@ -365,4 +368,10 @@ $('.dd-select').each(function(){
       $list.hide();
   });
 
+});
+
+// services cards
+$( ".service-card" ).each(function(){
+  let cardLink = $(this).find('.gb-button').attr('href');
+  $(this).wrap( "<a href='"+cardLink+"' class='service-card-outer-wrap'></a>" );
 });

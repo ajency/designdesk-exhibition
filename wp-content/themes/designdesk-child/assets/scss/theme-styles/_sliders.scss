@@ -442,7 +442,8 @@
 
 // locations slider
 .locations-slider {
-  max-width: 398px;
+  width: 100%;
+  max-width: 324px;
   .location {
     background: rgba(118, 200, 251, 0.8);
     padding: 30px;
@@ -495,6 +496,9 @@
         }
       }
     }
+  }
+  @media (min-width: 1200px){
+    max-width: 398px;
   }
   @media (max-width: 991.98px){
     .location{
