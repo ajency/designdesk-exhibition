@@ -364,7 +364,26 @@ $('.dd-select').each(function(){
       $(this).addClass('is-selected');
       $(this).parents('.field-group').find('#reset-button').show();
       $list.slideUp('fast');
-      //console.log($this.val());
+
+      let selectedListValue = $this.val();
+      let selectedListId = $($styledSelect.prev('select')).attr('id');
+
+      $.ajax({
+        type: 'POST',
+        url: '../wp-admin/admin-ajax.php',
+        dataType: 'json',
+        data: {
+          action: 'filter_portfolios',
+          paged: 1,
+          selectedListValue:  selectedListValue,
+          selectedListId: selectedListId
+        },
+        success: function (res) {
+          $('.dd-card-list').empty();
+          $('.dd-card-list').append(res.html);
+        }
+      });
+
   });
 
   $(document).click(function() {

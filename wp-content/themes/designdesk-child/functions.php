@@ -442,22 +442,64 @@ function weichie_load_more() {
   
 	if($ajaxposts->have_posts()) {
 		ob_start();
-	  while($ajaxposts->have_posts()) : $ajaxposts->the_post();
-		$response .=  get_template_part('template-parts/portfolio', 'card');;
-	  endwhile;
-	  $output = ob_get_contents();
-    ob_end_clean();
+	  	while($ajaxposts->have_posts()) : $ajaxposts->the_post();
+			$response .=  get_template_part('template-parts/portfolio', 'card');;
+	  	endwhile;
+	 	$output = ob_get_contents();
+    	ob_end_clean();
 	} else {
-	  $response = '';
+	  	$response = '';
 	}
 
 	$result = [
 		'max' => $max_pages,
 		'html' => $output,
-	  ];
+	];
   
-	  echo json_encode($result);
-	  exit;
-  }
-  add_action('wp_ajax_weichie_load_more', 'weichie_load_more');
-  add_action('wp_ajax_nopriv_weichie_load_more', 'weichie_load_more');
+	echo json_encode($result);
+	exit;
+}
+add_action('wp_ajax_weichie_load_more', 'weichie_load_more');
+add_action('wp_ajax_nopriv_weichie_load_more', 'weichie_load_more');
+
+function filter_portfolios(){
+	
+	$filterValue = $_POST['selectedListValue'];
+	$filterId = $_POST['selectedListId'];
+
+	$ajaxposts = new WP_Query([
+		'post_type' => 'dd_portfolio',
+		'posts_per_page' => 6,
+		'order_by' => 'date',
+		'order' => 'desc',
+		'meta_key'      => 'stall_size',
+		'meta_value'    => $filterValue,
+	  	'paged' => $_POST['paged'],
+	]);
+  
+	$response = '';
+	$max_pages = $ajaxposts->max_num_pages;
+  
+	if($ajaxposts->have_posts()) {
+		ob_start();
+	  	while($ajaxposts->have_posts()) : $ajaxposts->the_post();
+			$response .=  get_template_part('template-parts/portfolio', 'card');;
+	  	endwhile;
+	 	$output = ob_get_contents();
+    	ob_end_clean();
+	} else {
+	  	$response = '';
+	}
+
+	$result = [
+		'max' => $max_pages,
+		'filterValue' => $filterValue,
+		'filterId' => $filterId,
+		'html' => $output,
+	];
+  
+	echo json_encode($result);
+	exit;
+}
+add_action('wp_ajax_filter_portfolios', 'filter_portfolios');
+add_action('wp_ajax_nopriv_filter_portfolios', 'filter_portfolios');
