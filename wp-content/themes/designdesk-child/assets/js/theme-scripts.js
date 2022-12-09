@@ -386,7 +386,7 @@ $('#load-more').on('click', function() {
 
   $.ajax({
     type: 'POST',
-    url: '/designdesk-exhibition/wp-admin/admin-ajax.php',
+    url: '../wp-admin/admin-ajax.php',
     dataType: 'json',
     data: {
       action: 'weichie_load_more',
