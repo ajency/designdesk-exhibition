@@ -13,7 +13,10 @@ function resetFilter(element){
 }
 
 function filterPostType() {
+  currentPage = 1;
+
   //console.log("Filtered current page : " + currentPage);
+  
   let selectList = $(".dd-filters").find("ul.dd-select");
 
   let filterValues = [];
@@ -62,7 +65,7 @@ function filterPostType() {
     dataType: "json",
     data: {
       action: "filter_portfolios",
-      paged: 1,
+      paged: currentPage,
       stall_size,
       industry,
       location,
@@ -70,11 +73,12 @@ function filterPostType() {
     success: function (res) {
       $(".dd-card-list").empty();
       $(".dd-card-list").append(res.html);
+
       //console.log("maximum filtered pages : " + res.max);
+
       if(res.max > 1){
         $('#load-more').show();
-        //currentPage++;
-        dd_load_more_data( 1, res.max, res.stallSize, res.industry, res.location);
+        dd_load_more_data( currentPage, res.max, res.stallSize, res.industry, res.location);
       }else{
         $('#load-more').hide();
       }
