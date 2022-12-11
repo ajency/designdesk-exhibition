@@ -275,6 +275,9 @@ include('shortcodes/shortcodes.php');
 /* widgets */
 include('widgets/all_widgets.php');
 
+/* Filters */
+include('filters/filters.php');
+
 /* enqueue stylesheets */
 add_action( 'wp_enqueue_scripts', 'enqueue_child_theme_styles' );
 
@@ -294,6 +297,8 @@ function enqueue_child_theme_scripts() {
 	wp_register_script( 'critical-scripts', get_stylesheet_directory_uri().'/assets/js/critical-scripts.js' , '', '0.1', false );
 	wp_register_script( 'slick-script', get_stylesheet_directory_uri().'/assets/js/slick.min.js' , '', '3.6.1', true );
 	wp_register_script( 'theme-scripts', get_stylesheet_directory_uri().'/assets/js/theme-scripts.js' , '', '0.1', true );
+	wp_register_script( 'filters-scripts', get_stylesheet_directory_uri().'/assets/js/filters.js' , '', '0.1', true );
+
 
     wp_localize_script( 'theme-scripts', 'ajax_params', array(
 		'url' => site_url() . '/wp-admin/admin-ajax.php', 
@@ -302,6 +307,7 @@ function enqueue_child_theme_scripts() {
     wp_enqueue_script('critical-scripts');
 	wp_enqueue_script('slick-script');
 	wp_enqueue_script('theme-scripts');
+	wp_enqueue_script('filters-scripts');
 }
 add_action("wp_enqueue_scripts", "enqueue_child_theme_scripts");
 
@@ -427,79 +433,149 @@ function substrwords($text, $maxchar, $end='...') {
     return $output;
 }
 
+// clear string
+
+function cleanStr($string){
+    // Replaces all spaces with hyphens.
+    $string = str_replace(' ', '-', $string);
+
+    // Removes special chars.
+    $string = preg_replace('/[^A-Za-z0-9\-]/', '', $string);
+    // Replaces multiple hyphens with single one.
+    $string = preg_replace('/-+/', '-', $string);
+    
+    return strtolower($string);
+}
+
 // load more
-function weichie_load_more() {
-	$ajaxposts = new WP_Query([
+function dd_load_more_next_page(){
+	$industry = $_POST['industry'];
+	$stallSize = $_POST['stallSize'];
+	$location = $_POST['location'];
+
+	$args = [
 		'post_type' => 'dd_portfolio',
-		'posts_per_page' => 6,
+		'posts_per_page' => 3,
 		'order_by' => 'date',
 		'order' => 'desc',
-	  'paged' => $_POST['paged'],
-	]);
-  
-	$response = '';
-	$max_pages = $ajaxposts->max_num_pages;
-  
-	if($ajaxposts->have_posts()) {
-		ob_start();
-	  	while($ajaxposts->have_posts()) : $ajaxposts->the_post();
-			$response .=  get_template_part('template-parts/portfolio', 'card');;
-	  	endwhile;
-	 	$output = ob_get_contents();
-    	ob_end_clean();
-	} else {
-	  	$response = '';
-	}
-
-	$result = [
-		'max' => $max_pages,
-		'html' => $output,
-	];
-  
-	echo json_encode($result);
-	exit;
-}
-add_action('wp_ajax_weichie_load_more', 'weichie_load_more');
-add_action('wp_ajax_nopriv_weichie_load_more', 'weichie_load_more');
-
-function filter_portfolios(){
-	
-	$filterValue = $_POST['selectedListValue'];
-	$filterId = $_POST['selectedListId'];
-
-	$ajaxposts = new WP_Query([
-		'post_type' => 'dd_portfolio',
-		'posts_per_page' => 6,
-		'order_by' => 'date',
-		'order' => 'desc',
-		'meta_key'      => 'stall_size',
-		'meta_value'    => $filterValue,
 	  	'paged' => $_POST['paged'],
-	]);
-  
+	];
+
+	if(!empty($industry)){
+		$args['tax_query'][] = [
+			'taxonomy' => 'dd_industries',
+			'field'    => 'slug',
+			'terms'    => $industry,
+		];
+	}
+	
+	if(!empty($location)){
+		$args['meta_query']['relation'] = 'AND';
+		$args['meta_query'][] = [
+			'key'       => 'location',
+			'value'     => $location,
+			'compare'   => '=',
+		];
+	}
+
+	if(!empty($stallSize)){
+		$args['meta_query'][] = [
+			'key'       => 'stall_size',
+			'value'     => $stallSize,
+			'compare'   => '=',
+		];
+	}
+
+	$ajaxposts = new WP_Query($args);
+
 	$response = '';
 	$max_pages = $ajaxposts->max_num_pages;
   
 	if($ajaxposts->have_posts()) {
 		ob_start();
 	  	while($ajaxposts->have_posts()) : $ajaxposts->the_post();
-			$response .=  get_template_part('template-parts/portfolio', 'card');;
+			$response .=  get_template_part('template-parts/card', 'portfolio');
 	  	endwhile;
 	 	$output = ob_get_contents();
     	ob_end_clean();
-	} else {
-	  	$response = '';
 	}
 
 	$result = [
 		'max' => $max_pages,
-		'filterValue' => $filterValue,
-		'filterId' => $filterId,
+		'stallSize' => $stallSize,
+		'industry' => $industry,
+		'location' => $location,
 		'html' => $output,
 	];
   
 	echo json_encode($result);
 	exit;
 }
-add_action('wp_ajax_filter_portfolios', 'filter_portfolios');
-add_action('wp_ajax_nopriv_filter_portfolios', 'filter_portfolios');
+add_action('wp_ajax_dd_load_more_next_page', 'dd_load_more_next_page');
+add_action('wp_ajax_nopriv_dd_load_more_next_page', 'dd_load_more_next_page');
+
+function dd_load_more(){
+	$industry = $_POST['filtredIndustry'];
+	$stallSize = $_POST['filtredStallSize'];
+	$location = $_POST['filtredLocation'];
+
+	$args = [
+		'post_type' => 'dd_portfolio',
+		'posts_per_page' => 3,
+		'order_by' => 'date',
+		'order' => 'desc',
+	  	'paged' => $_POST['paged'],
+	];
+
+	if(!empty($industry)){
+		$args['tax_query'][] = [
+			'taxonomy' => 'dd_industries',
+			'field'    => 'slug',
+			'terms'    => $industry,
+		];
+	}
+	
+	if(!empty($location)){
+		$args['meta_query']['relation'] = 'AND';
+		$args['meta_query'][] = [
+			'key'       => 'location',
+			'value'     => $location,
+			'compare'   => '=',
+		];
+	}
+
+	if(!empty($stallSize)){
+		$args['meta_query'][] = [
+			'key'       => 'stall_size',
+			'value'     => $stallSize,
+			'compare'   => '=',
+		];
+	}
+
+	$ajaxposts = new WP_Query($args);
+
+	$response = '';
+	$max_pages = $ajaxposts->max_num_pages;
+  
+	if($ajaxposts->have_posts()) {
+		ob_start();
+	  	while($ajaxposts->have_posts()) : $ajaxposts->the_post();
+			$response .=  get_template_part('template-parts/card', 'portfolio');
+	  	endwhile;
+	 	$output = ob_get_contents();
+    	ob_end_clean();
+	}
+
+	$result = [
+		'max' => $max_pages,
+		'stallSize' => $stallSize,
+		'industry' => $industry,
+		'location' => $location,
+		'html' => $output,
+	];
+  
+	echo json_encode($result);
+	exit;
+}
+add_action('wp_ajax_dd_load_more', 'dd_load_more');
+add_action('wp_ajax_nopriv_dd_load_more', 'dd_load_more');

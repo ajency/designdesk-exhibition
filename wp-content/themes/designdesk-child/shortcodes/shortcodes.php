@@ -156,7 +156,7 @@ function portfolios($atts){
                                                         $output .=  '<li class="label-med-500"><img class="icon" src="'. get_site_url() .'/wp-content/themes/designdesk-child/assets/images/location.svg">Location : '.$portfolioLocation.'</li>';
                                                     endif;
                                                     if($stallSize):
-                                                        $output .=  '<li class="label-med-500"><img class="icon" src="'. get_site_url() .'/wp-content/themes/designdesk-child/assets/images/size-icon.svg">Size : '.$stallSize.' sqm</li>';
+                                                        $output .=  '<li class="label-med-500"><img class="icon" src="'. get_site_url() .'/wp-content/themes/designdesk-child/assets/images/size-icon.svg">Size : '.$stallSize.'/li>';
                                                     endif;
                                                 $output .=  '</ul>';
                                             $output .=  '</div>';

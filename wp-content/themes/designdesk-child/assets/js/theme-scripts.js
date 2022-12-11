@@ -316,7 +316,7 @@ if($('.location-details').is(":visible")){
     let markerLocation = $(this).data('locationmarker');
   
     let targetSlide = $(locationsSlider).find('.location[id='+ markerLocation + '_' + markerState +']').data('slick-index');
-    console.log(targetSlide);
+    //console.log(targetSlide);
     $(locationsSlider).slick('slickGoTo', targetSlide);
   });
 }
@@ -339,10 +339,12 @@ $('.dd-select').each(function(){
   for (var i = 0; i < numberOfOptions; i++) {
       $('<li />', {
           text: $this.children('option').eq(i).text(),
-          rel: $this.children('option').eq(i).val()
+          class: $this.children('option').eq(i).attr('class'),
+          'data-value': $this.children('option').eq(i).val(),
+          'data-slug': $this.children('option').eq(i).data('slug'),
       }).appendTo($list);
       if ($this.children('option').eq(i).is(':selected')){
-        $('li[rel="' + $this.children('option').eq(i).val() + '"]').addClass('is-selected')
+        $('li[data-value="' + $this.children('option').eq(i).val() + '"]').addClass('is-selected')
       }
   }
 
@@ -359,31 +361,11 @@ $('.dd-select').each(function(){
   $listItems.click(function(e) {
       e.stopPropagation();
       $styledSelect.text($(this).text()).removeClass('active');
-      $this.val($(this).attr('rel'));
+      $this.val($(this).attr('data-value'));
       $(this).parent().find('li').removeClass('is-selected');
       $(this).addClass('is-selected');
       $(this).parents('.field-group').find('#reset-button').show();
       $list.slideUp('fast');
-
-      let selectedListValue = $this.val();
-      let selectedListId = $($styledSelect.prev('select')).attr('id');
-
-      $.ajax({
-        type: 'POST',
-        url: '../wp-admin/admin-ajax.php',
-        dataType: 'json',
-        data: {
-          action: 'filter_portfolios',
-          paged: 1,
-          selectedListValue:  selectedListValue,
-          selectedListId: selectedListId
-        },
-        success: function (res) {
-          $('.dd-card-list').empty();
-          $('.dd-card-list').append(res.html);
-        }
-      });
-
   });
 
   $(document).click(function() {
@@ -399,32 +381,42 @@ $( ".service-card" ).each(function(){
   $(this).wrap( "<a href='"+cardLink+"' class='service-card-outer-wrap'></a>" );
 });
 
-// load more
 let currentPage = 1;
-$('#load-more').on('click', function() {
-  currentPage++; // Do currentPage + 1, because we want to load the next page
+let filtredStallSize, filtredIndustry, filtredLocation;
+
+function dd_load_more_data(currentPage, maxPages, stallSize, industry, location){
+  filtredStallSize = stallSize;
+  filtredIndustry = industry;
+  filtredLocation = location;
+}
+
+/* console.log("current page : "+ currentPage);
+console.log("next page : "+ (currentPage + 1)); */
+
+$('#load-more').click(function(){
+  currentPage++;
+
+  //console.log("currentPage : " + currentPage, filtredStallSize, filtredIndustry, filtredLocation);
 
   $.ajax({
     type: 'POST',
-    url: '../wp-admin/admin-ajax.php',
-    dataType: 'json',
+    url: "../wp-admin/admin-ajax.php",
+    dataType: "json",
     data: {
-      action: 'weichie_load_more',
+      action: "dd_load_more",
       paged: currentPage,
+      filtredStallSize,
+      filtredIndustry,
+      filtredLocation,
     },
     success: function (res) {
-      if(currentPage >= res.max) {
+      //console.log("current page : "+ currentPage);
+      //console.log("next page : "+ res.max);
+      $(".dd-card-list").append(res.html);
+      if(currentPage >= res.max ){
         $('#load-more').hide();
       }
-      $('.dd-card-list').append(res.html);
     }
   });
+
 });
-
-
-
-function resetFilter(element){
-  let defaultValue = $(element).parents('.field-group').find('.dd-select li[rel=hide]').text();
-    $(element).parents('.field-group').find('.select-styled').text(defaultValue);
-    $(element).hide();
-}

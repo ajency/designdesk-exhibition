@@ -66,7 +66,7 @@
                                         <li class="label-med-500"><img class="icon" src="<?php echo get_site_url() ?>/wp-content/themes/designdesk-child/assets/images/location.svg">Location : <?php echo $portfolioLocation ?></li>
                                     <?php endif;
                                     if($stallSize): ?>
-                                        <li class="label-med-500"><img class="icon" src="<?php echo get_site_url() ?>/wp-content/themes/designdesk-child/assets/images/size-icon.svg">Size : <?php echo $stallSize ?> sqm</li>
+                                        <li class="label-med-500"><img class="icon" src="<?php echo get_site_url() ?>/wp-content/themes/designdesk-child/assets/images/size-icon.svg">Size : <?php echo $stallSize ?></li>
                                     <?php endif; ?>
                                 </ul>
                             </div>

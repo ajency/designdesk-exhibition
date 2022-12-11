@@ -181,7 +181,7 @@ form {
       font-weight: 500;
       background: rgba(118, 200, 251, 0.6);
     }
-    &[rel="hide"] {
+    &[data-value="hide"] {
       display: none;
     }
   }
