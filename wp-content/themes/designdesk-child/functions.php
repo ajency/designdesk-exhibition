@@ -579,3 +579,26 @@ function dd_load_more(){
 }
 add_action('wp_ajax_dd_load_more', 'dd_load_more');
 add_action('wp_ajax_nopriv_dd_load_more', 'dd_load_more');
+
+
+// Post reading time
+function post_read_time() {
+ 
+	// get the post content
+	$content = get_post_field( 'post_content', get_the_ID());
+	 
+	// count the words
+	$word_count = str_word_count( strip_tags( $content ) );
+	 
+	// reading time itself	
+	$readingtime = ceil($word_count / 100);
+	 
+	if ($readingtime == 1) {
+	 $timer = " min read";
+	} else {
+	 $timer = " min read";
+	}
+
+	$totalreadingtime = $readingtime . $timer;
+	return $totalreadingtime;
+}

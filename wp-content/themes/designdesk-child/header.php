@@ -82,6 +82,10 @@ do_action( 'genesis_before_header' );
 //do_action( 'genesis_header' );
 include 'theme-templates/header.php';
 
+if ( is_single() && 'post' == get_post_type() ) {
+	include 'template-parts/breadcrumb.php';
+}
+
 /**
  * Fires immediately after the `genesis_header` action hook, before the site inner opening markup.
  *
