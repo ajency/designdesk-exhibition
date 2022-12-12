@@ -85,26 +85,30 @@ function hidePopup(targetPopup){
       el.stopVideo();
   });
 }
-// popup trigger
-$('.dd-popupToggler').each(function(){
-  $(this).click(function(e){
-    e.stopPropagation();
-    let targetPopup = $(this).attr('target-popup');
-    showPopup(targetPopup);
+
+function loadScripts(){
+  // popup trigger
+  $('.dd-popupToggler').each(function(){
+    $(this).click(function(e){
+      e.stopPropagation();
+      let targetPopup = $(this).attr('target-popup');
+      showPopup(targetPopup);
+    });
   });
-});
-// close popup
-$('.dd-close').click(function(){
-  let targetPopup = $(this).parents('.dd-popup').attr('id');
-  hidePopup('#'+targetPopup);
-});
-// close popup on outside click
-$(document).click(function(){
-  hidePopup('.dd-popup');
-});
-$('.main-content').click(function(event){
-  event.stopPropagation();
-});
+  // close popup
+  $('.dd-close').click(function(){
+    let targetPopup = $(this).parents('.dd-popup').attr('id');
+    hidePopup('#'+targetPopup);
+  });
+  // close popup on outside click
+  $(document).click(function(){
+    hidePopup('.dd-popup');
+  });
+  $('.main-content').click(function(event){
+    event.stopPropagation();
+  });
+}
+loadScripts();
 
 // portfolio gallery slider
 $('.portfolio-gallery-slider').each(function(){
@@ -152,6 +156,76 @@ $('.portfolio-thumbnail-carousel').each(function(){
     variableWidth: false,
   });
 });
+
+function destroySlickSlider(){
+  $('.portfolio-gallery-slider').each(function(){
+    let uniqueClass = '.slider-'+$(this).data('class');
+    let uniqueDotsClass = '.dd-slider-dots-'+$(this).data('class');
+    let thumbnailSlider = '.carousel-'+$(this).data('class');
+
+    if($(uniqueClass).hasClass('slick-initialized')){
+      $(uniqueClass).slick('unslick');
+      //console.log(uniqueClass + " slider destroyed!");
+    }
+
+    if($(thumbnailSlider).hasClass('slick-initialized')){
+      $(thumbnailSlider).slick('unslick');
+      //console.log(thumbnailSlider + " thumbnail slider destroyed!");
+    }
+  });
+}
+
+function applySlider(){
+  // portfolio gallery slider
+  $('.portfolio-gallery-slider').each(function(){
+    let uniqueClass = '.slider-'+$(this).data('class');
+    let uniqueDotsClass = '.dd-slider-dots-'+$(this).data('class');
+    let thumbnailSlider = '.carousel-'+$(this).data('class');
+
+    $(uniqueClass).slick({
+      slidesToShow: 1,
+      slidesToScroll: 1,
+      arrows: true,
+      dots:true,
+      fade: true,
+      speed: 600,
+      appendDots: $(uniqueDotsClass),
+      asNavFor: thumbnailSlider,
+      infinite: false,
+      prevArrow: "<button class='dd-slider-arrow dd-prev'><svg fill=none height=20 viewBox='0 0 12 20'width=12 xmlns=http://www.w3.org/2000/svg><path d='M10 17.7773L2.22222 9.99957L10 2.22179'stroke=white stroke-linecap=round stroke-linejoin=round stroke-width=4 /></svg></button>",
+      nextArrow: "<button class='dd-slider-arrow dd-next'><svg fill=none height=20 viewBox='0 0 12 20'width=12 xmlns=http://www.w3.org/2000/svg><path d='M2 17.7773L9.77778 9.99957L2 2.22179'stroke=#2471B5 stroke-linecap=round stroke-linejoin=round stroke-width=4 /></svg></button>",
+      responsive: [
+        {
+          breakpoint: 767.98,
+          settings: {
+            arrows: false,
+            dots: false
+          }
+        }
+      ]
+    });
+
+    //console.log("applied slider!");
+  });
+  // porfolio thumbnail carousel
+  $('.portfolio-thumbnail-carousel').each(function(){
+    let uniqueCarousel = '.carousel-'+$(this).data('class');
+    let mainSlider = '.slider-'+$(this).data('class');
+    $(uniqueCarousel).slick({
+      slidesToShow: 3,
+      slidesToScroll: 1,
+      arrows: false,
+      infinite: false,
+      dots:false,
+      speed: 600,
+      asNavFor: mainSlider,
+      centerMode: false,
+      focusOnSelect: true,
+      variableWidth: false,
+    });
+    //console.log("applied carousel!");
+  });
+}
 
 // Youtube video player
 var tag = document.createElement('script');
@@ -410,12 +484,16 @@ $('#load-more').click(function(){
       filtredLocation,
     },
     success: function (res) {
+      destroySlickSlider();
       //console.log("current page : "+ currentPage);
       //console.log("next page : "+ res.max);
       $(".dd-card-list").append(res.html);
       if(currentPage >= res.max ){
         $('#load-more').hide();
       }
+      // Load Scripts
+      loadScripts();
+      applySlider();
     }
   });
 

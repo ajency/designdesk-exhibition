@@ -71,6 +71,7 @@ function filterPostType() {
       location,
     },
     success: function (res) {
+      destroySlickSlider();
       $(".dd-card-list").empty();
       $(".dd-card-list").append(res.html);
 
@@ -82,6 +83,9 @@ function filterPostType() {
       }else{
         $('#load-more').hide();
       }
+      // Load Scripts
+      loadScripts();
+      applySlider();
     },
   });
 }
