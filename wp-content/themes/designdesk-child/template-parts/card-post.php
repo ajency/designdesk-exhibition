@@ -5,13 +5,19 @@ $postTitle = get_the_title();
 $postDate = get_the_date('F j, Y');
 $postUrl = get_permalink($postId);
 
+if (get_the_post_thumbnail()) {
+    $thumbnailUrl = get_the_post_thumbnail_url();
+} else {
+    $thumbnailUrl = get_site_url() . '/wp-content/themes/designdesk-child/assets/images/placeholder-square.jpg';
+}
+
 ?>
 
 <div class="dd-card post-card">
     <a href="<?php echo $postUrl ?>" class="card-link" target="_blank">
         <div class="dd-card__wraper">
             <div class="card-image">
-                <img src="http://localhost/designdesk-exhibition/wp-content/uploads/2022/11/video-thumbnail-1.jpg" alt="Exhibition Stall Design" title="Exhibition Stall Design" width="280" height="330">
+                <img src="<?php echo $thumbnailUrl ?>" alt="<?php echo $postTitle ?>" title="<?php echo $postTitle ?>" width="280" height="330">
             </div>
             <div class="card-content">
                 <div class="card-content__wraper">
