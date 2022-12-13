@@ -309,7 +309,13 @@ $(window).on("resize, load", function () {
       let slide = $(this).find('.slick-slide:not(.slick-current)');
       $(slide).find('.award-title').hide("slow");
     });
-  }
+
+    // Related posts sldier
+    $('.related-posts .dd-card-list').slick({
+      arrows:false,
+      dots:true,
+    });
+}
 });
 
 //our work sliders

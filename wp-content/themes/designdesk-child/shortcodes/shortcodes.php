@@ -267,7 +267,7 @@ function videos($atts){
                         $output .=  '</div>';
                         $output .=  '<div class="card-content">';
                             $output .=  '<div class="card-content__wraper">';
-                                $output .=  '<p class="card-title">'. substrwords($videoTitle, 70 ) .'</p>';
+                                $output .=  '<p class="card-title">'. substrwords($videoTitle, 60 ) .'</p>';
                             $output .=  '</div>';
                         $output .=  '</div>';
                     $output .=  '</div>';

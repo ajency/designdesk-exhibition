@@ -87,7 +87,7 @@
         letter-spacing: 0.1px;
         color: #041925;
         margin-bottom: 6px;
-        strong{
+        strong {
           font-weight: 600;
         }
       }
@@ -119,14 +119,14 @@
           }
         }
       }
-      .lists-column{
+      .lists-column {
         gap: 0px;
-        .wp-block-column{
-          &:not(:last-child){
+        .wp-block-column {
+          &:not(:last-child) {
             padding-right: 20px;
-            border-right: 1px solid #EEEEEE;
+            border-right: 1px solid #eeeeee;
           }
-          &:not(:first-child){
+          &:not(:first-child) {
             padding-left: 20px;
           }
         }
@@ -154,41 +154,178 @@
           }
         }
       }
-      .post-content{
-        .lists-column{
+      .post-content {
+        .lists-column {
           gap: 20px;
-          .wp-block-column{
-            &:not(:last-child){
+          .wp-block-column {
+            &:not(:last-child) {
               padding-right: 0px;
               border-right: none;
             }
-            &:not(:first-child){
+            &:not(:first-child) {
               padding-left: 0px;
             }
           }
         }
-        .dd-caption{
+        .dd-caption {
           margin-bottom: 20px;
         }
-        .wp-block-image{
-          figcaption{
+        .wp-block-image {
+          figcaption {
             text-align: left;
           }
         }
-        .wp-block-columns{
+        .wp-block-columns {
           margin-bottom: 30px;
-          &.order-reverse-mob{
+          &.order-reverse-mob {
             flex-direction: column-reverse;
           }
         }
-        h3{
+        h3 {
           @include h4(600);
           margin-bottom: 10px;
         }
-        .mb-40{
+        .mb-40 {
           margin-bottom: 30px !important;
         }
       }
+      .bg-image-cta{
+        margin-top: 60px !important;
+        margin-bottom: 60px !important;
+      }
+    }
+  }
+}
+
+// Post Footer
+.post-footer {
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  align-items: center;
+  align-content: center;
+  padding-bottom: 20px;
+  border-bottom: 2px solid #eeeeee;
+  margin-top: 60px;
+  margin-bottom: 60px;
+  @media(max-width:767.98px){
+    margin-top: 30px;
+    margin-bottom: 30px;
+    grid-template-columns: 1fr;
+    justify-items: start;
+    grid-gap: 30px;
+    padding-bottom: 30px;
+  }
+}
+
+.post-tags-container,
+.post-share-container {
+  display: flex;
+  gap: 13px 10px;
+  p {
+    margin-bottom: 0px;
+  }
+  .title {
+    @include h4(400);
+  }
+  ul {
+    display: flex;
+    align-items: center;
+    gap: 11px;
+    margin-bottom: 0px;
+    padding: 0px;
+    flex-wrap: wrap;
+    li {
+      list-style-type: none;
+    }
+  }
+  @media (max-width: 767.98px){
+    flex-direction: column;
+    .title{
+      @include body(600);
+    }
+    ul{
+      gap:10px;
+    }
+  }
+}
+
+.post-tags-container {
+  .tags {
+    .tag {
+      background: #ffffff;
+      border: 1px solid #eeeeee;
+      padding: 2px 8px;
+      height: 25px;
+      display: flex;  
+      transition: all 0.2s ease-in-out;
+      a {
+        @include label(400);
+        color: #041925 !important;
+        text-decoration: none !important;
+        transition: all 0.2s ease-in-out;
+      }
+      &:hover{
+        border-color: #041925;
+        a{
+          font-weight: 500;
+        }
+      }
+    }
+  }
+}
+
+.post-share-container {
+  justify-content: flex-end;
+  .social-share {
+    gap: 6px;
+    .share {
+      .icon {
+        height: 24px;
+        width: 24px;
+        display: block;
+        svg {
+          height: 100%;
+          width: 100%;
+          path {
+            fill: #2471b5;
+            transition: fill 0.2s ease-in-out;
+          }
+        }
+      }
+      &:hover{
+        .icon{
+          svg{
+            path{
+              fill: #76c8fb;
+            }
+          }
+        }
+      }
+    }
+  }
+  @media (max-width: 767.98px){
+    .social-share{
+      gap: 20px;
+      .share{
+        .icon{
+          height: 40px;
+          width: 40px;
+        }
+      }
+    }
+  }
+}
+
+//Related posts
+.related-posts{
+  .section-heading{
+    margin-bottom: 40px;
+    font-weight: 500;
+  }
+  @media (max-width: 767.98px){
+    .section-heading{
+      margin-bottom: 20px;
+      @include h3(500);
     }
   }
 }

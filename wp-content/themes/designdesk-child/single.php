@@ -16,6 +16,12 @@
                         </div>
                     </div>
 
+                    <!-- Post Footer -->
+                    <?php get_template_part('template-parts/post', 'footer'); ?>
+
+                    <!-- Related Posts -->
+                    <?php get_template_part('template-parts/post', 'related'); ?>
+
                     <!-- CTA -->
                     <?php get_template_part('template-parts/content', 'cta'); ?>
                 </div>

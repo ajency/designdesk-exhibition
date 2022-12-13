@@ -9,8 +9,8 @@
   overflow: hidden;
   position: relative;
 
-  &:before{
-    content: '';
+  &:before {
+    content: "";
     position: absolute;
     width: 204px;
     height: 204px;
@@ -20,18 +20,18 @@
     left: -15%;
     top: -10%;
   }
-  &.india{
-    &:before{
+  &.india {
+    &:before {
       background-image: url(../images/india-symbol.svg);
     }
   }
-  &.europe{
-    &:before{
+  &.europe {
+    &:before {
       background-image: url(../images/europe-symbol.svg);
     }
   }
-  &.worldwide{
-    &:before{
+  &.worldwide {
+    &:before {
       background-image: url(../images/world-symbol.svg);
     }
   }
@@ -46,7 +46,7 @@
     right: 30px;
     bottom: 40px;
     display: flex;
-    a{
+    a {
       background-color: transparent !important;
       font-size: 0px;
       height: 100%;
@@ -55,7 +55,7 @@
       margin: 0px;
       box-shadow: none !important;
     }
-    @media (max-width: 992px){
+    @media (max-width: 992px) {
       bottom: 30px;
     }
   }
@@ -142,16 +142,16 @@
     }
   }
 }
-.service-card-outer-wrap{
+.service-card-outer-wrap {
   cursor: pointer;
 }
-@media (min-width:768px){
-  .service-card{
-    &:hover{
-      .service-card-details{
-        .service-card-title{
+@media (min-width: 768px) {
+  .service-card {
+    &:hover {
+      .service-card-details {
+        .service-card-title {
           text-decoration-color: #ffffff;
-            /* &:after {
+          /* &:after {
               transform: scaleX(1);
               transform-origin: bottom left;
             } */
@@ -360,7 +360,12 @@
   grid-gap: 20px;
   .dd-card {
     overflow: hidden;
+    .card-link {
+      color: inherit !important;
+      text-decoration: none !important;
+    }
     &__wraper {
+      position: relative;
       .card-image {
         position: relative;
         height: 240px;
@@ -402,29 +407,88 @@
         p {
           margin-bottom: 0px;
         }
-      }
-    }
-    &.video-card{
-      .dd-card__wraper{
-        .card-content{
-          .card-title{
-            text-decoration: underline;
-            text-underline-offset: 7px;
-            text-decoration-thickness: 1px;
-            text-decoration-color: #041925;
-            transition: all 0.2s ease-in-out;
+        .card-title {
+          min-height: 50.4px;
+          @include h4(400);
+          text-decoration: underline;
+          text-underline-offset: 7px;
+          text-decoration-thickness: 1px;
+          text-decoration-color: transparent;
+          transition: all 0.2s ease-in-out;
+        }
+        .date {
+          @include label(400);
+          margin-top: 10px;
+          margin-bottom: 9px;
+        }
+        .link-with-icon {
+          a {
+            color: #f48e0c;
+            font-family: "Montserrat";
+            font-style: normal;
+            font-weight: 500;
+            font-size: 16px;
+            line-height: 140%;
+            text-transform: uppercase;
+            &:after {
+              background-color: #f48e0c;
+            }
+          }
+          .icon {
+            svg {
+              path {
+                stroke: #f48e0c;
+              }
+            }
           }
         }
       }
-      &.dd-popupToggler{
-        cursor: pointer;
-        &:hover{
-          .dd-card__wraper{
-            .card-content{
-              .card-title{
-                text-decoration-color: #ffffff;
+    }
+    cursor: pointer;
+    &:hover {
+      .dd-card__wraper {
+        .card-content {
+          .card-title {
+            text-decoration-color: #ffffff !important;
+          }
+          .link-with-icon {
+            a {
+              &:after {
+                transform: scaleX(1);
+                transform-origin: bottom left;
               }
             }
+          }
+        }
+      }
+    }
+    &.post-card {
+      .dd-card__wraper {
+        .card-image {
+          height: 400px;
+          &:before {
+            display: none;
+          }
+        }
+        .card-content {
+          background: transparent;
+          position: absolute;
+          bottom: 0px;
+          width: 100%;
+          &:before {
+            content: "";
+            height: 100%;
+            width: 100%;
+            background: #041925;
+            opacity: 0.8;
+            position: absolute;
+            left: 0;
+            bottom: 0;
+            z-index: 0;
+          }
+          .card-content__wraper {
+            position: relative;
+            z-index: 1;
           }
         }
       }
@@ -453,6 +517,17 @@
           }
           .card-content {
             padding: 10px;
+          }
+        }
+      }
+      &.post-card {
+        .dd-card__wraper {
+          .card-image {
+            height: 370px;
+          }
+          .date {
+            margin-top: 8px;
+            margin-bottom: 5px;
           }
         }
       }
