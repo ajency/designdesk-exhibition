@@ -53,7 +53,8 @@ function filter_portfolios(){
     	ob_end_clean();
 	} else {
 		ob_start();
-	  		$response .= get_template_part('template-parts/state', 'empty');
+			$args = array( 'post_type_title' => 'portfolio' );
+	  		$response .= get_template_part('template-parts/state', 'empty', $args);
 		  	$output = ob_get_contents();
 		ob_end_clean();
 	}

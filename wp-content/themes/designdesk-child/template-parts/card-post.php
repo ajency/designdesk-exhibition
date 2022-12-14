@@ -14,7 +14,7 @@ if (get_the_post_thumbnail()) {
 ?>
 
 <div class="dd-card post-card">
-    <a href="<?php echo $postUrl ?>" class="card-link" target="_blank">
+    <a href="<?php echo $postUrl ?>" class="card-link">
         <div class="dd-card__wraper">
             <div class="card-image">
                 <img src="<?php echo $thumbnailUrl ?>" alt="<?php echo $postTitle ?>" title="<?php echo $postTitle ?>" width="280" height="330">
@@ -22,15 +22,8 @@ if (get_the_post_thumbnail()) {
             <div class="card-content">
                 <div class="card-content__wraper">
                     <p class="card-title"><?php echo substrwords($postTitle, 60) ?></p>
-                    <p class="date"><?php echo $postDate ?></p>
-                    <div class="link-with-icon">
-                        <a href="<?php echo $postUrl ?>"  target="_blank">Read More</a>
-                        <span class="icon">
-                            <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                <path d="M5.33594 12.667L10.0026 8.00033L5.33594 3.33366" stroke="#2471B5" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"></path>
-                            </svg>
-                        </span>
-                    </div>
+                    <?php date_n_readTime($postDate, post_read_time()); ?>
+                    <?php echo do_shortcode('[dd_link_with_icon link="'.$postUrl.'" link-title="Read More" style="2"]'); ?>
                 </div>
             </div>
         </div>

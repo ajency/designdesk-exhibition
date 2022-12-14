@@ -416,10 +416,21 @@
           text-decoration-color: transparent;
           transition: all 0.2s ease-in-out;
         }
-        .date {
-          @include label(400);
-          margin-top: 10px;
-          margin-bottom: 9px;
+        .post-details {
+          .icon{
+            svg{
+              path{
+                fill: #fff;
+              }
+            }
+          }
+          p{
+            &:not(:last-child){
+              &:after{
+                background-color: #fff;
+              }
+            }
+          }
         }
         .link-with-icon {
           a {
@@ -525,7 +536,7 @@
           .card-image {
             height: 370px;
           }
-          .date {
+          .post-details {
             margin-top: 8px;
             margin-bottom: 5px;
           }

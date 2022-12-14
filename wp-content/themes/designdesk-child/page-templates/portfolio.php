@@ -40,7 +40,7 @@
                             <div class="dd-card-list">
                                 <?php
                                 while($portfolios->have_posts()) : $portfolios->the_post();?>
-                                <?php get_template_part('template-parts/card', 'portfolio'); ?>
+                                    <?php get_template_part('template-parts/card', 'portfolio'); ?>
                                 <?php endwhile;
                                 ?>
                             </div>

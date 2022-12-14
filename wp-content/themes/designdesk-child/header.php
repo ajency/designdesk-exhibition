@@ -82,7 +82,8 @@ do_action( 'genesis_before_header' );
 //do_action( 'genesis_header' );
 include 'theme-templates/header.php';
 
-if ( is_single() && 'post' == get_post_type() ) {
+$breadcrumb_visibility = get_field('breadcrumb_visibility');
+if ( $breadcrumb_visibility == '1' ) {
 	include 'template-parts/breadcrumb.php';
 }
 
