@@ -304,6 +304,9 @@
       }
     }
   }
+  @media(min-width:768px){
+    grid-column: 2 / 3;
+  }
   @media (max-width: 767.98px) {
     .social-share {
       gap: 20px;

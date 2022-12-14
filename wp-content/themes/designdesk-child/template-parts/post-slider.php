@@ -5,8 +5,8 @@
 <div class="alignfull">
     <div class="alignwide">
         <div class="dd-post-slider">
-            <?php foreach($postSlides as $post): setup_postdata($post);
             
+            <?php foreach($postSlides as $post): setup_postdata($post);
             $postTitle = get_the_title();
             $postDate = get_the_date('F j, Y');
             $postUrl = get_permalink();
@@ -22,7 +22,7 @@
                 <div class="dd-post-slide">
                     <div class="dd-post-slide__wraper">
                         <div class="image-container">
-                            <img src="<?php if($thumbnailUrl): echo $thumbnailUrl; else: echo site_url() . '/wp-content/themes/designdesk-child/assets/images/placeholder.jpg'; endif; ?>" alt="" title="" width="481" height="274">
+                            <img src="<?php if($thumbnailUrl): echo $thumbnailUrl; else: echo site_url() . '/wp-content/themes/designdesk-child/assets/images/placeholder.jpg'; endif; ?>" alt="<?php echo $postTitle ?>" title="<?php echo $postTitle ?>" width="481" height="274">
                         </div>
                         <div class="details-container">
                             <p class="title hide-md-down"><?php echo substrwords($postTitle , 90); ?></p>
@@ -33,7 +33,9 @@
                         </div>
                     </div>
                 </div>
-            <?php endforeach; ?>
+            <?php endforeach;  wp_reset_postdata();?>
         </div>
+
+    <?php  ?>
     </div>
 </div>
