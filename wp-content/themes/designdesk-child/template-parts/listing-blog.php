@@ -1,5 +1,5 @@
 <?php
-    $dd_post_count = get_field( "post_count" );
+    $dd_post_count = get_option( 'posts_per_page' );
 ?>
 
 <div class="alignfull">
@@ -12,7 +12,7 @@
     $blogsArgs = [
         "post_type"     => 'post',
         "order_by"      => 'date',
-        "order"         => 'ASC',
+        "order"         => 'DESC',
         'paged' => $paged,
         'posts_per_page' => $dd_post_count, // limit of posts
     ];

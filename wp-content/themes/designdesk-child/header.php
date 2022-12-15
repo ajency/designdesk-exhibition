@@ -82,7 +82,13 @@ do_action( 'genesis_before_header' );
 //do_action( 'genesis_header' );
 include 'theme-templates/header.php';
 
-$breadcrumb_visibility = get_field('breadcrumb_visibility');
+$term = get_queried_object();
+if(is_archive()){
+	$breadcrumb_visibility = get_field('breadcrumb_visibility', $term);
+}else{
+	$breadcrumb_visibility = get_field('breadcrumb_visibility');
+}
+
 if ( $breadcrumb_visibility == '1' ) {
 	include 'template-parts/breadcrumb.php';
 }

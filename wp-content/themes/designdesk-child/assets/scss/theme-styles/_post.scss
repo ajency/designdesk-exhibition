@@ -1,3 +1,4 @@
+//post
 .post-template-default {
   &.single {
     .hero-banner {
@@ -304,7 +305,7 @@
       }
     }
   }
-  @media(min-width:768px){
+  @media (min-width: 768px) {
     grid-column: 2 / 3;
   }
   @media (max-width: 767.98px) {
@@ -452,11 +453,82 @@
     position: relative;
     z-index: 1;
   }
-  @media (max-width: 768.98px){
-    .dd-post-slider{
+  @media (max-width: 768.98px) {
+    .dd-post-slider {
       margin-top: -25px;
-      .slick-dots{
+      .slick-dots {
         margin-top: 0px;
+      }
+    }
+  }
+}
+
+// tag archive
+
+.archive {
+  .hero-banner {
+    min-height: 365px;
+    padding-top: 225px;
+    padding-bottom: 60px;
+    background-position: center;
+    &:before {
+      background: radial-gradient(
+        128.02% 1290.07% at 11.98% 68.28%,
+        rgba(0, 0, 0, 0.63) 0%,
+        rgba(0, 0, 0, 0) 49.12%,
+        rgba(255, 255, 255, 0) 85.85%
+      );
+    }
+    .banner-heading {
+      margin-bottom: 30px;
+    }
+    hr {
+      &.separator-horizontal-orange {
+        margin-bottom: 0px !important;
+      }
+    }
+  }
+  @media (min-width: 768px) {
+    header {
+      &.dd-header {
+        &:after {
+          content: "";
+          height: 100%;
+          width: 100%;
+          opacity: 0.5;
+          backdrop-filter: blur(16px);
+          background: linear-gradient(
+            180deg,
+            #041925 0%,
+            rgba(4, 25, 37, 0) 93.71%
+          );
+          position: absolute;
+          top: 0px;
+          z-index: -1;
+        }
+      }
+      &.active {
+        &.dd-header {
+          &::after {
+            display: none;
+          }
+        }
+      }
+    }
+  }
+  @media (max-width: 767.98px) {
+    .hero-banner {
+      max-height: 300px;
+      min-height: 300px;
+      padding-top: 189px;
+      padding-bottom: 30px;
+      &:before {
+        background: radial-gradient(
+          128.02% 1290.07% at 11.98% 68.28%,
+          rgba(0, 0, 0, 0.63) 0%,
+          rgba(0, 0, 0, 0) 70.12%,
+          rgba(255, 255, 255, 0) 85.85%
+        );
       }
     }
   }
