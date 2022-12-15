@@ -75,7 +75,7 @@ function portfolios($atts){
         'posts_per_page' => $a['total-portfolios'],
         'post_type'     => 'dd_portfolio',
         'orderby'=> 'title',
-        'order' => 'ASC',
+        'order' => 'DESC',
         'meta_query'    => array(
             'relation'      => 'AND',
             array(
@@ -226,7 +226,7 @@ function videos($atts){
         'posts_per_page' => $a['total-videos'],
         'post_type'     => 'dd_video',
         'orderby'=> 'title',
-        'order' => 'ASC',
+        'order' => 'DESC',
         'meta_query'    => array(
             'relation'      => 'AND',
             array(

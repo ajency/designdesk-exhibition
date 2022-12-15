@@ -580,6 +580,44 @@ function dd_load_more(){
 add_action('wp_ajax_dd_load_more', 'dd_load_more');
 add_action('wp_ajax_nopriv_dd_load_more', 'dd_load_more');
 
+function dd_load_more_default(){
+	$paged = $_POST['paged'];
+	$postType = $_POST['postType'];
+	$cardTemplate = $_POST['cardTemplate'];
+	$postsPerPage = $_POST['postsPerPage'];
+
+	$ajaxposts = new WP_Query([
+		'post_type' => $postType,
+		'posts_per_page' => $postsPerPage,
+		'orderby' => 'date',
+		'order' => 'DESC',
+		'paged' => $paged,
+	]);
+
+	$response = '';
+	$max_pages = $ajaxposts->max_num_pages;
+
+	if($ajaxposts->have_posts()) {
+		ob_start();
+		while($ajaxposts->have_posts()) : $ajaxposts->the_post();
+			$response .= get_template_part('template-parts/card', $cardTemplate);
+		endwhile;
+		$output = ob_get_contents();
+    	ob_end_clean();
+	  } else {
+		$response = '';
+	}
+
+	$result = [
+		'max' => $max_pages,
+		'html' => $output,
+	  ];
+
+	echo json_encode($result);
+	exit;
+}
+add_action('wp_ajax_dd_load_more_default', 'dd_load_more_default');
+add_action('wp_ajax_nopriv_dd_load_more_default', 'dd_load_more_default');
 
 // Post reading time
 function post_read_time() {
