@@ -455,7 +455,7 @@ function dd_load_more_next_page(){
 
 	$args = [
 		'post_type' => 'dd_portfolio',
-		'posts_per_page' => 3,
+		'posts_per_page' => 3, // portfolio posts per page
 		'order_by' => 'date',
 		'order' => 'desc',
 	  	'paged' => $_POST['paged'],
@@ -521,7 +521,7 @@ function dd_load_more(){
 
 	$args = [
 		'post_type' => 'dd_portfolio',
-		'posts_per_page' => 3,
+		'posts_per_page' => 3, // portfolio posts per page
 		'order_by' => 'date',
 		'order' => 'desc',
 	  	'paged' => $_POST['paged'],

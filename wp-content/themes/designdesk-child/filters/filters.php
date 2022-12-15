@@ -8,7 +8,7 @@ function filter_portfolios(){
 
 	$args = [
 		'post_type' => 'dd_portfolio',
-		'posts_per_page' => 3,
+		'posts_per_page' => 3, // portfolio posts per page
 		'order_by' => 'date',
 		'order' => 'desc',
 	  	'paged' => $_POST['paged'],

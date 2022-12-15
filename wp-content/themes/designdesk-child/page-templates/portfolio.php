@@ -30,7 +30,7 @@
                         <?php 
                             $portfolios = new WP_Query([
                                 'post_type' => 'dd_portfolio',
-                                'posts_per_page' => 3,
+                                'posts_per_page' => 3, // portfolio posts per page
                                 'order_by' => 'date',
                                 'order' => 'desc',
                                 'paged' => 1
