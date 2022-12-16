@@ -353,6 +353,15 @@ $(window).on("resize, load", function () {
       arrows:false,
       dots:true,
     });
+
+    // hero banner mobile background
+    $('.hero-banner').each(function(){
+      let bannerBgMob = $(this).data('mobbg');
+      if(bannerBgMob){
+        console.log(bannerBgMob);
+        $(this).css({"background": "url("+bannerBgMob+")"});
+      }
+    });
 }
 });
 
