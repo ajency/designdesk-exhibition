@@ -1,31 +1,58 @@
-.page-template{
-    //Filters section
-    .dd-filters {
-        margin-bottom: 40px;
-        &__wraper {
-          display: flex;
-          justify-content: space-between;
-          gap: 20px;
-        }
-        @media(max-width:767.98px){
-          &__wraper{
-              flex-direction: column;
+.page-template {
+  //Filters section
+  .dd-filters {
+    margin-bottom: 40px;
+    &__wraper {
+      display: flex;
+      justify-content: space-between;
+      gap: 20px;
+    }
+    @media (max-width: 767.98px) {
+      &__wraper {
+        flex-direction: column;
+      }
+    }
+  }
+  .dd-button {
+    text-align: center;
+    margin-top: 40px;
+    margin-bottom: 0px;
+  }
+  &-portfolio {
+    .page-intro {
+      margin-bottom: 30px !important;
+    }
+    hr {
+      &.wp-block-separator {
+        margin: 30px auto;
+      }
+    }
+  }
+  &-default {
+    .Contact_Us {
+      .hero-banner {
+        .alignwide {
+          display: grid;
+          grid-template-columns: 1fr 1fr;
+          align-items: center;
+          .image-container{
+            text-align: right;
           }
         }
       }
-      .dd-button{
-        text-align: center;
-        margin-top: 40px;
-        margin-bottom: 0px;
-      }
-    &-portfolio{
-        .page-intro{
-            margin-bottom: 30px !important;
-        }
-        hr{
-            &.wp-block-separator{
-                margin: 30px auto;
-            }
-        }
     }
+    @media(max-width:767.98px){
+      .Contact_Us{
+        .hero-banner {
+          .alignwide {
+            display: flex;
+            flex-direction: column-reverse;
+            .image-container{
+              padding-bottom: 53px;
+            }
+          }
+        }
+      }
+    }
+  }
 }

@@ -12,6 +12,7 @@
         $banner_image_array = get_field( "banner_image" );
     }
 
+    $postName = $term-> post_name;
 
     if ($banner_visibility == 1 ) : ?>
         <div class="wp-block-genesis-blocks-gb-columns hero-banner mt-0 gb-layout-columns-1 one-column gb-background-cover gb-background-no-repeat alignfull" style="background-image:url(<?php if($banner_image_array): echo $banner_image_array['url']; else: echo site_url() . '/wp-content/themes/designdesk-child/assets/images/placeholder.jpg'; endif; ?>)">
@@ -22,6 +23,11 @@
                         <?php if($banner_text): ?><p class="h4-reg-400 banner-text has-white-color has-text-color"><?php echo $banner_text ?></p><?php endif; ?>
                         <hr class="wp-block-separator has-alpha-channel-opacity separator-horizontal-orange">
                     </div>
+                    <?php if ($postName == 'contact-us'):?>
+                        <div class="image-container">
+                            <img src="<?php echo site_url()."/wp-content/themes/designdesk-child/assets/images/map.svg" ?>" alt="map">
+                        </div>
+                    <?php endif;?>
                 </div>
             </div>
         </div>
