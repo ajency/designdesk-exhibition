@@ -3,7 +3,7 @@ form {
   .dd-button {
     button {
       border-radius: 0 !important;
-      box-shadow: none !important;
+      box-shadow: 2px 4px 4px rgba(0, 0, 0, 0.25) !important;
       border-color: #f48e0c !important;
       padding: 12px 30px !important;
       height: 50px !important;
@@ -46,11 +46,20 @@ form {
   .form-field {
     margin-bottom: 30px !important;
   }
+  .frm_form_title {
+    color: #2471B5 !important;
+    font-family: $poppins !important;
+    font-weight: 600 !important;
+    font-size: 32px !important;
+    line-height: 48px !important;
+    text-transform: capitalize;
+    margin-bottom: 60px !important;
+  }
   @media (min-width: 768px) {
     .dd-button {
       button {
         &:hover {
-          box-shadow: 2px 4px 4px rgba(0, 0, 0, 0.25) !important;
+          box-shadow: 0px 0px 0px rgba(0, 0, 0, 0) !important;
         }
       }
     }
@@ -68,8 +77,8 @@ form {
       }
     }
     .form-field {
-        margin-bottom: 20px !important;
-      }
+      margin-bottom: 20px !important;
+    }
   }
 }
 
@@ -87,16 +96,15 @@ form {
   }
 }
 
-
 // filters
 .field-group {
   position: relative;
   width: 100%;
-  label{
+  label {
     @include h4(500);
     margin-bottom: 4px;
   }
-  #reset-button{
+  #reset-button {
     display: none;
     cursor: pointer;
     height: 25px;
@@ -124,19 +132,19 @@ form {
   height: 42px;
 }
 .select-styled {
-  position: absolute; 
+  position: absolute;
   top: 0;
   right: 0;
   bottom: 0;
   left: 0;
-  background: #FFFFFF;
-  border: 1px solid #EEEEEE;
+  background: #ffffff;
+  border: 1px solid #eeeeee;
   padding: 10px 20px;
   display: flex;
   align-items: center;
-  transition:  all 0.2s ease-in;
+  transition: all 0.2s ease-in;
   &:after {
-    content:"";
+    content: "";
     width: 13px;
     height: 7px;
     background-image: url(../images/down-arrow-dark.png);
@@ -144,13 +152,14 @@ form {
     background-repeat: no-repeat;
     position: absolute;
     right: 20px;
-    transition:  all 0.2s ease-in;
+    transition: all 0.2s ease-in;
   }
   &:hover {
-    background-color: #FFFFFF;
+    background-color: #ffffff;
   }
-  &:active, &.active {
-    background-color: #FFFFFF;
+  &:active,
+  &.active {
+    background-color: #ffffff;
     border-color: #041925;
     &:after {
       transform: rotate(180deg);
@@ -159,7 +168,7 @@ form {
 }
 
 .dd-select {
-  display: none; 
+  display: none;
   position: absolute;
   top: 100%;
   right: 0;
@@ -168,15 +177,15 @@ form {
   margin: 0 !important;
   padding: 0 !important;
   list-style: none;
-  background: #FFFFFF;
+  background: #ffffff;
   box-shadow: 0px 4px 16px rgba(0, 0, 0, 0.08);
   li {
     margin: 0;
     padding: 12px 0;
     text-indent: 15px;
     list-style-type: none !important;
-    transition:  all 0.15s ease-in;
-    &:hover, 
+    transition: all 0.15s ease-in;
+    &:hover,
     &.is-selected {
       font-weight: 500;
       background: rgba(118, 200, 251, 0.6);

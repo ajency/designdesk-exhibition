@@ -805,3 +805,51 @@
     }
   }
 }
+
+// conatct us form
+.callback-form {
+  .wp-block-columns{
+    margin-bottom: 0px;
+  }
+  .alignwide {
+    .frm_forms {
+      form {
+        max-width: 780px;
+        margin: auto;
+        text-align: center;
+        fieldset {
+          padding-bottom: 0px;
+        }
+        .frm_button_submit {
+          width: 100% !important;
+          justify-content: center !important;
+        }
+      }
+    }
+  }
+  @media (min-width: 768px) {
+    margin-top: -220px !important;
+    .frm_forms {
+      background: #ffffff;
+      border: 1px solid #eeeeee;
+      box-shadow: 2px 5px 22px rgba(0, 0, 0, 0.06);
+      padding-top: 40px;
+      padding-bottom: 60px;
+    }
+  }
+  @media (max-width: 767.98px) {
+    form {
+      .frm_form_title {
+        margin-bottom: 30px !important;
+        font-size: 24px !important;
+        line-height: 28px !important;
+      }
+      .frm_fields_container {
+        padding: 20px;
+        background: #ffffff;
+        border: 1px solid #eeeeee;
+        box-shadow: 2px 5px 22px rgba(0, 0, 0, 0.06);
+      }
+    }
+  }
+}
