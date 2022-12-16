@@ -14,11 +14,13 @@ if (get_field('video_title') == '') {
 }
 $videoId = get_field('youtube_embed_id');
 
-$loopCount = $args['loop_count'];
+$videoId = get_field('youtube_embed_id');
+
+$videoPlayerId = get_the_ID();
 
 ?>
 
-<div class="dd-card video-card dd-popupToggler" video-id="<?php echo $videoId ?>" target-popup="#<?php echo $videoPopupId ?>">
+<div class="dd-card video-card dd-popupToggler" video-id="<?php echo $videoId ?>" player-id="player-<?php echo $videoPlayerId ?>"  target-popup="#<?php echo $videoPopupId ?>">
     <div class="dd-card__wraper">
         <div class="card-image">
             <img src="<?php echo  $thumbnailUrl  ?>" alt="<?php echo get_the_title() ?>" title="<?php echo get_the_title() ?>" width="280" height="330">
@@ -40,7 +42,7 @@ $loopCount = $args['loop_count'];
             </div>
             <div class="dd-popup-body main-content">
                 <div class="dd-popup-body__wraper">
-                    <div id="player<?php  echo $loopCount ?>"></div>
+                    <div id="player-<?php echo $videoPlayerId ?>"></div>
                 </div>
             </div>
             <div class="dd-popup-footer">

@@ -268,7 +268,9 @@ function videos($atts){
             }
             $videoId = get_field('youtube_embed_id');
 
-                $output .=  '<div class="dd-card video-card dd-popupToggler" video-id="'.$videoId.'" target-popup="#'.$videoPopupId.'">';
+            $videoPlayerId = get_the_ID();
+
+                $output .=  '<div class="dd-card video-card dd-popupToggler" video-id="'.$videoId.'" player-id="player-'.$videoPlayerId.'" target-popup="#'.$videoPopupId.'">';
                     $output .=  '<div class="dd-card__wraper">';
                         $output .=  '<div class="card-image">';
                             $output .=  '<img src="'. $thumbnailUrl .'" alt="'.get_the_title().'" title="'.get_the_title().'" width="280" height="330">';
@@ -290,7 +292,7 @@ function videos($atts){
                             $output .=  '</div>';
                             $output .=  '<div class="dd-popup-body main-content">';
                                 $output .=  '<div class="dd-popup-body__wraper">';
-                                $output .=  '<div id="player'.$loopCount.'"></div>';
+                                $output .=  '<div id="player-'.$videoPlayerId.'"></div>';
                                 $output .=  '</div>';
                                 $output .=  '<div class="dd-slider-dots dd-slider-dots-'.$videoPopupId.'"></div>';
                             $output .=  '</div>';

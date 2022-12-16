@@ -348,6 +348,7 @@ function dd_portfolio_type() {
 			),
 				'public'      => true,
 				'has_archive' => true,
+				'publicly_queryable'  => false, // disable single & archive page
 				'rewrite'     => array( 'slug' => 'portfolios' ), // my custom slug
 				'menu_icon' => 'dashicons-portfolio',
 				'show_in_rest' => true,
@@ -400,6 +401,7 @@ function dd_video_type() {
 			),
 				'public'      => true,
 				'has_archive' => true,
+				'publicly_queryable'  => false, // disable single & archive page
 				'rewrite'     => array( 'slug' => 'video' ), // my custom slug
 				'menu_icon' => 'dashicons-video-alt3',
 				'show_in_rest' => true,
