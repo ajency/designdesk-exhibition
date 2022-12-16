@@ -808,7 +808,7 @@
 
 // conatct us form
 .callback-form {
-  .wp-block-columns{
+  .wp-block-columns {
     margin-bottom: 0px;
   }
   .alignwide {
@@ -852,4 +852,43 @@
       }
     }
   }
+}
+
+// office locations
+.office-location-section {
+  background: radial-gradient(
+      95.76% 599.79% at 103.19% 38.83%,
+      #2471b5 0.64%,
+      #1d7ac9 10.15%,
+      #1188e8 57.76%,
+      #2471b5 79.68%,
+      #2471b5 100%
+    ),
+    #2471b5;
+    padding-top: 60px;
+    padding-bottom: 60px;
+
+    .wp-block-columns{
+      margin-bottom: 0px;
+      gap: 20px;
+      display: grid;
+    }
+
+    .section-heading{
+      color: #ffffff;
+      margin-bottom: 40px;
+    }
+    @media(min-width:768px){
+      .wp-block-columns{
+        grid-template-columns: 1fr 1fr 1fr;
+      }
+    }
+    @media(max-width:767.98px){
+      padding-top: 40px;
+      padding-bottom: 40px;
+      .section-heading{
+        margin-bottom: 30px;
+        text-align: left;
+      }
+    }
 }

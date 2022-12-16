@@ -1,0 +1,36 @@
+.office-location {
+  background: #ffffff;
+  border: 1px solid #eeeeee;
+  padding: 20px;
+  height: 100%;
+  p {
+    margin-bottom: 0px;
+  }
+  .location-name {
+    margin-bottom: 10px;
+  }
+  hr {
+    &.separator-horizontal-orange {
+      margin-top: 10px !important;
+      margin-bottom: 20px !important;
+    }
+  }
+  ul {
+    margin-bottom: 0px;
+    padding: 0px;
+    li {
+        img{
+            height: 24px !important;
+            width: 24px !important;
+            object-fit: cover;
+        }
+        list-style-type: none;
+        display: grid;
+        grid-template-columns: 24px 1fr;
+        grid-gap: 10px;
+        &:not(:last-child){
+            margin-bottom: 10px;
+        }
+    }
+  }
+}
