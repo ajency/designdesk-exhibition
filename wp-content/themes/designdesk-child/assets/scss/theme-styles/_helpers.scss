@@ -134,6 +134,9 @@ $gradient4: radial-gradient(
   &-reg-400 {
     @include h4(400);
   }
+  &-semi-600{
+    @include h4(600);
+  }
 }
 
 //hide
@@ -244,8 +247,9 @@ $gradient4: radial-gradient(
     transition: all 0.2 ease-in-out !important;
     cursor: pointer;
   }
-  &.bordered{
-    a, button{
+  &.bordered {
+    a,
+    button {
       background-color: #ffffff !important;
       border: 1px solid $brand-orange;
     }
@@ -264,9 +268,10 @@ $gradient4: radial-gradient(
         background-repeat: no-repeat;
       }
     }
-    &.plus-icon{
-      a, button{
-        &:after{
+    &.plus-icon {
+      a,
+      button {
+        &:after {
           background-image: url(../images/plus-icon-dark.svg);
         }
       }
@@ -309,7 +314,7 @@ $gradient4: radial-gradient(
 }
 
 //links
-@mixin dd-link(){
+@mixin dd-link() {
   position: relative;
   &:after {
     content: "";
@@ -330,10 +335,9 @@ $gradient4: radial-gradient(
     }
   }
 }
-.dd-link{
+.dd-link {
   @include dd-link;
 }
-
 
 //seperators
 .dd-seperator {
@@ -352,4 +356,42 @@ $gradient4: radial-gradient(
   border-color: #f48e0c !important;
   margin: 20px 0 !important;
   max-width: 93px !important;
+}
+
+.float-over {
+  @media (min-width: 768px) {
+    background: #ffffff;
+    box-shadow: 2px 5px 22px rgba(0, 0, 0, 0.06);
+    padding: 40px;
+    margin-top: -220px;
+  }
+}
+
+
+.profile-link-icon{
+  display: inline-flex;
+  height: 24px;
+  width: 24px;
+  svg{
+    height: 100%;
+    width: 100%;
+  }
+    &.linkedIn{
+      a{
+        display: inline-flex;
+        svg{
+          path{
+            fill: #2471B5;
+            transition: fill 0.2s ease-in-out;
+          }
+        }
+        &:hover{
+          svg{
+            path{
+              fill: #76c8fb;
+            }
+          }
+        }
+      }
+    }
 }

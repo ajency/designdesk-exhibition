@@ -55,6 +55,7 @@
 .section-heading {
   @include h2(600);
   text-transform: capitalize;
+  margin-bottom: 20px;
 }
 .secondary-heading {
   @include h2(400);
