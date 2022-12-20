@@ -1042,12 +1042,12 @@
       }
     }
   }
-  p{
+  p {
     padding-left: 0px !important;
     padding-right: 0px !important;
   }
-  .text{
-    color:#5B5B5B;
+  .text {
+    color: #5b5b5b;
   }
   @media (min-width: 768px) {
     .team-profile {
@@ -1064,6 +1064,7 @@
     }
     .subheading {
       margin-bottom: 40px;
+      margin-left: 0;
     }
     .gb-container-content {
       display: grid;
@@ -1075,15 +1076,123 @@
         grid-column: 1 / span 2;
       }
     }
-    .team-profile{
+    .team-profile {
       box-shadow: none;
       padding: 20px;
-      p{
+      p {
         text-align: left;
       }
-      .position{
+      .position {
         margin-bottom: 10px;
       }
+    }
+  }
+}
+
+.statement-section {
+  .section-heading {
+    font-weight: 500;
+    font-size: 48px;
+    line-height: 140%;
+    margin-bottom: 10px;
+  }
+  hr {
+    &.separator-horizontal-orange {
+      margin-top: 10px !important;
+      margin-bottom: 0px !important;
+    }
+  }
+  p {
+    @include body(400);
+    margin-bottom: 0px;
+  }
+  .name {
+    font-family: $poppins;
+    margin-top: 10px;
+    margin-bottom: 4px;
+    font-weight: 500;
+    font-size: 18px;
+    line-height: 140%;
+  }
+  .position {
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 140%;
+  }
+  .name,
+  .position {
+    display: flex;
+    text-align: left;
+    max-width: 185px;
+    margin-left: auto;
+  }
+  .wp-block-columns {
+    margin-bottom: 0px;
+    gap: 70px 20px;
+    .wp-block-column {
+      &:first-child {
+        max-width: 280px;
+      }
+    }
+  }
+  .gb-block-layout-column-inner {
+    padding: 100px 40px 40px 0px !important;
+    position: relative;
+    &:before {
+      content: url(../images/coma2.svg);
+      width: 100px;
+      height: 80px;
+      object-fit: contain;
+      position: absolute;
+      top: 40px;
+      left: 20%;
+      z-index: -1;
+    }
+    &:after {
+      content: "";
+      background: linear-gradient(
+        91.76deg,
+        #ffffff 0.18%,
+        rgba(118, 200, 251, 0.235345) 23.72%,
+        #76c8fb 93.82%
+      );
+      opacity: 0.2;
+      height: 100%;
+      width: 100%;
+      max-width: 980px;
+      position: absolute;
+      top: 0px;
+      right: 0px;
+      z-index: -1;
+    }
+  }
+  @media (max-width: 767.98px) {
+    .gb-block-layout-column-inner {
+      padding: 30px 20px !important;
+      margin-left: -20px;
+      margin-right: -20px;
+      &:after {
+        background: linear-gradient(
+          124.14deg,
+          #ffffff 28.71%,
+          rgba(118, 200, 251, 0.235345) 42.78%,
+          #76c8fb 66.85%
+        );
+      }
+      &:before {
+        left: 20px;
+        top: 100px;
+      }
+    }
+    .section-heading {
+      @include h3(600);
+    }
+    .name,
+    .position {
+      max-width: 100%;
+    }
+    .name {
+      margin-top: 40px;
     }
   }
 }
