@@ -1340,3 +1340,31 @@
     }
   }
 }
+
+//banner cta section
+.banner-cta{
+  .alignwide{
+    .gb-block-layout-column-inner{
+      padding: 40px 20px !important;
+    }
+  }
+  .dd-button{
+    margin-bottom: 0px;
+  }
+  .subheading{
+    max-width: 523px;
+    margin: auto;
+    margin-bottom: 30px;
+    @include h4(500);
+  }
+  @media(max-width:767.98px){
+    .section-heading, .subheading{
+      text-align: left;
+      margin-left: 0px;
+    }
+    .subheading{
+      @include body(400);
+      margin-bottom: 20px;
+    }
+  }
+}
