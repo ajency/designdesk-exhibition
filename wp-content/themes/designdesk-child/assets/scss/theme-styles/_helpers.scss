@@ -126,6 +126,9 @@ $gradient4: radial-gradient(
       @include h3(600);
     }
   }
+  &-med-500{
+    @include h3(500);
+  }
 }
 .h4 {
   &-med-500 {
@@ -136,6 +139,9 @@ $gradient4: radial-gradient(
   }
   &-semi-600{
     @include h4(600);
+  }
+  &-med-400{
+    @include h4(500);
   }
 }
 
@@ -172,6 +178,16 @@ $gradient4: radial-gradient(
     text-align: center !important;
     margin-left: auto !important;
     margin-right: auto !important;
+  }
+}
+
+// widths
+.max{
+  &-580{
+    max-width: 580px;
+  }
+  &-400{
+    max-width: 400px;
   }
 }
 
