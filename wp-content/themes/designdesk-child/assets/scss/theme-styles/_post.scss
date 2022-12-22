@@ -488,34 +488,6 @@
       }
     }
   }
-  @media (min-width: 768px) {
-    header {
-      &.dd-header {
-        &:after {
-          content: "";
-          height: 100%;
-          width: 100%;
-          opacity: 0.5;
-          backdrop-filter: blur(16px);
-          background: linear-gradient(
-            180deg,
-            #041925 0%,
-            rgba(4, 25, 37, 0) 93.71%
-          );
-          position: absolute;
-          top: 0px;
-          z-index: -1;
-        }
-      }
-      &.active {
-        &.dd-header {
-          &::after {
-            display: none;
-          }
-        }
-      }
-    }
-  }
   @media (max-width: 767.98px) {
     .hero-banner {
       max-height: 300px;
