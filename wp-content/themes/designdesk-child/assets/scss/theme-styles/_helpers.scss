@@ -129,6 +129,9 @@ $gradient4: radial-gradient(
   &-med-500{
     @include h3(500);
   }
+  &-reg-400{
+    @include h3(400);
+  }
 }
 .h4 {
   &-med-500 {
@@ -340,6 +343,7 @@ $gradient4: radial-gradient(
 
 //links
 @mixin dd-link() {
+  text-decoration: none;
   position: relative;
   &:after {
     content: "";
