@@ -1743,3 +1743,17 @@
     }
   }
 }
+
+//about us intro
+.about-us-intro{
+  .wp-block-columns{
+    margin-bottom: 0px;
+    gap:30px 64px;
+    p{
+      margin-bottom: 0px;
+    }
+  }
+  .slick-dots{
+    margin-bottom: 0px;
+  }
+}

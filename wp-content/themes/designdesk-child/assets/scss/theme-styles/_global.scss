@@ -197,6 +197,15 @@
     }
   }
 }
+.dots-dark {
+  .slick-dots{
+    li{
+      button{
+        background: #2471B5;
+      }
+    }
+  }
+}
 .slick-slide {
   outline: none !important;
 }
@@ -345,4 +354,9 @@
   .wp-block-columns {
     flex-wrap: nowrap !important;
   }
+}
+
+.alignfull:not(.has-background) .wp-block-group__inner-container > p:not(.has-background-color) {
+  padding-left: 0px !important;
+  padding-right: 0px !important;
 }

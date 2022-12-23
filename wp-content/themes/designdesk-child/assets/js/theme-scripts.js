@@ -660,3 +660,10 @@ $(teamTestimonialSlider).slick({
     }
   ]
 });
+
+let aboutUsSlider = $('.about-us-slider .gb-container-content');
+$(aboutUsSlider).slick({
+  arrows:false,
+  dots: true,
+  infinite: false,
+});
