@@ -734,7 +734,7 @@
 
 // team slider thumbnails
 .team-slider-thumbnails {
-  .slick-slider{
+  .slick-slider {
     max-width: 547px;
     overflow: hidden;
   }
@@ -742,7 +742,7 @@
     margin: 0 5px;
     opacity: 0.7;
     box-sizing: border-box;
-    img{
+    img {
       width: 59px;
       height: 59px;
     }
@@ -787,13 +787,110 @@
   @media (max-width: 767.98px) {
     .slick-slide {
       margin: 0 4px;
-      img{
+      img {
         width: 36px;
         height: 36px;
       }
     }
-    .slick-list{
+    .slick-list {
       margin: 0 -4px;
+    }
+  }
+}
+
+.team-testimonial-slider {
+  .testimonial {
+    padding: 40px 20px 20px;
+    p {
+      margin-bottom: 0px;
+      padding-left: 0px !important;
+      padding-right: 0px !important;
+    }
+    .wp-block-group__inner-container {
+      background: #ffffff;
+      box-shadow: 2px 4px 18px rgba(0, 0, 0, 0.12);
+      padding: 40px;
+      position: relative;
+      z-index: 1;
+      &:before {
+        content: "";
+        background-image: url(../images/coma3.svg);
+        background-repeat: no-repeat;
+        background-size: contain;
+        width: 273px;
+        height: 208px;
+        position: absolute;
+        left: 50px;
+        top: 0px;
+        z-index: -1;
+      }
+    }
+    .picture {
+      width: 87px;
+      height: 87px;
+      margin: auto;
+      margin-top: -80px;
+      margin-bottom: 13px;
+      background: #2471b5;
+      border-radius: 100%;
+      overflow: hidden;
+      figure {
+        margin-left: 3px;
+        margin-top: 2px;
+      }
+    }
+    .name {
+      margin-bottom: 4px;
+    }
+    .position {
+      margin-bottom: 10px;
+    }
+    hr.separator-horizontal-orange {
+      margin: 10px auto 20px !important;
+    }
+    .text {
+      max-width: 556px;
+      margin: auto;
+    }
+  }
+  .dd-slider-arrow {
+    &.dd-next {
+      right: -73px;
+    }
+    &.dd-prev {
+      left: -73px;
+    }
+  }
+  @media (max-width: 767.98px) {
+    .testimonial {
+      padding-left: 1px;
+      padding-right: 1px;
+      .wp-block-group__inner-container {
+        box-shadow: none;
+        border: 1px solid #eeeeee;
+        padding: 30px 16px;
+        &:before {
+          width: 68px;
+          height: 52px;
+          right: 10px;
+          left: auto;
+          top: 10px;
+        }
+      }
+      .picture {
+        height: 78px;
+        width: 78px;
+        margin-bottom: 10px;
+        margin-top: -69px;
+      }
+      .name {
+        @include body(600);
+      }
+      .experience {
+        @include label(400);
+        color: #5b5b5b;
+        margin-bottom: 20px;
+      }
     }
   }
 }

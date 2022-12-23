@@ -641,11 +641,21 @@ $(teamThumbSlider).slick({
   variableWidth:true,
   focusOnSelect: true,
   centerMode:false,
+});
+
+// team testimonial section
+let teamTestimonialSlider = $('.team-testimonial-slider .gb-container-content');
+$(teamTestimonialSlider).slick({
+  arrows:true,
+  dots: false,
+  infinite: false,
+  prevArrow: "<button class='dd-slider-arrow dd-prev'><svg fill=none height=20 viewBox='0 0 12 20'width=12 xmlns=http://www.w3.org/2000/svg><path d='M10 17.7773L2.22222 9.99957L10 2.22179'stroke=white stroke-linecap=round stroke-linejoin=round stroke-width=4 /></svg></button>",
+  nextArrow: "<button class='dd-slider-arrow dd-next'><svg fill=none height=20 viewBox='0 0 12 20'width=12 xmlns=http://www.w3.org/2000/svg><path d='M2 17.7773L9.77778 9.99957L2 2.22179'stroke=#2471B5 stroke-linecap=round stroke-linejoin=round stroke-width=4 /></svg></button>",
   responsive: [
     {
       breakpoint: 767.98,
       settings: {
-        slidesToShow: 7,
+        appendArrows: '.slick-arrow-navigation2',
       }
     }
   ]

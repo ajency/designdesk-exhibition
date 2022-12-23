@@ -1646,3 +1646,28 @@
     }
   }
 }
+
+// team testimonial section
+.team-testimonial-section{
+  .subheading{
+    margin-bottom: 60px;
+  }
+  .gb-block-layout-column-inner{
+    max-width: 980px;
+    margin: auto;
+  }
+  @media(max-width:767.98px){
+    .subheading{
+      max-width: 100%;
+      margin-bottom: 30px;
+    }
+    .slick-arrow-navigation2{
+      display: flex;
+      gap: 20px;
+      justify-content: center;
+      .dd-slider-arrow{
+        position: inherit;
+      }
+    }
+  }
+}
