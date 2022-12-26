@@ -688,3 +688,22 @@ $(journeySlider).slick({
     }
   ]
 });
+
+// Show the first four images
+$(".gallery-image:lt(10)").show();
+
+// When the gallery button is clicked
+$("#gallery-load-more").on('click', function(event) {
+  // Prevent default behavior
+  event.preventDefault();
+  // All of the hidden images
+  var $hidden = $(".gallery-image:hidden");
+  // Show the next four images
+  $($hidden).slice(0, 10).fadeIn(800);
+  // If the length of $hidden is 10 then hide the button
+  //console.log($hidden.length);
+  if ($hidden.length <= 10) {
+    //console.log("button hidden!");
+    $(this).fadeOut();
+  }
+});
