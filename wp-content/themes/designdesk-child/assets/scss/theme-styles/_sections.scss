@@ -1761,6 +1761,7 @@
 // journey section
 .journey-section {
   background-position: right 24px !important;
+  background-size: auto !important;
   .subheading {
     max-width: 735px;
     margin-bottom: 40px;
@@ -1830,6 +1831,7 @@
 
 .about-us-page {
   &.image-cta {
+    margin-top: 80px !important;
     .has-bg {
       background: linear-gradient(280deg, #76c8fb -17.85%, #2471b5 72.31%);
       padding-right: 0px;
@@ -1850,6 +1852,7 @@
       }
     }
     @media (max-width: 767.98px) {
+      margin-top: 40px !important;
       .has-bg {
         padding: 20px;
       }
@@ -1892,7 +1895,7 @@
   .dd-gallery {
     display: grid;
     grid-gap: 20px;
-    grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
     grid-auto-rows: 202px;
     grid-auto-flow: dense;
     figure {
