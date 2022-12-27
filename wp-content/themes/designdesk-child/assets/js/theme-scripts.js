@@ -707,3 +707,17 @@ $("#gallery-load-more").on('click', function(event) {
     $(this).fadeOut();
   }
 });
+
+//gallery popup
+$('.galleryTrigger').click(function(){
+  let imageUrl = $(this).find('img').attr('src');
+  let imageAlt = $(this).find('img').attr('alt');
+  let imageTitle = $(this).find('img').attr('title');
+
+  //console.log(imageUrl, imageAlt, imageTitle);
+
+  $('#galleryPopup').find('.gallery-image-container img').attr('src', imageUrl);
+  $('#galleryPopup').find('.gallery-image-container img').attr('alt', imageAlt);
+  $('#galleryPopup').find('.gallery-image-container img').attr('title', imageTitle);
+
+});
