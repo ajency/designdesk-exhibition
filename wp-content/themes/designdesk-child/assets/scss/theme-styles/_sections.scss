@@ -1902,10 +1902,12 @@
       width: 100%;
       height: 100%;
       display: none;
+      overflow: hidden;
       img {
         height: 100%;
         width: 100%;
         object-fit: cover;
+        transition: transform 0.2s ease-in-out;
       }
       &.wide {
         grid-column: span 2;
@@ -1916,6 +1918,13 @@
       &.big {
         grid-column: span 2;
         grid-row: span 2;
+      }
+    }
+    .gallery-image{
+      &:hover{
+        img{
+          transform: scale(1.2);
+        }
       }
     }
   }
