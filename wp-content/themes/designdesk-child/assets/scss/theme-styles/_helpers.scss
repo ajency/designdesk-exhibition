@@ -195,8 +195,14 @@ $gradient4: radial-gradient(
   &-400{
     max-width: 400px;
   }
+  &-700{
+    max-width: 700px;
+  }
   &-980{
     max-width: 980px;
+  }
+  &-890{
+    max-width: 890px;
   }
 }
 .margin-auto-center{
@@ -390,11 +396,16 @@ $gradient4: radial-gradient(
     }
   }
 }
-.separator-horizontal-orange {
-  border-width: 4px !important;
-  border-color: #f48e0c !important;
-  margin: 20px 0 !important;
-  max-width: 93px !important;
+.separator-horizontal{
+  height: 2px;
+  border-width: 2px !important;
+  max-width: 100% !important;
+  &-orange {
+    border-width: 4px !important;
+    border-color: #f48e0c !important;
+    margin: 20px 0 !important;
+    max-width: 93px !important;
+  }
 }
 
 .float-section {
