@@ -909,7 +909,7 @@
 //journey slider
 .journey-slider {
   overflow: hidden;
-  .slick-list{
+  .slick-list {
     margin: 0px -10px;
   }
   .slick-slide {
@@ -987,7 +987,8 @@
           top: -11.5px;
           transform: rotate(45deg);
         } */
-        &:after, &:before{
+        &:after,
+        &:before {
           content: "";
           position: absolute;
           border-left: 20px solid transparent;
@@ -996,12 +997,12 @@
           left: 30px;
           margin-left: -20px;
         }
-        &:before{
+        &:before {
           border-bottom: 20px solid #2471b5;
           margin-top: -21px;
           left: 33.5px;
         }
-        &:after{
+        &:after {
           border-bottom: 20px solid #fff;
           border-width: 18.5px;
           margin-top: -18px;
@@ -1014,6 +1015,89 @@
       margin-top: 10px !important;
       margin-bottom: 20px !important;
       max-width: 30px !important;
+    }
+  }
+}
+
+//dd-slider-style-1
+.dd-slider-style-1 {
+  .dd-slide {
+    &__wraper {
+      background: #ffffff;
+      border: 2px solid #2471b5;
+      padding: 40px;
+      p {
+        margin-bottom: 0px;
+      }
+      .image-container {
+        width: 100%;
+        height: 403px;
+        overflow: hidden;
+        img {
+          height: 100%;
+          width: 100%;
+          object-fit: cover;
+        }
+      }
+      .slide-number {
+        font-family: $poppins;
+        font-weight: 600;
+        font-size: 80px;
+        line-height: 120px;
+        color: #2471b5;
+      }
+      .heading {
+        display: flex;
+        gap: 20px;
+        align-items: center;
+        b,
+        strong {
+          font-weight: 600;
+        }
+      }
+    }
+  }
+  @media (min-width: 768px) {
+    .dd-slide {
+      &__wraper {
+        display: grid;
+        grid-gap: 40px;
+        grid-template-columns: calc(40% - 20px) calc(60% - 20px);
+        .image-container-slider {
+          margin-top: -111px;
+        }
+        hr.separator-horizontal-orange {
+          margin-top: 2px !important;
+          max-width: 180px !important;
+        }
+      }
+    }
+  }
+  @media (max-width: 767.98px) {
+    .dd-slide {
+      &__wraper {
+        padding: 20px;
+        hr.separator-horizontal-orange {
+          max-width: 30px !important;
+        }
+        .image-container {
+          height: 242px;
+        }
+        .heading {
+          align-items: flex-end;
+          flex-direction: row-reverse;
+          justify-content: space-between;
+          line-height: 28px;
+          font-weight: 600;
+          position: relative;
+          .slide-heading {
+            position: absolute;
+            left: 0;
+            bottom: 0;
+            max-width: 90%;
+          }
+        }
+      }
     }
   }
 }

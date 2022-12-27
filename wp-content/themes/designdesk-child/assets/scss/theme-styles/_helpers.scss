@@ -132,6 +132,9 @@ $gradient4: radial-gradient(
   &-reg-400{
     @include h3(400);
   }
+  &-semi-400{
+    @include h3(400);
+  }
 }
 .h4 {
   &-med-500 {

@@ -421,6 +421,9 @@
   .banner-heading,
   .banner-text {
     max-width: 50%;
+    @media(max-width:767.98px){
+      max-width: 100%;
+    }
   }
   @media (max-width: 767.98px) {
     min-height: 500px;
@@ -1926,6 +1929,18 @@
           transform: scale(1.2);
         }
       }
+    }
+  }
+}
+
+//who-we-are-not-section
+.who-we-are-not-section{
+  .subheading{
+    margin-bottom: 111px;
+  }
+  @media (max-width: 767.98px){
+    .subheading{
+      margin-bottom: 30px;
     }
   }
 }

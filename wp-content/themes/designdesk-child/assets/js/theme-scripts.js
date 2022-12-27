@@ -708,7 +708,7 @@ $("#gallery-load-more").on('click', function(event) {
   }
 });
 
-//gallery popup
+//gallery popup - custom block
 $('.galleryTrigger').click(function(){
   let imageUrl = $(this).find('img').attr('src');
   let imageAlt = $(this).find('img').attr('alt');
@@ -720,4 +720,21 @@ $('.galleryTrigger').click(function(){
   $('#galleryPopup').find('.gallery-image-container img').attr('alt', imageAlt);
   $('#galleryPopup').find('.gallery-image-container img').attr('title', imageTitle);
 
+});
+
+//DD slider (style 1) - custom block
+let ddImageSlider = $('.dd-slider-style-1 .image-container-slider');
+$(ddImageSlider).slick({
+    dots: true,
+    arrows: false,
+    infinite: false,
+    appendDots: $('.dd-slider-style-1-navigation'),
+    asNavFor: $('.dd-slider-style-1 .slide-content-slider'),
+});
+let ddContenteSlider = $('.dd-slider-style-1 .slide-content-slider');
+$(ddContenteSlider).slick({
+  dots: false,
+  arrows: false,
+  infinite: false,
+  asNavFor: $('.dd-slider-style-1 .image-container-slider'),
 });
