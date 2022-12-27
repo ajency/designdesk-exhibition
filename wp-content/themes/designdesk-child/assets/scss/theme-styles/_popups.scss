@@ -63,13 +63,27 @@
     }
   }
   &.gallery-popup {
+    .dd-popup-content{
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-direction: column;
+    }
+    .dd-popup-header{
+      width: 100%;
+    }
+    .dd-popup__wraper{
+      width: max-content;
+      max-width: calc(100% - 40px);
+    }
     .gallery-image-container {
-      background: #fff;
-      height: 70vh;
+      overflow: hidden;
+      max-height: 70vh;
+      height: auto;
+      margin: auto;
       display: flex;
       align-items: center;
       justify-content: center;
-      padding: 40px;
       img {
         height: 100%;
         width: 100%;
