@@ -93,6 +93,9 @@ $gradient4: radial-gradient(
       @include label(400);
     }
   }
+  &-semi-600{
+    @include label(600);
+  }
 }
 .body {
   &-reg-400,
@@ -444,4 +447,8 @@ $gradient4: radial-gradient(
         }
       }
     }
+}
+
+.min-height-700{
+  min-height: 700px;
 }

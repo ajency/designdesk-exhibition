@@ -1,3 +1,4 @@
+//office locations
 .office-location {
   background: #ffffff;
   border: 1px solid #eeeeee;
@@ -19,18 +20,60 @@
     margin-bottom: 0px;
     padding: 0px;
     li {
-        img{
-            height: 24px !important;
-            width: 24px !important;
-            object-fit: cover;
-        }
-        list-style-type: none;
+      img {
+        height: 24px !important;
+        width: 24px !important;
+        object-fit: cover;
+      }
+      list-style-type: none;
+      display: grid;
+      grid-template-columns: 24px 1fr;
+      grid-gap: 10px;
+      &:not(:last-child) {
+        margin-bottom: 10px;
+      }
+    }
+  }
+}
+
+// halfcircle slider
+.dd-slider-half-circle {
+  padding-top: 125px;
+  padding-bottom: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  .outer-circle {
+    width: 501px;
+    height: 501px;
+    border-radius: 100%;
+    background-image: url(../images/world-map.svg);
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    /* &:before{
+      content: '';
+      height: 4px;
+      width: 4px;
+      background-color: red;
+      left: calc(50% - 2px);
+      top: calc(50% - 2px);
+      z-index: 1;
+    } */
+    .circle-slide {
+      position: absolute;
+      left: calc(50% - 23px );
+      top: calc(50% - 23px);
+      -webkit-transition: all 2s linear;
+      -moz-transition: all 2s linear;
+      transition: all 2s linear;
+      &__wraper {
         display: grid;
-        grid-template-columns: 24px 1fr;
         grid-gap: 10px;
-        &:not(:last-child){
-            margin-bottom: 10px;
-        }
+        grid-template-columns: 46px 1fr;
+        align-items: center;
+      }
     }
   }
 }

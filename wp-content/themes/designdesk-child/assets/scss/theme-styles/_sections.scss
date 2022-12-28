@@ -2009,15 +2009,15 @@
       padding: 0px;
       gap: 28px;
       background: none !important;
-      .stats{
+      .stats {
         gap: 28px;
       }
     }
     hr.separator-horizontal {
       background-color: rgba(118, 200, 251, 1) !important;
     }
-    .stats{
-      .stat-number{
+    .stats {
+      .stat-number {
         @include h2(600);
       }
     }
@@ -2054,13 +2054,109 @@
       max-width: 81px;
       height: 200px;
       background-image: url(../images/cube-left-mob.svg);
-      top:547px;
+      top: 547px;
     }
     &:after {
       max-width: 66px;
       height: 162px;
       background-image: url(../images/cube-right-mob.svg);
       top: 323px;
+    }
+  }
+}
+
+// halfcircle slider
+.halfcircle-slider-section {
+  position: relative;
+  p {
+    margin-bottom: 0px;
+  }
+  .stat-number {
+    @include h1(600);
+  }
+  .stat-title {
+    @include h3(500);
+  }
+  @media (min-width: 992px) {
+    .alignwide > .gb-block-layout-column-inner {
+      position: relative;
+      &:before,
+      &:after {
+        content: "";
+        opacity: 0.8;
+        height: 100%;
+        position: absolute;
+        z-index: -1;
+        top: 0px;
+      }
+      &:before {
+        background: linear-gradient(
+          270.26deg,
+          #76c8fb 0.16%,
+          rgba(217, 217, 217, 0) 99.7%
+        );
+        width: 50%;
+        left: 0px;
+      }
+      &:after {
+        background: linear-gradient(
+          90deg,
+          #76c8fb 0%,
+          rgba(118, 200, 251, 0) 116.67%
+        );
+        width: 24px;
+        left: 50%;
+      }
+    }
+    .top-float {
+      padding-top: 30px;
+      top: 0px;
+    }
+    .bottom-float {
+      padding-bottom: 60px;
+      bottom: 0px;
+      .text {
+        max-width: 218px;
+        margin-bottom: 3px;
+      }
+    }
+    .top-float,
+    .bottom-float {
+      max-width: 35%;
+      position: absolute;
+      left: 0px;
+    }
+  }
+  @media (max-width: 767.98px) {
+    .float-center {
+      margin-top: 40px;
+    }
+    .bottom-float > .wp-block-group__inner-container {
+      display: grid;
+      grid-template-columns: 1.8fr 1fr;
+      align-items: center;
+    }
+    .bottom-float{
+      .text, p.text:not(.has-background-color){
+        padding-right: 22px !important;
+      }
+      .text{
+        @include label(400);
+        border-right: 1px solid #EEEEEE;
+      }
+      .wp-block-group{
+        padding-left: 22px;
+        p{
+          text-align: center;
+        }
+      }
+      .stat-number{
+        margin-bottom: 4px;
+        @include h3(600);
+      }
+      .stat-title{
+        @include h4(600);
+      }
     }
   }
 }
