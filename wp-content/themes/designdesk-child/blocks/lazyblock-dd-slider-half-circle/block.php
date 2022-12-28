@@ -14,8 +14,13 @@
 </div>
 
 <script type="text/javascript">
+    
+    let ddCircle = $('.dd-slider-half-circle .outer-circle');
+    let ddCircleRadius = (ddCircle.width()/2)+'px';
+    console.log(ddCircleRadius);
+
     var type = 0.5, //circle type - 1 whole, 0.5 half, 0.25 quarter
-        radius = '14em', //distance from center
+        radius = ddCircleRadius, //distance from center
         start = -90, //shift start from 0
         $elements = $('.circle-slide'),
         numberOfElements = (type === 1) ? $elements.length : $elements.length - 1, //adj for even distro of elements when not full circle
