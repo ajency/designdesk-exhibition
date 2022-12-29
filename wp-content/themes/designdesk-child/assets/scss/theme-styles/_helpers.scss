@@ -364,6 +364,7 @@ $gradient4: radial-gradient(
 @mixin dd-link() {
   text-decoration: none;
   position: relative;
+  color: inherit;
   &:after {
     content: "";
     width: 100%;
@@ -385,6 +386,20 @@ $gradient4: radial-gradient(
 }
 .dd-link {
   @include dd-link;
+}
+.dd-link-outer {
+  a{
+    @include dd-link;
+  }
+}
+.dd-link-outer{
+  &.dark-link{
+    a{
+      &:after{
+        background-color: #041925;
+      }
+    }
+  }
 }
 
 //seperators

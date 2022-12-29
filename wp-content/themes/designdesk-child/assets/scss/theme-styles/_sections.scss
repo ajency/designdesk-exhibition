@@ -418,11 +418,15 @@
   .banner-heading {
     margin-bottom: 20px;
   }
-  .banner-heading,
-  .banner-text {
-    max-width: 50%;
-    @media (max-width: 767.98px) {
-      max-width: 100%;
+  .gb-block-layout-column-inner {
+    &:not(.contact-us) {
+      .banner-heading,
+      .banner-text {
+        max-width: 50%;
+        @media (max-width: 767.98px) {
+          max-width: 100%;
+        }
+      }
     }
   }
   @media (max-width: 767.98px) {
@@ -923,6 +927,15 @@
   }
   .wp-block-columns {
     margin-bottom: 0px;
+    display: flex;
+    gap: 40px;
+    justify-content: space-between;
+    max-width: 980px;
+    margin: auto;
+    .wp-block-column {
+      flex-basis: auto;
+      flex-grow: inherit;
+    }
   }
   figure {
     margin-bottom: 0px !important;
@@ -1063,6 +1076,11 @@
     color: #5b5b5b;
   }
   @media (min-width: 768px) {
+    .wp-block-group__inner-container {
+      display: grid;
+      justify-items: center;
+      margin-bottom: 24px;
+    }
     .team-profile {
       .profile-picture {
         margin-top: -77px;
@@ -2136,25 +2154,26 @@
       grid-template-columns: 1.8fr 1fr;
       align-items: center;
     }
-    .bottom-float{
-      .text, p.text:not(.has-background-color){
+    .bottom-float {
+      .text,
+      p.text:not(.has-background-color) {
         padding-right: 22px !important;
       }
-      .text{
+      .text {
         @include label(400);
-        border-right: 1px solid #EEEEEE;
+        border-right: 1px solid #eeeeee;
       }
-      .wp-block-group{
+      .wp-block-group {
         padding-left: 22px;
-        p{
+        p {
           text-align: center;
         }
       }
-      .stat-number{
+      .stat-number {
         margin-bottom: 4px;
         @include h3(600);
       }
-      .stat-title{
+      .stat-title {
         @include h4(600);
       }
     }
