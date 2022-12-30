@@ -684,27 +684,61 @@ $(journeySlider).slick({
       breakpoint: 767.98,
       settings: {
         slidesToShow: 1,
+        variableWidth:true
       }
     }
   ]
 });
 
-// Show the first four images
-$(".gallery-image:lt(10)").show();
+function showGallery(imageCount){
+  $(".gallery-image:lt("+imageCount+")").show();
 
-// When the gallery button is clicked
-$("#gallery-load-more").on('click', function(event) {
-  // Prevent default behavior
-  event.preventDefault();
-  // All of the hidden images
-  var $hidden = $(".gallery-image:hidden");
-  // Show the next four images
-  $($hidden).slice(0, 10).fadeIn(800);
-  // If the length of $hidden is 10 then hide the button
-  //console.log($hidden.length);
-  if ($hidden.length <= 10) {
-    //console.log("button hidden!");
-    $(this).fadeOut();
+  let hiddenImages = $(".gallery-image:hidden").length;
+
+  if(hiddenImages > 0){
+    $("#gallery-load-more").fadeIn();
+  }
+}
+
+function loadGallery(imageCount, hiddenImages, thisElement){
+  $(hiddenImages).slice(0, imageCount).fadeIn(800);
+  if (hiddenImages.length <= imageCount) {
+    $(thisElement).fadeOut();
+  }
+}
+
+$(document).ready(function () {
+  $(window).on("resize", function (e) {
+      checkScreenSize();
+  });
+
+  checkScreenSize();
+  
+  function checkScreenSize(){
+      var newWindowWidth = $(window).width();
+      if (newWindowWidth > 768) {
+          // desktop
+          
+         showGallery(10);
+         $("#gallery-load-more").on('click', function(event) {
+           event.preventDefault();
+           let hiddenImages = $(".gallery-image:hidden");
+           loadGallery(10, hiddenImages, this);
+         });
+
+      }
+      else
+      {
+         // mobile
+
+         showGallery(3);
+        $("#gallery-load-more").on('click', function(event) {
+          event.preventDefault();
+          let hiddenImages = $(".gallery-image:hidden");
+          loadGallery(3, hiddenImages, this);
+        });
+
+      }
   }
 });
 

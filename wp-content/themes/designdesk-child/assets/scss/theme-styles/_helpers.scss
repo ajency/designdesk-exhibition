@@ -418,7 +418,9 @@ $gradient4: radial-gradient(
   height: 2px;
   border-width: 2px !important;
   max-width: 100% !important;
+  opacity: 0.5;
   &-orange {
+    opacity: 1;
     border-width: 4px !important;
     border-color: #f48e0c !important;
     margin: 20px 0 !important;

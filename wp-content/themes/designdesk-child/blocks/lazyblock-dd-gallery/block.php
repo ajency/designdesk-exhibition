@@ -17,11 +17,7 @@ $totalImages = count($images);
         <?php endforeach; ?>
     </div>
 
-    <?php
-
-    if ($totalImages > 10) { ?>
         <div id="gallery-load-more" class="wp-block-genesis-blocks-gb-button dd-button bordered right-icon plus-icon gb-block-button"><a class="gb-button gb-button-shape-rounded gb-button-size-medium" style="color:#ffffff;background-color:#3373dc">Load More</a></div>
-    <?php } ?>
 
 </div>
 

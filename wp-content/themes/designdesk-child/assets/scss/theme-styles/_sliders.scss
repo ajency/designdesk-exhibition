@@ -1017,6 +1017,29 @@
       max-width: 30px !important;
     }
   }
+  @media(max-width:767.98px){
+    margin-left: -20px;
+    margin-right: -20px;
+    padding-left: 20px;
+    .slick-list{
+      position: relative;
+      &:after{
+        content: '';
+        height: 100%;
+        background: linear-gradient(270deg, #FFFFFF 0%, rgba(255, 255, 255, 0) 58.7%);
+        width: 40px;
+        position: absolute;
+        right: 0px;
+        top:0px;
+      }
+    }
+    .slick-list {
+      margin: 0px 0px;
+    }
+    .journey-slide{
+      max-width: 300px;
+    }
+  }
 }
 
 //dd-slider-style-1
