@@ -33,10 +33,30 @@
         numberOfElements = (type === 1) ? $elements.length : $elements.length - 1, //adj for even distro of elements when not full circle
         slice = 360 * type / numberOfElements;
 
+        $($('.circle-slide').slice(9)).each(function(i){
+
+            var  thisElement = $(this),
+                rotate = slice * (i+9) + start,
+                rotateReverse = rotate * -1,
+                rotateHalf = rotate + 180,
+                reverseHalf = (-rotateHalf),
+                rotateFull = rotate + 360,
+                reverseFull = (-rotateFull);
+
+                let transformString = 'circleRotate'+i+' '+ '25s linear infinite';
+
+            if(i < 9){
+                console.log("Index "+i);
+                $('head').append('<style id="circular-animations">@keyframes circleRotate'+ (i+9) +'{0%{transform: rotate(' + rotate + 'deg) translate(' + radius + ') rotate(' + rotateReverse + 'deg);}'+ (Math.floor(50-(5.5*i))) +'%{opacity:0;}'+ (Math.floor(50-(5.5*i))+10) +'%{opacity:1;}'+ (Math.floor(100-(5.5*i))-10) +'%{opacity:1;}'+ Math.floor(100-(5.5*i)) +'%{opacity:0;} 100%{transform: rotate(' + rotateFull + 'deg) translate(' + radius + ') rotate(' + reverseFull + 'deg);opacity: 0;}</style>');
+            }
+            });
+
     $elements.each(function(i) {
         var  thisElement = $(this),
             rotate = slice * i + start,
             rotateReverse = rotate * -1,
+            rotateHalf = rotate + 180,
+            reverseHalf = (-rotateHalf),
             rotateFull = rotate + 360,
             reverseFull = (-rotateFull);
 
@@ -46,11 +66,15 @@
 
         let transformString = 'circleRotate'+i+' '+ '25s linear infinite';
 
-        $('head').append('<style id="circular-animations">@keyframes circleRotate'+i+'{0%{transform: rotate(' + rotate + 'deg) translate(' + radius + ') rotate(' + rotateReverse + 'deg);}100%{transform: rotate(' + rotateFull + 'deg) translate(' + radius + ') rotate(' + reverseFull + 'deg);}</style>');
+        if(i < 9){
+            $('head').append('<style id="circular-animations">@keyframes circleRotate'+i+'{0%{transform: rotate(' + rotate + 'deg) translate(' + radius + ') rotate(' + rotateReverse + 'deg);}'+ (Math.floor(50-(5.5*i))-10) +'%{opacity:1;}'+ Math.floor(50-(5.5*i)) +'%{opacity:0;}'+ Math.floor(100-(5.5*i)) +'%{opacity:0;}'+ Math.floor(100-(5.5*i)+10) +'%{opacity:1;} 100%{transform: rotate(' + rotateFull + 'deg) translate(' + radius + ') rotate(' + reverseFull + 'deg);opacity: 1;}</style>');
+        }
         
         setTimeout(function(){
             thisElement.css('animation', transformString);
         }, 3000);
     });
+
+
 
 </script>

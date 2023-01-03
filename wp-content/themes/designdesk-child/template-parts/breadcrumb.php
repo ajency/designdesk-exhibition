@@ -10,6 +10,9 @@ $postId = get_the_ID();
                 <?php if ( is_singular( 'post' ) || is_tag() ) { ?>
                     <li class="breadcrumb-item"><a href="<?php echo site_url().'/blogs'; ?>" class="link">Blogs</a></li>
                 <?php } ?>
+                <?php if ( is_singular( 'dd_case_study' ) || is_tag() ) { ?>
+                    <li class="breadcrumb-item"><a href="<?php echo site_url().'/case-studies'; ?>" class="link">Case Studies</a></li>
+                <?php } ?>
                 <?php  if ( is_single()) { ?>
                     <li class="breadcrumb-item active"><a class="link"><?php the_title() ?></a></li>
                 <?php } elseif (is_page()) { ?>

@@ -12,6 +12,8 @@
         $banner_text = get_field( "banner_text" );
         $banner_image_array = get_field( "banner_image" );
         $banner_image_mob_array = get_field( "banner_image_mob" );
+        $caseStudyLocation = get_field('case-study-location');
+        $caseStudySize = get_field('case-study-size');
     }
 
     $postName = $term-> post_name;
@@ -24,6 +26,11 @@
                         <p class="h1-semi-600 banner-heading has-white-color has-text-color"><?php if($banner_heading): echo $banner_heading; else: echo single_term_title(); endif; ?></p>
                         <?php if($banner_text): ?><p class="h4-reg-400 banner-text has-white-color has-text-color"><?php echo $banner_text ?></p><?php endif; ?>
                         <hr class="wp-block-separator has-alpha-channel-opacity separator-horizontal-orange">
+                        <?php if($caseStudyLocation || $caseStudySize): ?>
+                            <ul class="stallDetails">
+                                <li class="label-med-500"><img class="icon" src="<?php echo site_url() .'/wp-content/themes/designdesk-child/assets/images/location.svg'?>">Location : New Delhi</li><li class="label-med-500"><img class="icon" src="<?php echo site_url() .'/wp-content/themes/designdesk-child/assets/images/size-icon.svg'?>">Size : 100 sqm</li>
+                            </ul>
+                        <?php endif ?>
                     </div>
                     <?php if ($postName == 'contact-us'):?>
                         <div class="image-container">

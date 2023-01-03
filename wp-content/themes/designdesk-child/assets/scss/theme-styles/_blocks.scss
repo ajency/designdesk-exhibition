@@ -102,6 +102,9 @@
           top: -5px;
         }
       } */
+      &:not(:nth-child(-n+9)){
+        opacity: 0;
+      }
     }
   }
   @media(min-width:991px){
