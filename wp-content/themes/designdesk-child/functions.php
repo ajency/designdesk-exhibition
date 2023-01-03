@@ -411,6 +411,27 @@ function dd_video_type() {
 }
 add_action('init', 'dd_video_type');
 
+//case studies
+function dd_case_study() {
+	register_post_type('dd_case_study',
+		array(
+			'labels'      => array(
+				'name'          => __('Case Studies', 'designdesk-child'),
+				'singular_name' => __('Case Study', 'designdesk-child'),
+				'all_items'           => __( 'All Case Studies', 'designdesk-child' ),
+				'add_new'        => __( 'Add New Case Study', 'designdesk-child' ),
+			),
+				'public'      => true,
+				'has_archive' => true,
+				'rewrite'     => array( 'slug' => 'case-study' ), // my custom slug
+				'menu_icon' => 'dashicons-format-aside',
+				'show_in_rest' => true,
+				'supports' => array( 'title', 'editor', 'excerpt', 'author', 'thumbnail', 'revisions', 'custom-fields', ),
+		)
+	);
+}
+add_action('init', 'dd_case_study');
+
 // substr words
 function substrwords($text, $maxchar, $end='...') {
     if (strlen($text) > $maxchar || $text == '') {
