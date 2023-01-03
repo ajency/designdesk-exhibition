@@ -51,6 +51,10 @@
   .gb-block-layout-column-inner {
     padding-bottom: 0px !important;
   }
+  &.spacing-40{
+    margin-top: 40px !important;
+    margin-bottom: 40px !important;
+  }
 }
 .section-heading {
   @include h2(600);

@@ -28,7 +28,18 @@
                         <hr class="wp-block-separator has-alpha-channel-opacity separator-horizontal-orange">
                         <?php if($caseStudyLocation || $caseStudySize): ?>
                             <ul class="stallDetails">
-                                <li class="label-med-500"><img class="icon" src="<?php echo site_url() .'/wp-content/themes/designdesk-child/assets/images/location.svg'?>">Location : New Delhi</li><li class="label-med-500"><img class="icon" src="<?php echo site_url() .'/wp-content/themes/designdesk-child/assets/images/size-icon.svg'?>">Size : 100 sqm</li>
+                                <li class="label-med-500">
+                                    <span class="icon stroked">
+                                        <svg width="12" height="16" viewBox="0 0 12 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                        <path d="M6 8.66602C7.10457 8.66602 8 7.77059 8 6.66602C8 5.56145 7.10457 4.66602 6 4.66602C4.89543 4.66602 4 5.56145 4 6.66602C4 7.77059 4.89543 8.66602 6 8.66602Z" stroke="#041925" stroke-linecap="round" stroke-linejoin="round"/>
+                                        <path d="M6.0013 1.33301C4.58681 1.33301 3.23026 1.89491 2.23007 2.8951C1.22987 3.8953 0.667969 5.25185 0.667969 6.66634C0.667969 7.92767 0.935969 8.75301 1.66797 9.66634L6.0013 14.6663L10.3346 9.66634C11.0666 8.75301 11.3346 7.92767 11.3346 6.66634C11.3346 5.25185 10.7727 3.8953 9.77254 2.8951C8.77234 1.89491 7.41579 1.33301 6.0013 1.33301V1.33301Z" stroke="#041925" stroke-linecap="round" stroke-linejoin="round"/>
+                                        </svg>
+                                    </span>Location : New Delhi</li><li class="label-med-500"><span class="icon paths">
+                                        <svg width="16" height="13" viewBox="0 0 16 13" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                        <path d="M7.52825 2.5741L-0.0142221 6.92837C-0.534181 7.22855 -0.534181 7.71677 -0.0142221 8.01694L6.58544 11.8269C7.1054 12.1271 7.9511 12.1271 8.47106 11.8269L16.0135 7.47266C16.5335 7.17248 16.5335 6.68426 16.0135 6.38409L9.41387 2.5741C8.89391 2.27393 8.04821 2.27393 7.52825 2.5741ZM7.52825 11.2826L0.928587 7.47266L8.47106 3.11839L15.0712 6.9281L7.52825 11.2826Z" fill="#041925"/>
+                                        <path d="M7.52825 0.54383L-0.0142221 4.8981C-0.534181 5.19827 -0.534181 5.68649 -0.0142221 5.98667L6.58544 9.79665C7.1054 10.0968 7.9511 10.0968 8.47106 9.79665L16.0135 5.44238C16.5335 5.14221 16.5335 4.65399 16.0135 4.35382L9.41387 0.54383C8.89391 0.243657 8.04821 0.243657 7.52825 0.54383ZM7.52825 9.25237L0.928587 5.44238L8.47106 1.08811L15.0712 4.89783L7.52825 9.25237Z" fill="#041925"/>
+                                        </svg>
+                                    </span>Size : 100 sqm</li>
                             </ul>
                         <?php endif ?>
                     </div>
