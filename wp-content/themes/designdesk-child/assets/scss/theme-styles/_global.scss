@@ -291,10 +291,14 @@
         align-items: center;
         &:not(:first-child) {
           &:before {
+            content: "";
             font-size: 0px;
-            content: url(../images/right-arrow-light.svg);
-            padding-right: 10px;
-            padding-left: 10px;
+            background-image: url(../images/right-arrow-light.svg);
+            height: 100%;
+            width: 24px;
+            background-repeat: no-repeat;
+            background-position-x: calc(50%);
+            background-position-y: calc(50%);
           }
         }
         .link {
@@ -372,7 +376,8 @@
     display: flex;
     margin-top: 20px;
   }
-  .text-left-mob, .has-text-align-center.text-left-mob {
+  .text-left-mob,
+  .has-text-align-center.text-left-mob {
     text-align: left;
     p {
       text-align: left;

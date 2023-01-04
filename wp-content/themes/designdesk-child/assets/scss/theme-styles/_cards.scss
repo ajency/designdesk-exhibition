@@ -417,16 +417,16 @@
           transition: all 0.2s ease-in-out;
         }
         .post-details {
-          .icon{
-            svg{
-              path{
+          .icon {
+            svg {
+              path {
                 fill: #fff;
               }
             }
           }
-          p{
-            &:not(:last-child){
-              &:after{
+          p {
+            &:not(:last-child) {
+              &:after {
                 background-color: #fff;
               }
             }
@@ -504,6 +504,82 @@
         }
       }
     }
+    &.case-study-card {
+      .dd-card__wraper {
+        position: relative;
+        &:before {
+          content: "";
+          height: 100%;
+          width: 100%;
+          background: #041925;
+          opacity: 0.5;
+          position: absolute;
+          left: 0px;
+          top: 0px;
+        }
+        &:after {
+          content: "";
+          height: 40px;
+          width: 40px;
+          position: absolute;
+          background-image: url(../images/plus-icon.svg);
+          background-repeat: no-repeat;
+          background-size: contain;
+          background-position: center;
+          left: calc(50% - 20px);
+          top: calc(50% - 20px);
+        }
+        &::before,
+        &::after {
+          opacity: 0;
+          transition: opacity 0.2s ease-in-out;
+        }
+        .card-image {
+          max-height: 350px;
+          height: 350px;
+        }
+        .card-content {
+          background-color: transparent;
+          padding: 20px;
+          position: absolute;
+          bottom: 0px;
+          left: 0px;
+          width: 100%;
+          &:after {
+            content: "";
+            height: 100%;
+            width: 100%;
+            background: #041925;
+            opacity: 0.8;
+            position: absolute;
+            left: 0px;
+            top: 0px;
+          }
+          .card-title {
+            min-height: auto;
+            @include body(600);
+            color: #ffffff;
+            position: relative;
+            z-index: 1;
+            margin-bottom: 0px;
+          }
+        }
+      }
+    }
+  }
+  @media (min-width: 992px) {
+    .dd-card {
+      &.case-study-card {
+        &:hover {
+          &::before {
+            opacity: 0.5;
+          }
+          &::after {
+            opacity: 1;
+          }
+        }
+      }
+    }
   }
   @media (min-width: 768px) {
     grid-template-columns: 1fr 1fr 1fr;
@@ -539,6 +615,20 @@
           .post-details {
             margin-top: 8px;
             margin-bottom: 5px;
+          }
+        }
+      }
+      &.case-study-card {
+        .dd-card__wraper {
+          &:after {
+            opacity: 1;
+            background-image: url(../images/show-more.svg);
+            top: 10px;
+            left: auto;
+            right: 10px;
+          }
+          .card-image {
+            height: 260px;
           }
         }
       }

@@ -17,7 +17,7 @@
                     </div>
 
                     <!-- Related Posts -->
-                    <?php get_template_part('template-parts/post', 'related'); ?>
+                    <?php get_template_part('template-parts/case-study', 'related'); ?>
 
                     <!-- CTA -->
                     <?php get_template_part('template-parts/content', 'cta'); ?>
