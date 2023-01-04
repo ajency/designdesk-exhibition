@@ -513,4 +513,12 @@
   .hero-banner{
     margin-bottom: 60px !important;
   }
+  @media(max-width:767.98px){
+    .hero-banner{
+      margin-bottom: 40px !important;
+    }
+    .h2-semi-600{
+      @include h3(600);
+    }
+  }
 }
