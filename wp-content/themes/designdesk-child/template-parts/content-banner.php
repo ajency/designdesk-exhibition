@@ -23,7 +23,7 @@
             <div class="gb-layout-column-wrap gb-block-layout-column-gap-2 gb-is-responsive-column">
                 <div class="wp-block-genesis-blocks-gb-column alignwide gb-block-layout-column gb-is-vertically-aligned-center">
                     <div class="gb-block-layout-column-inner <?php if ($postName == 'contact-us'): echo "contact-us"; endif; ?>">
-                        <p class="h1-semi-600 banner-heading has-white-color has-text-color"><?php if($banner_heading): echo $banner_heading; else: echo single_term_title(); endif; ?></p>
+                        <h1 class="h1-semi-600 banner-heading has-white-color has-text-color"><?php if($banner_heading): echo $banner_heading; else: echo single_term_title(); endif; ?></h1>
                         <?php if($banner_text): ?><p class="h4-reg-400 banner-text has-white-color has-text-color"><?php echo $banner_text ?></p><?php endif; ?>
                         <hr class="wp-block-separator has-alpha-channel-opacity separator-horizontal-orange">
                         <?php if($caseStudyLocation || $caseStudySize): ?>

@@ -1397,6 +1397,7 @@
   .title {
     @include h3(500);
     margin-bottom: 8px;
+    text-transform: capitalize;
   }
   .text {
     @include body(400);
