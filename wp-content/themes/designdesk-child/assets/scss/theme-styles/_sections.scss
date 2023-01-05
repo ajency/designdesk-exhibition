@@ -1078,9 +1078,6 @@
         border-width: 1px !important;
       }
     }
-    .section-heading {
-      color: #041925 !important;
-    }
   }
 }
 
@@ -1182,6 +1179,7 @@
     font-size: 48px;
     line-height: 140%;
     margin-bottom: 10px;
+    font-family: $poppins;
   }
   hr {
     &.separator-horizontal-orange {
@@ -1434,8 +1432,11 @@
   p {
     margin-bottom: 0px;
   }
-  a {
-    @include dd-link;
+  .dd-link {
+    display: inline-block;
+    a{
+      text-decoration: none !important;
+    }
   }
   .alignwide {
     .gb-block-layout-column-inner {
@@ -1459,6 +1460,7 @@
     gap: 0px;
     .section-heading {
       text-align: left;
+      margin-bottom: 0px;
     }
     & > .wp-block-column {
       &:not(:last-child) {

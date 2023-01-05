@@ -9,7 +9,7 @@
                     <div class="gb-block-layout-column-inner">
                         <div class="wp-container-1 wp-block-group float-over text-left-mob">
                             <div class="wp-block-group__inner-container">
-                                <p class="has-text-align-center section-heading has-text-color" style="color:#2471b5"><?php echo $intro_heading ?></p>
+                                <h2 class="has-text-align-center section-heading has-text-color" style="color:#2471b5"><?php echo $intro_heading ?></h2>
                                 <div class="has-text-align-center body-reg-400 intro-text"><?php echo $intro; ?></div>
                             </div>
                         </div>

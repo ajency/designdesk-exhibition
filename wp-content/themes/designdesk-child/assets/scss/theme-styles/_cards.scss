@@ -570,12 +570,14 @@
   @media (min-width: 992px) {
     .dd-card {
       &.case-study-card {
-        &:hover {
-          &::before {
-            opacity: 0.5;
-          }
-          &::after {
-            opacity: 1;
+        .dd-card__wraper{
+          &:hover {
+            &::before {
+              opacity: 0.5;
+            }
+            &::after {
+              opacity: 1;
+            }
           }
         }
       }
