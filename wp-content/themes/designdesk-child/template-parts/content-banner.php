@@ -6,6 +6,8 @@
         $banner_text = get_field( "banner_text", $term );
         $banner_image_array = get_field( "banner_image", $term );
         $banner_image_mob_array = get_field( "banner_image_mob", $term );
+        $caseStudyLocation = get_field('case-study-location', $term);
+        $caseStudySize = get_field('case-study-size', $term);
     }else{
         $banner_visibility = get_field('banner_visibility');
         $banner_heading = get_field( "banner_heading" );

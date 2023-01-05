@@ -462,12 +462,11 @@
 
 // tag archive
 
-.archive {
+.archive, .page-template-dd-case-studies {
   .hero-banner {
     min-height: 365px;
     padding-top: 225px;
     padding-bottom: 60px;
-    background-position: center;
     &:before {
       background: radial-gradient(
         128.02% 1290.07% at 11.98% 68.28%,
@@ -487,11 +486,10 @@
   }
   @media (max-width: 767.98px) {
     .hero-banner {
-      max-height: 300px;
+      max-height: 100%;
       min-height: 300px;
-      padding-top: 189px;
+      padding-top: 0px;
       padding-bottom: 30px;
-      background-position: right;
       &:before {
         background: radial-gradient(
           128.02% 1290.07% at 11.98% 68.28%,
