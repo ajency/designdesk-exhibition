@@ -1,5 +1,6 @@
-.post-template-default, .single-dd_case_study{
-  .post-content{
+.post-template-default,
+.single-dd_case_study {
+  .post-content {
     max-width: 980px;
     margin: auto;
     .wp-block-columns {
@@ -85,7 +86,7 @@
       }
     }
   }
-  @media(max-width:767.98px){
+  @media (max-width: 767.98px) {
     .post-content {
       .lists-column {
         gap: 20px;
@@ -462,57 +463,53 @@
 
 // tag archive
 
-.archive, .page-template-dd-case-studies {
-  .hero-banner {
-    min-height: 365px;
-    padding-top: 225px;
-    padding-bottom: 60px;
+.archive .hero-banner,
+.hero-banner-small {
+  min-height: 365px;
+  padding-top: 225px;
+  padding-bottom: 60px;
+  &:before {
+    background: radial-gradient(
+      128.02% 1290.07% at 11.98% 68.28%,
+      rgba(0, 0, 0, 0.63) 0%,
+      rgba(0, 0, 0, 0) 49.12%,
+      rgba(255, 255, 255, 0) 85.85%
+    );
+  }
+  .banner-heading {
+    margin-bottom: 30px;
+  }
+  hr {
+    &.separator-horizontal-orange {
+      margin-bottom: 0px !important;
+    }
+  }
+  @media (max-width: 767.98px) {
+    max-height: 100%;
+    min-height: 300px;
+    padding-top: 0px;
+    padding-bottom: 30px;
     &:before {
       background: radial-gradient(
         128.02% 1290.07% at 11.98% 68.28%,
         rgba(0, 0, 0, 0.63) 0%,
-        rgba(0, 0, 0, 0) 49.12%,
+        rgba(0, 0, 0, 0) 70.12%,
         rgba(255, 255, 255, 0) 85.85%
       );
-    }
-    .banner-heading {
-      margin-bottom: 30px;
-    }
-    hr {
-      &.separator-horizontal-orange {
-        margin-bottom: 0px !important;
-      }
-    }
-  }
-  @media (max-width: 767.98px) {
-    .hero-banner {
-      max-height: 100%;
-      min-height: 300px;
-      padding-top: 0px;
-      padding-bottom: 30px;
-      &:before {
-        background: radial-gradient(
-          128.02% 1290.07% at 11.98% 68.28%,
-          rgba(0, 0, 0, 0.63) 0%,
-          rgba(0, 0, 0, 0) 70.12%,
-          rgba(255, 255, 255, 0) 85.85%
-        );
-      }
     }
   }
 }
 
-
 // case studies post type
-.single-dd_case_study{
-  .hero-banner{
+.single-dd_case_study {
+  .hero-banner {
     margin-bottom: 60px !important;
   }
-  @media(max-width:767.98px){
-    .hero-banner{
+  @media (max-width: 767.98px) {
+    .hero-banner {
       margin-bottom: 40px !important;
     }
-    .h2-semi-600{
+    .h2-semi-600 {
       @include h3(600);
     }
   }

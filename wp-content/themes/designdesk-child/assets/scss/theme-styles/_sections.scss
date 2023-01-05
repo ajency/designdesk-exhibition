@@ -499,9 +499,9 @@
     hr.wp-block-separator {
       margin: 30px 0 !important;
     }
-    .stallDetails{
+    .stallDetails {
       margin-bottom: 30px;
-      li{
+      li {
         &:not(:last-child) {
           padding-right: 16px;
         }
@@ -1434,7 +1434,7 @@
   }
   .dd-link {
     display: inline-block;
-    a{
+    a {
       text-decoration: none !important;
     }
   }
@@ -2291,6 +2291,91 @@
       }
       .stat-title {
         @include h4(600);
+      }
+    }
+  }
+}
+
+.faqs-section {
+  p {
+    margin-bottom: 0px;
+  }
+  .wp-block-columns {
+    margin-bottom: 0px;
+    gap: 20px;
+  }
+}
+.gb-block-accordion {
+  margin-bottom: 0px;
+  &:not(:last-child) {
+    margin-bottom: 30px;
+  }
+  details {
+    border: 1px solid #eeeeee;
+    background: #fff;
+    transition: height 0.2s ease-in-out;
+    .gb-accordion-title {
+      background-color: transparent;
+      @include body(500);
+      padding: 31px 20px;
+      position: relative;
+      padding-right: 46px;
+      display: flex;
+      align-items: center;
+      cursor: pointer;
+      &:after {
+        content: "";
+        height: 1px;
+        width: calc(100% - 40px);
+        background-color: transparent;
+        position: absolute;
+        bottom: 0px;
+        left: 20px;
+        transition: all 0.2s ease-in-out;
+      }
+      &::marker {
+        display: none;
+        font-size: 0px;
+      }
+      &:before {
+        content: "";
+        background-image: url(../images/arrow-down.svg);
+        height: 16px;
+        width: 16px;
+        font-size: 16px;
+        transition: all 0.1s ease;
+        display: inline-block;
+        background-repeat: no-repeat;
+        background-size: contain;
+        background-position: center;
+        position: absolute;
+        right: 20px;
+        transform-origin: center;
+      }
+    }
+    .gb-accordion-text {
+      padding: 20px;
+    }
+    &[open] {
+      .gb-accordion-title {
+        &:after {
+          background-color: #eeeeee;
+        }
+        &:before{
+          transform: rotate(180deg);
+        }
+      }
+    }
+  }
+  @media(max-width:767.98px){
+    details{
+      .gb-accordion-title{
+        padding: 16px;
+        padding-right: 42px;
+      }
+      .gb-accordion-text{
+        padding: 16px;
+        color: #5B5B5B;
       }
     }
   }
