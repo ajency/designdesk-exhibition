@@ -8,6 +8,10 @@
   padding-top: 10px;
   padding-bottom: 10px;
   font-size: 14px;
+  & > .wrap{
+    margin-left: auto;
+    margin-right: auto;
+  }
   @media only screen and (max-width: 959.98px) {
     padding-top: 20px;
     padding-bottom: 20px;

@@ -308,7 +308,7 @@ $gradient4: radial-gradient(
     color: $accent-black !important;
     @include h4(500);
     text-decoration: none !important;
-    transition: all 0.2 ease-in-out !important;
+    transition: all 0.2s ease-in-out !important;
     cursor: pointer;
   }
   &.bordered {

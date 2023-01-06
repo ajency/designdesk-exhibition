@@ -12,7 +12,11 @@ $linkedin_link = get_theme_mod('dd_social_link_5');
 
 ?>
 
-<header class="dd-header">
+<?php if(is_404()){
+    $extraClasses = "bg-header";
+ }?>
+
+<header class="dd-header <?php if($extraClasses): echo $extraClasses; endif; ?>">
     <div class="site-inner dd-header__wraper">
         <div class="left-side">
             <div class="dd-logo mobile-hide">
