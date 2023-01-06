@@ -12,7 +12,7 @@ $linkedin_link = get_theme_mod('dd_social_link_5');
 
 ?>
 
-<?php if(is_404()){
+<?php if(is_404() || is_page('thank-you')){
     $extraClasses = "bg-header";
  }?>
 

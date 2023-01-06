@@ -432,7 +432,6 @@ $gradient4: radial-gradient(
   }
 }
 .separator-horizontal{
-  height: 2px;
   border-width: 2px !important;
   max-width: 100% !important;
   opacity: 0.5;
@@ -442,6 +441,12 @@ $gradient4: radial-gradient(
     border-color: #f48e0c !important;
     margin: 20px 0 !important;
     max-width: 93px !important;
+  }
+  &.thickness-4{
+    border-width: 4px !important;
+    @media (max-width: 767.98px){
+      border-width: 1px !important;
+    }
   }
 }
 

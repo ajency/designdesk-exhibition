@@ -2387,7 +2387,7 @@
       .gb-block-layout-column-inner {
         display: grid;
         grid-gap: 80px;
-        @media(max-width:767.98px){
+        @media (max-width: 767.98px) {
           grid-gap: 20px;
         }
       }
@@ -2447,18 +2447,18 @@
       @include body(600);
     }
   }
-  &.style1{
+  &.style1 {
     gap: 20px !important;
-    grid-gap:20px !important;
-    & > .wp-block-column{
-      background: #F9F9F9;
+    grid-gap: 20px !important;
+    & > .wp-block-column {
+      background: #f9f9f9;
       padding: 30px;
       padding-bottom: 20px;
     }
-    .testimonial-text{
+    .testimonial-text {
       @include h4(400);
     }
-    .company-details{
+    .company-details {
       margin-top: 20px;
     }
   }
@@ -2482,20 +2482,21 @@
     .company-details {
       margin-top: 20px;
     }
-    &:not(.style1){
-      .testimonial-text, .company-details{
+    &:not(.style1) {
+      .testimonial-text,
+      .company-details {
         padding-left: 20px;
         padding-right: 20px;
       }
-      .company-details{
+      .company-details {
         padding-bottom: 10px;
       }
     }
-    &.style1{
-      & > .wp-block-column{
+    &.style1 {
+      & > .wp-block-column {
         padding: 20px;
       }
-      .testimonial-text{
+      .testimonial-text {
         @include body(400);
       }
     }
@@ -2510,42 +2511,146 @@
   grid-gap: 20px;
   justify-content: space-between;
   align-items: center;
-  .section-heading{
+  .section-heading {
     @include h1(600);
   }
-  .text{
+  .text {
     max-width: 500px;
     margin-bottom: 20px;
   }
-  .dd-button{
+  .dd-button {
     margin-top: 60px;
   }
-  .image-container{
-    img{
+  .image-container {
+    img {
       height: 100%;
       width: 100%;
       object-fit: contain;
     }
   }
-  @media(max-width:767.98px){
+  @media (max-width: 767.98px) {
     flex-direction: column;
     margin: 40px auto;
     text-align: center;
-    .section-heading{
+    .section-heading {
       @include h2(600);
     }
-    .dd-button{
+    .dd-button {
       margin-top: 40px;
     }
-    hr{
+    hr {
       margin-left: auto !important;
       margin-right: auto !important;
     }
-    .image-container{
+    .image-container {
       margin-bottom: 40px;
       margin: 0px auto 40px;
       width: 240px;
       height: 240px;
+    }
+  }
+}
+
+.thank-you-section {
+  margin-top: 200px !important;
+  .section-heading {
+    @include h1(600);
+  }
+  .text {
+    max-width: 500px;
+    margin-bottom: 20px;
+  }
+  .dd-button {
+    margin-top: 60px;
+    margin-bottom: 0px;
+  }
+  .image-container {
+    figure {
+      margin-top: 0px;
+      margin-bottom: 0px;
+      img {
+        height: 100%;
+        width: 100%;
+        object-fit: contain;
+      }
+    }
+  }
+  .wp-block-columns {
+    margin-bottom: 0px;
+  }
+  @media (max-width: 767.98px) {
+    margin-top: 40px !important;
+    text-align: center;
+    .image-container {
+      width: 238.29px;
+      height: 238.36px;
+      margin: 0px auto 40px;
+    }
+    .section-heading {
+      @include h2(600);
+      text-align: center;
+    }
+    .dd-button {
+      margin-top: 40px;
+    }
+    hr {
+      margin-left: auto !important;
+      margin-right: auto !important;
+    }
+  }
+}
+
+.social-links-section {
+  .wp-block-columns {
+    margin-bottom: 0px;
+    gap: 40px 120px;
+    grid-gap: 40px 120px;
+    .wp-block-column {
+      display: grid;
+      grid-gap: 33px;
+      justify-items: center;
+      text-align: center;
+      grid-template-rows: 93px 1fr;
+      .icon {
+        height: 93px;
+        width: 93px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        svg {
+          height: 100%;
+          width: 100%;
+          object-fit: contain;
+          path {
+            fill: #2471b5;
+            transition: all 0.2s ease-in-out;
+          }
+        }
+        @media (min-width: 768px) {
+          &:hover {
+            svg {
+              path {
+                fill: #76c8fb;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+  p {
+    margin-bottom: 0px;
+  }
+  @media (max-width: 767.98px) {
+    .wp-block-columns {
+      .wp-block-column {
+        grid-template-rows: 73px 1fr;
+        grid-gap: 12px;
+        .icon {
+          height: 75px;
+          width: 75px;
+        }
+      }
     }
   }
 }
