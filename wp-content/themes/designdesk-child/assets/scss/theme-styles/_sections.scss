@@ -2366,6 +2366,10 @@
         }
       }
     }
+    summary::-webkit-details-marker {
+      display: none !important;
+      font-size: 0px !important;
+    }
   }
   @media (max-width: 767.98px) {
     details {
@@ -2653,4 +2657,31 @@
       }
     }
   }
+}
+
+.dd-instagram-feed {
+  margin-top: 80px;
+  margin-bottom: 80px;
+  article[aria-label="Post 2, Instagram post by Curator.io Powered by Curator.io "],
+  div[aria-label="Post 2, Instagram post by Curator.io Powered by Curator.io "] {
+    display: none !important;
+  }
+  a.crt-logo.crt-tag {
+    display: none;
+  }
+  .dd-instagram-feed .crt-feed > div {
+    width: calc(100% / 3) !important;
+    padding: 15px 10px !important;
+  }
+  @media (max-width: 767.98px) {
+    margin-top: 40px;
+    margin-bottom: 40px;
+  }
+/*   @media (min-width: 768px) {
+    .crt-feed {
+      & > div {
+        width: calc(100% / 3) !important;
+      }
+    }
+  } */
 }
