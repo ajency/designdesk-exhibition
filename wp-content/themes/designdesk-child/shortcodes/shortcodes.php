@@ -20,7 +20,7 @@ function contact_phone($atts)
         'number' => '#',
     );
     $a = shortcode_atts($default, $atts);
-    return '<div class="contact-link"><img src="' . get_site_url() . '/wp-content/themes/designdesk-child/assets/images/phone.png" title="phone" alt="phone" class="icon icon-phone"><a href="tel:' . $a['number'] . '">' . $a['number'] . '</a></div>';
+    return '<div class="contact-link"><img loading="lazy" src="' . get_site_url() . '/wp-content/themes/designdesk-child/assets/images/phone.png" title="phone" alt="phone" class="icon icon-phone"><a href="tel:' . $a['number'] . '">' . $a['number'] . '</a></div>';
 }
 add_shortcode('dd_phone', 'contact_phone');
 
@@ -130,7 +130,7 @@ function portfolios($atts){
                 $output .=  '<div class="portfolio-card dd-popupToggler" target-popup="#'.$portfolioId.'">';
                     $output .=  '<div class="portfolio-card__wraper">';
                         $output .=  '<div class="card-image">';
-                            $output .=  '<img src="'. $thumbnailUrl .'" alt="'.get_the_title().'" title="'.get_the_title().'" width="280" height="330">';
+                            $output .=  '<img loading="lazy" src="'. $thumbnailUrl .'" alt="'.get_the_title().'" title="'.get_the_title().'" width="280" height="330">';
                         $output .=  '</div>';
                         $output .=  '<div class="card-content">';
                             $output .=  '<div class="card-content__wraper">';
@@ -159,7 +159,7 @@ function portfolios($atts){
                                                         $imagesAlt = $imagesField['value']['alt'];
                                                         $imagesTitle = $imagesField['value']['title'];
                                                         $output .=  '<div class="gallery-slide">';
-                                                            $output .=  '<img class="gallery-image" src="'.$imagesUrl.'" alt="'.$imagesAlt.'" title="'.$imagesTitle.'">';
+                                                            $output .=  '<img loading="lazy" class="gallery-image" loading="lazy" src="'.$imagesUrl.'" alt="'.$imagesAlt.'" title="'.$imagesTitle.'">';
                                                         $output .=  '</div>';
                                                     endif;
                                                 endforeach;
@@ -173,10 +173,10 @@ function portfolios($atts){
                                                 $output .=  '<p class="h2-semi-600 portfolio-title">'.$portfolioTitle.'</p>';
                                                 $output .=  '<ul class="portfolio-info-list">';
                                                     if($portfolioLocation):
-                                                        $output .=  '<li class="label-med-500"><img class="icon" src="'. get_site_url() .'/wp-content/themes/designdesk-child/assets/images/location.svg">Location : '.$portfolioLocation.'</li>';
+                                                        $output .=  '<li class="label-med-500"><img loading="lazy" class="icon" src="'. get_site_url() .'/wp-content/themes/designdesk-child/assets/images/location.svg">Location : '.$portfolioLocation.'</li>';
                                                     endif;
                                                     if($stallSize):
-                                                        $output .=  '<li class="label-med-500"><img class="icon" src="'. get_site_url() .'/wp-content/themes/designdesk-child/assets/images/size-icon.svg">Size : '.$stallSize.'</li>';
+                                                        $output .=  '<li class="label-med-500"><img loading="lazy" class="icon" src="'. get_site_url() .'/wp-content/themes/designdesk-child/assets/images/size-icon.svg">Size : '.$stallSize.'</li>';
                                                     endif;
                                                 $output .=  '</ul>';
                                             $output .=  '</div>';
@@ -192,7 +192,7 @@ function portfolios($atts){
                                                                     $imagesAlt = $imagesField['value']['alt'];
                                                                     $imagesTitle = $imagesField['value']['title'];
                                                                     $output .=  '<div class="thumbnail-slide">';
-                                                                        $output .=  '<img class="thumbnail-image" src="'.$imagesUrl.'" alt="'.$imagesAlt.'" title="'.$imagesTitle.'" height="62" width="99.2">';
+                                                                        $output .=  '<img loading="lazy" class="thumbnail-image" src="'.$imagesUrl.'" alt="'.$imagesAlt.'" title="'.$imagesTitle.'" height="62" width="99.2">';
                                                                     $output .=  '</div>';
                                                                 endif;
                                                             endforeach;
@@ -284,7 +284,7 @@ function videos($atts){
                 $output .=  '<div class="dd-card video-card dd-popupToggler" video-id="'.$videoId.'" player-id="player-'.$videoPlayerId.'" target-popup="#'.$videoPopupId.'">';
                     $output .=  '<div class="dd-card__wraper">';
                         $output .=  '<div class="card-image">';
-                            $output .=  '<img src="'. $thumbnailUrl .'" alt="'.get_the_title().'" title="'.get_the_title().'" width="280" height="330">';
+                            $output .=  '<img loading="lazy" src="'. $thumbnailUrl .'" alt="'.get_the_title().'" title="'.get_the_title().'" width="280" height="330">';
                             $output .=  '<a class="play-button " ></a>';
                         $output .=  '</div>';
                         $output .=  '<div class="card-content">';

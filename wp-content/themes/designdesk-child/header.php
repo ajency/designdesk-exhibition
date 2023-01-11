@@ -68,11 +68,15 @@ genesis_markup(
  */
 do_action( 'genesis_before_header' );
 
-/* critical css */
-?>
-<?php
-/* critical css */
+$stylesheetUri = get_stylesheet_directory();
 
+?>
+<!-- critical css -->
+<style id="critical-css-main" type="text/css">
+
+</style>
+<!-- critical css -->
+<?php
 
 /**
  * Fires to display the main header content.
