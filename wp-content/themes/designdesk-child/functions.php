@@ -326,6 +326,26 @@ function wpb_widgets_init() {
 }
 add_action( 'widgets_init', 'wpb_widgets_init' );
 
+/**
+ * WP - Load CSS Asynchronously
+ * Eliminate blocking-resources
+ */
+function ct_style_loader_tag($html, $handle) {
+    $async_loading = array(
+		'theme-font-montserrat',
+		'theme-font-poppins',
+		'critical-css',
+		'slick-styles',
+		'theme-styles'
+    );
+    if( in_array($handle, $async_loading) ) {
+        $async_html = str_replace("rel='stylesheet'", "rel='preload' as='style' onload='this.onload=null;this.rel='stylesheet''", $html);
+        $async_html .= str_replace( 'media=\'all\'', 'media="print" onload="this.media=\'all\'"', $html );
+        return $async_html;
+    }
+    return $html;
+}
+add_filter('style_loader_tag', 'ct_style_loader_tag', 10, 2);
 
 //defer
 function defer_parsing_of_js ( $url ) {
